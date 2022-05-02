@@ -5,15 +5,15 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
-  path: content/products
+  path: content/products.json
   label: Products
   match: "**/*"
 - type: document
-  path: content/programs
+  path: content/programs.json
   label: Programs
   match: "**/*"
 - type: document
-  path: content/daily-hukumnama
+  path: content/daily-hukumnama.json
   label: Daily Hukumana
   match: "**/*"
 upload_dir: uploads
