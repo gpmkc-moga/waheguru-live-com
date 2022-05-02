@@ -1,29 +1,29 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: admin
 webhook_url: 
 sections:
+- type: heading
+  label: Website Content
 - type: document
   path: content/products.json
   label: Products
-  match: "**/*"
 - type: document
   path: content/programs.json
   label: Programs
-  match: "**/*"
 - type: document
   path: content/daily-hukumnama.json
   label: Daily Hukumana
-  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
+  preview_output_directory: ".nuxt"
   install_dependencies_command: npm install
   preview_docker_image: forestryio/node:12
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: npm run develop
+  instant_preview_command: npm run forestry-preview
