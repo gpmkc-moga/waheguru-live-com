@@ -1,4 +1,66 @@
 ---
 label: Programs
 hide_body: true
-fields: []
+fields:
+- name: program
+  type: field_group_list
+  fields:
+  - name: smagam_start_date
+    type: datetime
+    label: Smagam start date
+    description: Please enter smagam start date (eg. March Camp 20th March)
+    config:
+      required: true
+      date_format: 
+      time_format: 
+      display_utc: false
+    default: ''
+  - name: smagam_end_date
+    type: datetime
+    label: Smagam end date
+    description: Please enter smagam end date (eg. March Camp 31st March)
+    config:
+      required: false
+      date_format: 
+      time_format: 
+      display_utc: false
+    default: ''
+  - name: smagam_address_line_1
+    type: text
+    config:
+      required: true
+    description: Please enter Smagam Address (Line 1) (eg. Village Bhamboj)<br>
+    label: Smagam Address Line 1
+  - name: smagam_address_line_2
+    type: text
+    config:
+      required: true
+    label: Smagam Address Line 2
+    description: Please enter Smagam Address (Line 2) (eg. Dist Gurdaspur, Punjab(INDIA))<br>
+  - name: smagam_poster
+    type: file
+    config:
+      maxSize: 1
+    label: Smagam Poster
+    description: Please upload smagam poster (.jpeg or .jpg, &lt;1 mb)
+  - name: smagam_location
+    type: select
+    default: Headquarters
+    config:
+      required: true
+      options:
+      - Headquarters
+      - Outside
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Smagam Location
+    description: 'Please select if program is at headquarters or outside<br>Headquarters:
+      Gurudwara Prabh Milne Ka Chao, Moga'
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Program
