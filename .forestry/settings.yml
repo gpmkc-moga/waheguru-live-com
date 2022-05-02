@@ -3,7 +3,19 @@ new_page_extension: md
 auto_deploy: false
 admin_path: 
 webhook_url: 
-sections: 
+sections:
+- type: document
+  path: content/products
+  label: Products
+  match: "**/*"
+- type: document
+  path: content/programs
+  label: Programs
+  match: "**/*"
+- type: document
+  path: content/daily-hukumnama
+  label: Daily Hukumana
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
