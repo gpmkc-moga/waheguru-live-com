@@ -64,3 +64,5 @@ fields:
     max: 
     labelField: 
   label: Program
+pages:
+- content/programs.json
