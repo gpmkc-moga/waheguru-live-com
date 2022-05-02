@@ -10,7 +10,8 @@
     "forestry-preview": "nuxt -p 8080 -H 0.0.0.0",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "lintfix": "npm run lint:js -- --fix"
+    "lintfix": "npm run lint:js -- --fix",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",
@@ -35,6 +36,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.2.0",
     "postcss": "^8.4.4",
-    "prettier": "2.6.2"
+    "prettier": "2.6.2",
+    "push-dir": "^0.4.1"
   }
 }
