@@ -1,4 +1,4 @@
-name: Push on commit
+name: Push notification on commit
 
 on: [push]
 
@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Send OneSignal Notification
-      uses: cingh-jasdeep/onesignal-github-action@0.0.2
+      uses: cingh-jasdeep/onesignal-github-action@0.0.3
       env:
         API_KEY: ${{ secrets.API_KEY }}
         APP_ID: "0ddb5f3a-df91-4d2a-bd99-0b841f86288e"
