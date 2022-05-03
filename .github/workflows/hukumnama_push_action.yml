@@ -1,0 +1,16 @@
+name: Push on commit
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send OneSignal Notification
+      uses: cingh-jasdeep/onesignal-github-action@v0.0.1
+      env:
+        API_KEY: ${{ secrets.API_KEY }}
+        APP_ID: "0ddb5f3a-df91-4d2a-bd99-0b841f86288e"
+        MESSAGE: "There is a new commit!"
