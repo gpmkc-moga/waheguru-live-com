@@ -11,6 +11,6 @@ jobs:
     - name: Send OneSignal Notification
       uses: cingh-jasdeep/onesignal-github-action@0.0.3
       env:
-        API_KEY: ${{ secrets.API_KEY }}
+        API_KEY: ${{ secrets.ONESIGNAL_TEST_API_KEY }}
         APP_ID: "0ddb5f3a-df91-4d2a-bd99-0b841f86288e"
         MESSAGE: "There is a new commit!"
