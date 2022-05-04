@@ -6,8 +6,6 @@ on:
       - "master"
     paths:
       - "content/daily-hukumnama.json"
-env:
-  ONESIGNAL_APP_ID: "0ddb5f3a-df91-4d2a-bd99-0b841f86288e"
 
 jobs:
   read_hukumnama_file:
@@ -27,6 +25,9 @@ jobs:
         continue-on-error: true
 
   send_onesignal_notification:
+    env:
+      ONESIGNAL_APP_ID: "0ddb5f3a-df91-4d2a-bd99-0b841f86288e"
+
     runs-on: ubuntu-latest
     needs: read_hukumnama_file
     if: ${{ needs.read_hukumnama_file.outputs.hukumnama_photo_url != '' }}
@@ -36,8 +37,8 @@ jobs:
           curl --include \
               --request POST \
               --header "Content-Type: application/json; charset=utf-8" \
-              --header "Authorization: Basic NjE5OThjNDktMzczNy00MjAzLTg4NmUtM2Q4ZGI1MzBiNGVk" \
-              --data-binary "{\"app_id\": \"0ddb5f3a-df91-4d2a-bd99-0b841f86288e\",
+              --header "Authorization: Basic ${{secrets.ONESIGNAL_TEST_API_KEY}}" \
+              --data-binary "{\"app_id\": \"{{env.ONESIGNAL_APP_ID}}\",
           \"contents\": {\"en\": \"Today's Hukumnama\"},
           \"headings\": {\"en\": \"Gurdwara Prabh Milne Ka Chao, Moga\"},
           \"isAndroid\": true,
