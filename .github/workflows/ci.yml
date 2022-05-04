@@ -9,6 +9,7 @@ on:
       - master
 concurrency:
   group: ci
+  cancel-in-progress: true
 
 jobs:
   ci:

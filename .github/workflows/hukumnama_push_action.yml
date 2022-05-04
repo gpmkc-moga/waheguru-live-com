@@ -8,6 +8,7 @@ on:
       - "content/daily-hukumnama.json"
 concurrency:
   group: push
+  cancel-in-progress: true
 
 jobs:
   read_hukumnama_file:
