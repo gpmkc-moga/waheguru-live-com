@@ -5,7 +5,7 @@ on:
     branches:
       - "master"
     paths:
-      - "/content/daily-hukumnama.json"
+      - "content/daily-hukumnama.json"
 env:
   ONESIGNAL_APP_ID: "0ddb5f3a-df91-4d2a-bd99-0b841f86288e"
 
@@ -19,7 +19,7 @@ jobs:
         id: daily_hukumnama
         uses: juliangruber/read-file-action@v1
         with:
-          path: /content/daily-hukumnama.json
+          path: content/daily-hukumnama.json
 
   send_onesignal_notification:
     runs-on: ubuntu-latest
