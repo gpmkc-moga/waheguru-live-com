@@ -13,24 +13,24 @@ jobs:
   read_hukumnama_file:
     runs-on: ubuntu-latest
     outputs:
-      hukumnama_content: ${{ steps.daily_hukumnama.outputs.content }}
+      hukumnama_photo_url: ${{steps.daily_hukumnama_photo.outputs.prop}}
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
-      - name: Read content/daily-hukumnama.json
-        id: daily_hukumnama
-        uses: juliangruber/read-file-action@v1
+      - name: Read content/daily-hukumnama.json for photo
+        id: daily_hukumnama_photo
+        uses: notiz-dev/github-action-json-property@release
         with:
-          path: ./content/daily-hukumnama.json
+          path: "content/daily-hukumnama.json"
+          prop_path: "photo"
 
-      - name: Echo photo content/daily-hukumnama.json
-        run: echo "${{ steps.daily_hukumnama.outputs.content.photo }}"
+      - run: echo ${{steps.daily_hukumnama_photo.outputs.prop}}
 
   send_onesignal_notification:
     runs-on: ubuntu-latest
     needs: read_hukumnama_file
-    if: ${{ needs.read_hukumnama_file.hukumnama_content.photo != '' }}
+    if: ${{ needs.read_hukumnama_file.hukumnama_photo_url != '' }}
     steps:
       - name: Send OneSignal Notification
         uses: cingh-jasdeep/onesignal-github-action@0.0.5
