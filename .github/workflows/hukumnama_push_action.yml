@@ -38,7 +38,7 @@ jobs:
               --request POST \
               --header "Content-Type: application/json; charset=utf-8" \
               --header "Authorization: Basic ${{secrets.ONESIGNAL_TEST_API_KEY}}" \
-              --data-binary "{\"app_id\": \"{{env.ONESIGNAL_APP_ID}}\",
+              --data-binary "{\"app_id\": \"${{env.ONESIGNAL_APP_ID}}\",
           \"contents\": {\"en\": \"Today's Hukumnama\"},
           \"headings\": {\"en\": \"Gurdwara Prabh Milne Ka Chao, Moga\"},
           \"isAndroid\": true,
