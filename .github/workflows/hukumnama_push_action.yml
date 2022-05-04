@@ -20,7 +20,7 @@ jobs:
 
       - name: Read content/daily-hukumnama.json for photo
         id: daily_hukumnama_photo
-        uses: notiz-dev/github-action-json-property@0.1.0
+        uses: notiz-dev/github-action-json-property@release
         with:
           path: "content/daily-hukumnama.json"
           prop_path: "photo"
