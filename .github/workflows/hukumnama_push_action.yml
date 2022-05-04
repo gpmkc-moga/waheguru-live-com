@@ -6,6 +6,8 @@ on:
       - "master"
     paths:
       - "content/daily-hukumnama.json"
+concurrency:
+  group: push
 
 jobs:
   read_hukumnama_file:
