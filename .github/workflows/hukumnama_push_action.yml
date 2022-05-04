@@ -27,7 +27,7 @@ jobs:
     if: ${{ needs.read_hukumnama_file.hukumnama_content.photo != '' }}
     steps:
       - name: Send OneSignal Notification
-        uses: cingh-jasdeep/onesignal-github-action@0.0.4
+        uses: cingh-jasdeep/onesignal-github-action@0.0.5
         with:
           apiKey: ${{ secrets.ONESIGNAL_TEST_API_KEY }}
           appId: ${{ env.ONESIGNAL_APP_ID }}
