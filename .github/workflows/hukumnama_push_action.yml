@@ -15,11 +15,14 @@ jobs:
     outputs:
       hukumnama_content: ${{ steps.daily_hukumnama.outputs.content }}
     steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
       - name: Read content/daily-hukumnama.json
         id: daily_hukumnama
         uses: juliangruber/read-file-action@v1
         with:
-          path: content/daily-hukumnama.json
+          path: ./content/daily-hukumnama.json
 
   send_onesignal_notification:
     runs-on: ubuntu-latest
