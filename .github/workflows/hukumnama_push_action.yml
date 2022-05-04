@@ -26,12 +26,10 @@ jobs:
           path: "content/daily-hukumnama.json"
           prop_path: "photo"
 
-      - run: echo ${{steps.daily_hukumnama_photo.outputs.prop}}
-
   send_onesignal_notification:
     runs-on: ubuntu-latest
     needs: read_hukumnama_file
-    if: ${{ needs.read_hukumnama_file.hukumnama_photo_url != '' }}
+    if: ${{ needs.read_hukumnama_file.hukumnama_photo_url != "" }}
     steps:
       - name: Send OneSignal Notification
         uses: cingh-jasdeep/onesignal-github-action@0.0.5
