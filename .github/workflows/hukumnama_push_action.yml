@@ -24,6 +24,9 @@ jobs:
         with:
           path: ./content/daily-hukumnama.json
 
+      - name: Echo content/daily-hukumnama.json
+        run: echo "${{ steps.daily_hukumnama.outputs.content }}"
+
   send_onesignal_notification:
     runs-on: ubuntu-latest
     needs: read_hukumnama_file
