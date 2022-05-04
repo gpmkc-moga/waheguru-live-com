@@ -24,8 +24,8 @@ jobs:
         with:
           path: ./content/daily-hukumnama.json
 
-      - name: Echo content/daily-hukumnama.json
-        run: echo "${{ steps.daily_hukumnama.outputs.content }}"
+      - name: Echo photo content/daily-hukumnama.json
+        run: echo "${{ steps.daily_hukumnama.outputs.content.photo }}"
 
   send_onesignal_notification:
     runs-on: ubuntu-latest
