@@ -62,8 +62,7 @@ jobs:
               - content/daily-hukumnama.json
 
   send_hukumnama_notif:
-    runs-on: ubuntu-latest
-    needs: ci
-    if: needs.ci.outputs.hukumnama_updated == 'true'
     uses: ./.github/workflows/hukumnama_push_action.yml
     secrets: inherit
+    needs: ci
+    if: needs.ci.outputs.hukumnama_updated == 'true'
