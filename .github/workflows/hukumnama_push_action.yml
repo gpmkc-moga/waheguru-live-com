@@ -1,10 +1,11 @@
 name: Push notification on commit of content/daily-hukumnama.json
 
 on:
-  workflow_run:
-    workflows: [ci]
-    types:
-      - completed
+  workflow_call:
+    # workflows: [ci]
+    # types:
+    #   - completed
+
   # paths:
   #   - "content/daily-hukumnama.json"
   # push:
@@ -17,32 +18,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check_hukumnama_file_changed:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    steps:
-      - uses: gagle/check-path-changes@v1
-        id: check-path-changes
-        with:
-          baseRef: "master"
-          headRef: "master"
-          paths: |
-            json:
-              - content/daily-hukumnama.json
-    outputs:
-      changed-json: ${{ steps.check-path-changes.outputs.json }}
-
   read_hukumnama_file:
     runs-on: ubuntu-latest
-    needs: check_hukumnama_file_changed
-    if: ${{ needs.check_hukumnama_file_changed.outputs.json == 'true' }}
     outputs:
       hukumnama_photo_url: ${{steps.daily_hukumnama_photo.outputs.prop}}
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
 
-      - name: Read content/daily-hukumnama.json for photo
+      - name: Read content/daily-hukumnama.json for photo 🖼️
         id: daily_hukumnama_photo
         uses: thiagomoreirac/github-action-json-property@v0.1.3-beta
         with:
