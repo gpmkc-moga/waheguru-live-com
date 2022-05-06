@@ -1,7 +1,8 @@
 <template>
   <div>
     <div>Waheguru Live</div>
-    <div class="onesignal-customlink-container"></div>
+    <!-- page keeps refreshing in dev mode! -->
+    <div v-if="!isDev" class="onesignal-customlink-container"></div>
   </div>
 </template>
 
@@ -10,10 +11,11 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "IndexPage",
-  data() {
-    return {};
+  asyncData(context) {
+    return {
+      isDev: context.isDev,
+    };
   },
-  mounted() {},
   methods: {},
 });
 </script>
