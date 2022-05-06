@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: gagle/check-path-changes@v1.0.0
+      - uses: gagle/check-path-changes@v1
         id: check-path-changes
         with:
           baseRef: "master"
