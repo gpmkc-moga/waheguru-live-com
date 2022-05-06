@@ -13,6 +13,8 @@ concurrency:
 
 jobs:
   ci:
+    name: CI 🤖
+
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -62,6 +64,7 @@ jobs:
               - content/daily-hukumnama.json
 
   send_hukumnama_notif:
+    name: Send Hukumnama Notification 📬 📜
     uses: ./.github/workflows/hukumnama_push_action.yml
     secrets: inherit
     needs: ci
