@@ -1,11 +1,19 @@
 name: Push notification on commit of content/daily-hukumnama.json
 
 on:
-  push:
+  workflow_run:
+    workflows: [ci]
+    types:
+      - completed
     branches:
       - "master"
     paths:
       - "content/daily-hukumnama.json"
+  # push:
+  #   branches:
+  #     - "master"
+  #   paths:
+  #     - "content/daily-hukumnama.json"
 concurrency:
   group: push
   cancel-in-progress: true
