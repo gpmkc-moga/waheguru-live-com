@@ -5,10 +5,8 @@ on:
     workflows: [ci]
     types:
       - completed
-    branches:
-      - "master"
-    paths:
-      - "content/daily-hukumnama.json"
+  # paths:
+  #   - "content/daily-hukumnama.json"
   # push:
   #   branches:
   #     - "master"
@@ -19,8 +17,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check_hukumnama_file_changed:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: gagle/check-path-changes@v1.0.0
+        id: check-path-changes
+        with:
+          baseRef: "master"
+          headRef: "master"
+          paths: |
+            json:
+              - content/daily-hukumnama.json
+    outputs:
+      changed-json: ${{ steps.check-path-changes.outputs.json }}
+
   read_hukumnama_file:
     runs-on: ubuntu-latest
+    needs: check_hukumnama_file_changed
+    if: ${{ needs.check_hukumnama_file_changed.outputs.json == 'true' }}
     outputs:
       hukumnama_photo_url: ${{steps.daily_hukumnama_photo.outputs.prop}}
     steps:
