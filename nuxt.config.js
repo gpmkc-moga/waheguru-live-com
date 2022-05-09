@@ -32,6 +32,7 @@ export default {
     "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -92,4 +93,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // google fonts options: https://google-fonts.nuxtjs.org/options
+  googleFonts: {
+    families: {
+      "Krona+One": true,
+    },
+    display: "auto",
+  },
 };
