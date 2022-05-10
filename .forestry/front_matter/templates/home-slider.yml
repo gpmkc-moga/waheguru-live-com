@@ -1,6 +1,6 @@
 ---
 label: Home Slider
-hide_body: false
+hide_body: true
 fields:
 - name: slides
   type: field_group_list
