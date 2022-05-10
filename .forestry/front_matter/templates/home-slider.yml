@@ -23,3 +23,5 @@ fields:
     labelField: 
   label: Slides
   description: Image Slides
+pages:
+- content/home-slider.json
