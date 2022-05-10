@@ -7,9 +7,10 @@
         class="bg-white z-30 relative flex flex-col items-center md:flex-row"
       >
         <nuxt-link to="/" class="m-2 w-full md:basis-3/5 flex justify-center">
-          <img
+          <nuxt-picture
+            format="webp"
             class="block w-1/2"
-            src="~/assets/GPMKC_Logo.png"
+            src="/GPMKC_Logo.png"
             :alt="logoAlt"
           />
         </nuxt-link>
@@ -94,9 +95,10 @@
     <!-- desktop -->
     <div class="hidden lg:flex items-center bg-white">
       <nuxt-link to="/" class="basis-1/4 m-2">
-        <img
+        <nuxt-picture
+          format="webp"
           class="block w-full"
-          src="~/assets/GPMKC_Logo.png"
+          src="/GPMKC_Logo.png"
           :alt="logoAlt"
         />
       </nuxt-link>

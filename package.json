@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt --port 3001",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxt start --port 3001",
     "generate": "nuxt generate",
     "forestry-preview": "nuxt -p 8080 -H 0.0.0.0",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
@@ -20,12 +20,14 @@
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
+    "vue-concise-slider": "^4.2.5",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
+    "@nuxt/image": "^0.6.2",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
