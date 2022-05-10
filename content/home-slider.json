@@ -1,6 +1,10 @@
 {
   "slides": [
     {
+      "path": "/img/slider_4.jpg",
+      "description": "ਗੁਰਮੁਖਿ ਹੋਵੈ ਸੁ ਕਾਇਆ ਖੋਜੈ ਹੋਰ ਸਭ ਭਰਮਿ ਭੁਲਾਈ ॥- Guru Granth Sahib ji"
+    },
+    {
       "path": "/img/slider_3.png",
       "description": "ਹਮ ਨਹੀ ਚੰਗੇ ਬੁਰਾ ਨਹੀ ਕੋਇ ॥ ਪ੍ਰਣਵਤਿ ਨਾਨਕੁ ਤਾਰੇ ਸੋਇ ॥੪॥੧॥੨॥ - Guru Granth Sahib ji"
     },
