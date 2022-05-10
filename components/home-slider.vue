@@ -1,17 +1,19 @@
 <template>
-  <SliderWindow>
-    <SliderItem
-      v-for="slide in homeSliderContent.slides"
-      :key="slide.description"
-    >
-      <nuxt-picture
-        format="webp"
-        class="w-full"
-        :src="slide.path"
-        :alt="slide.description"
-      />
-    </SliderItem>
-  </SliderWindow>
+  <client-only placeholder="Loading Slides...">
+    <SliderWindow>
+      <SliderItem
+        v-for="slide in homeSliderContent.slides"
+        :key="slide.description"
+      >
+        <nuxt-picture
+          format="webp"
+          class="w-full"
+          :src="slide.path"
+          :alt="slide.description"
+        />
+      </SliderItem>
+    </SliderWindow>
+  </client-only>
 </template>
 
 <script lang="ts">
