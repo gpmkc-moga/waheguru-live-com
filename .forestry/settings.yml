@@ -7,6 +7,10 @@ sections:
 - type: heading
   label: Website Content
 - type: document
+  path: content/home-slider.json
+  label: Home Slider
+  match: "**/*"
+- type: document
   path: content/products.json
   label: Products
 - type: document
