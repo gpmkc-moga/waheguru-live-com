@@ -31,6 +31,9 @@
     ]
 
   },
+  "include": [
+    "types"
+  ],
   "exclude": [
     "node_modules",
     ".nuxt",

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div style="width: 100%; margin: 20px auto; height: 400px">
-      <home-slider />
-    </div>
+    <home-slider class="w-full" />
     <!-- page keeps refreshing in dev mode! -->
     <div v-if="!isDev" class="onesignal-customlink-container"></div>
   </div>

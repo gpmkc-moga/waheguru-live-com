@@ -8,8 +8,9 @@
       >
         <nuxt-link to="/" class="m-2 w-full md:basis-3/5 flex justify-center">
           <nuxt-picture
+            width="366"
             format="webp"
-            class="block w-1/2"
+            class="flex w-1/2 justify-center"
             src="/GPMKC_Logo.png"
             :alt="logoAlt"
           />
