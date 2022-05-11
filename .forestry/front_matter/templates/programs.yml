@@ -59,6 +59,11 @@ fields:
     label: Smagam Location
     description: 'Please select if program is at headquarters or outside<br>Headquarters:
       Gurudwara Prabh Milne Ka Chao, Moga'
+  - name: smagam_name
+    type: text
+    config:
+      required: false
+    label: Smagam Name
   config:
     min: 
     max: 
