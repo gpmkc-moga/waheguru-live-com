@@ -4,13 +4,13 @@
   ],
   "programs": [
     {
-      "smagam_name": "March Camp 2023",
-      "smagam_start_date": "2023-03-22T00:00:00+05:30",
-      "smagam_end_date": "2023-03-31T00:00:00+05:30",
+      "smagam_location": "Headquarters",
+      "smagam_start_date": "2022-08-10T00:00:00+05:30",
       "smagam_address_line_1": "Rauli Road",
       "smagam_address_line_2": "Moga, Punjab",
       "smagam_poster": "",
-      "smagam_location": "Headquarters"
+      "smagam_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2022",
+      "smagam_end_date": "2022-08-11T00:00:00+05:30"
     },
     {
       "smagam_name": "December Camp 2022",
@@ -22,13 +22,13 @@
       "smagam_location": "Headquarters"
     },
     {
-      "smagam_location": "Headquarters",
-      "smagam_start_date": "2022-08-10T00:00:00+05:30",
+      "smagam_name": "March Camp 2023",
+      "smagam_start_date": "2023-03-22T00:00:00+05:30",
+      "smagam_end_date": "2023-03-31T00:00:00+05:30",
       "smagam_address_line_1": "Rauli Road",
       "smagam_address_line_2": "Moga, Punjab",
       "smagam_poster": "",
-      "smagam_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2022",
-      "smagam_end_date": "2022-08-11T00:00:00+05:30"
+      "smagam_location": "Headquarters"
     }
   ]
 }
