@@ -1,10 +1,18 @@
 // https://github.com/kendallstrautman/brevifolia-nuxt-forestry/blob/master/nuxt.config.js
 import config from "./content/config.json";
-
+// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+const routerBase =
+  process.env.DEPLOY_ENV === "GH_PAGES"
+    ? {
+        router: {
+          base: "/waheguru-live-com/",
+        },
+      }
+    : {};
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
-
+  ...routerBase,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Waheguru Live",

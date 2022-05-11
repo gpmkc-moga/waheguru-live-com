@@ -7,6 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start --port 3001",
     "generate": "nuxt generate",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "forestry-preview": "nuxt -p 8080 -H 0.0.0.0",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",

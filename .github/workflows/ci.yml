@@ -44,7 +44,7 @@ jobs:
         run: npm ci --prefer-offline --no-audit
 
       - name: Generate
-        run: npm run generate
+        run: npm run generate:gh-pages
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
