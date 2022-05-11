@@ -2,7 +2,7 @@
 label: Programs
 hide_body: true
 fields:
-- name: program
+- name: programs
   type: field_group_list
   fields:
   - name: smagam_start_date
@@ -63,6 +63,6 @@ fields:
     min: 
     max: 
     labelField: 
-  label: Program
+  label: Programs
 pages:
 - content/programs.json
