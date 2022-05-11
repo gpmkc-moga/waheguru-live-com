@@ -4,6 +4,15 @@
   ],
   "programs": [
     {
+      "smagam_name": "December Camp 2022",
+      "smagam_start_date": "2022-12-24T00:00:00+05:30",
+      "smagam_end_date": "2022-12-31T00:00:00+05:30",
+      "smagam_address_line_1": "Rauli Road",
+      "smagam_address_line_2": "Moga, Punjab",
+      "smagam_poster": "",
+      "smagam_location": "Headquarters"
+    },
+    {
       "smagam_location": "Headquarters",
       "smagam_start_date": "2022-08-10T00:00:00+05:30",
       "smagam_address_line_1": "Rauli Road",
