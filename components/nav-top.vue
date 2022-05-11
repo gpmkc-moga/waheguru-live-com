@@ -60,10 +60,18 @@
             v-show="isMenuOpen"
             class="top-0 absolute flex flex-col w-screen"
           >
-            <nuxt-link to="/about" class="mobile-menu-item z-10"
+            <nuxt-link
+              to="/about"
+              class="mobile-menu-item z-10"
+              @click.native="isMenuOpen = false"
               >About</nuxt-link
             >
-            <nuxt-link to="/" class="mobile-menu-item z-10">Home</nuxt-link>
+            <nuxt-link
+              to="/"
+              class="mobile-menu-item z-10"
+              @click.native="isMenuOpen = false"
+              >Home</nuxt-link
+            >
             <a
               class="z-10 mobile-menu-item"
               @click="isLiveMenuOpen = !isLiveMenuOpen"
@@ -74,19 +82,36 @@
                 v-show="isLiveMenuOpen"
                 class="z-0 relative flex flex-col w-full"
               >
-                <nuxt-link to="/live-radio" class="mobile-menu-item-sub"
+                <nuxt-link
+                  to="/live-radio"
+                  class="mobile-menu-item-sub"
+                  @click.native="isMenuOpen = false"
                   >Live Radio</nuxt-link
                 >
-                <nuxt-link to="/live-video" class="mobile-menu-item-sub"
+                <nuxt-link
+                  to="/live-video"
+                  class="mobile-menu-item-sub"
+                  @click.native="isMenuOpen = false"
                   >Live Video</nuxt-link
                 >
               </div>
             </transition>
-            <nuxt-link to="/gallery" class="mobile-menu-item"
+            <nuxt-link
+              to="/gallery"
+              class="mobile-menu-item"
+              @click.native="isMenuOpen = false"
               >Gallery</nuxt-link
             >
-            <nuxt-link to="/store" class="mobile-menu-item">Store</nuxt-link>
-            <nuxt-link to="/contact" class="mobile-menu-item"
+            <nuxt-link
+              to="/store"
+              class="mobile-menu-item"
+              @click.native="isMenuOpen = false"
+              >Store</nuxt-link
+            >
+            <nuxt-link
+              to="/contact"
+              class="mobile-menu-item"
+              @click.native="isMenuOpen = false"
               >Contact</nuxt-link
             >
           </div>
