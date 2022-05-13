@@ -34,10 +34,12 @@
           v-for="(slide, idx) in homeSliderContent.slides"
           :key="idx"
           :index="idx"
+          class="relative"
         >
+          <div class="aspect-[1546/356] w-full animate-pulse" />
           <nuxt-picture
             format="webp"
-            class="w-full"
+            class="w-full absolute top-0 left-0 z-10"
             :src="slide.path"
             :alt="slide.description"
           />
