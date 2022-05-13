@@ -44,7 +44,7 @@ export default Vue.extend({
     let metaDescriptionFromSlide = "";
     for (const i in homeSliderContentAny.slides) {
       metaDescriptionFromSlide +=
-        homeSliderContentAny.slides[i].description + " ";
+        homeSliderContentAny.slides[i].description + "\n";
     }
     return {
       homeSliderContent,
