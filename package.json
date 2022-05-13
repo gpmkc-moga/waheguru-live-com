@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt --port 3001",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start --port 3001",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "forestry-preview": "nuxt -p 8080 -H 0.0.0.0",

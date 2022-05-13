@@ -3,7 +3,7 @@
     <!-- heading -->
     <nuxt-picture
       format="webp"
-      class="flex justify-center md:mt-[140px] lg:mt-[240px]"
+      class="flex justify-center md:mt-[140px]"
       src="/heading_daily_hukumnama.jpg"
       :img-attrs="{
         class: 'w-3/5 md:w-2/5',
@@ -30,7 +30,11 @@
         :src="hukumnamaContent.audio"
       ></audio>
       <!-- hukumnama photo -->
-      <div v-if="hukumnamaContent.photo" id="lightgallery" class="w-full">
+      <div
+        v-if="STATIC_PATH + hukumnamaContent.photo"
+        id="lightgallery"
+        class="w-full"
+      >
         <a :href="hukumnamaContent.photo" target="_blank">
           <nuxt-picture
             alt="Hukumnama Photo"
@@ -56,6 +60,7 @@
     />
     <!-- page keeps refreshing in dev mode! -->
     <div
+      v-if="!isDev"
       class="ccenter-col-content justify-center onesignal-customlink-container"
     ></div>
   </div>
@@ -97,12 +102,12 @@ export default Vue.extend({
 .tomb-hukumnama {
   @screen md {
     @apply bg-no-repeat bg-local bg-[length:100%];
-    background-image: url("/bg_tomb_about.jpg");
+    background-image: url("~static/bg_tomb_about.jpg");
     background-position: 0 -48px;
   }
-  @screen lg {
-    background-position: 0 -87px;
-  }
+  // @screen lg {
+  //   background-position: 0 -87px;
+  // }
 }
 .ccenter-col-content {
   @apply flex flex-col
