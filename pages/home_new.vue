@@ -1,6 +1,9 @@
 <template>
   <div>
-    <home-slider class="w-full" />
+    <home-slider
+      :home-slider-content-parent="homeSliderContent"
+      class="w-full"
+    />
 
     <!-- hukumnama, programs and founder section -->
     <div class="p-2.5 w-full">
@@ -35,8 +38,32 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  async asyncData(context) {
+    const homeSliderContent = await context.$content("home-slider").fetch();
+    const homeSliderContentAny: any = homeSliderContent;
+    let metaDescriptionFromSlide = "";
+    for (const i in homeSliderContentAny.slides) {
+      metaDescriptionFromSlide +=
+        homeSliderContentAny.slides[i].description + " ";
+    }
+    return {
+      homeSliderContent,
+      metaDescriptionFromSlide,
+    };
+  },
   data: () => {
     return {};
+  },
+  head() {
+    return {
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.metaDescriptionFromSlide,
+        },
+      ],
+    };
   },
   methods: {},
 });

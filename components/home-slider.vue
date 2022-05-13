@@ -77,6 +77,13 @@ import "hooper/dist/hooper.css";
 
 export default Vue.extend({
   components: { Hooper, Slide, HooperNavigation },
+  props: {
+    homeSliderContentParent: {
+      type: Object,
+      default: null,
+      required: false,
+    },
+  },
   data: () => {
     return {
       homeSliderContent: {},
@@ -89,7 +96,11 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    this.homeSliderContent = await this.$content("home-slider").fetch();
+    if (this.homeSliderContentParent != null) {
+      this.homeSliderContent = this.homeSliderContentParent;
+    } else {
+      this.homeSliderContent = await this.$content("home-slider").fetch();
+    }
   },
 });
 </script>
