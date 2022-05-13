@@ -41,6 +41,5 @@ jobs:
           \"isIos\": true,
           \"isAnyWeb\": true,
           \"url\": \"https://wahegurulive.com/hukumnama/today/\",
-          \"web_url\": \"https://wahegurulive.com/hukumnama/today/\",
           \"included_segments\": [\"Subscribed Users\"]}" \
               https://onesignal.com/api/v1/notifications
