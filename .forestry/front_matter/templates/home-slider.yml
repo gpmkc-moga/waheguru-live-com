@@ -10,7 +10,7 @@ fields:
     config:
       maxSize: 64
     label: path
-    description: Image path
+    description: Image upload<br>Please use resolution 1546/356
   - name: description
     type: text
     config:
