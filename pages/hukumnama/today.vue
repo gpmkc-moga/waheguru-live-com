@@ -30,12 +30,8 @@
         :src="hukumnamaContent.audio"
       ></audio>
       <!-- hukumnama photo -->
-      <div
-        v-if="STATIC_PATH + hukumnamaContent.photo"
-        id="lightgallery"
-        class="w-full"
-      >
-        <a :href="hukumnamaContent.photo" target="_blank">
+      <div v-if="hukumnamaContent.photo" id="lightgallery" class="w-full">
+        <a :href="STATIC_PATH + hukumnamaContent.photo" target="_blank">
           <nuxt-picture
             alt="Hukumnama Photo"
             format="webp"
