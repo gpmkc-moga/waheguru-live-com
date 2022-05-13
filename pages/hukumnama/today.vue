@@ -31,7 +31,8 @@
       ></audio>
       <!-- hukumnama photo -->
       <div v-if="hukumnamaContent.photo" id="lightgallery" class="w-full">
-        <a :href="STATIC_PATH + hukumnamaContent.photo" target="_blank">
+        <!-- caveat: https://github.com/nuxt/nuxt.js/issues/4544#issuecomment-451698704 -->
+        <a :href="hukumnamaContent.photo.substring(1)" target="_blank">
           <nuxt-picture
             alt="Hukumnama Photo"
             format="webp"
