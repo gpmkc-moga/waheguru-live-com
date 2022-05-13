@@ -32,7 +32,7 @@
       <!-- hukumnama photo -->
       <div v-if="hukumnamaContent.photo" id="lightgallery" class="w-full">
         <!-- caveat: https://github.com/nuxt/nuxt.js/issues/4544#issuecomment-451698704 -->
-        <a :href="hukumnamaContent.photo.substring(1)" target="_blank">
+        <a :href="hukumnamaContent.photo" target="_blank">
           <nuxt-picture
             alt="Hukumnama Photo"
             format="webp"
@@ -65,8 +65,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-// import lightGallery from "lightgallery";
-// import "lightgallery/css/lightgallery.css";
 
 export default Vue.extend({
   async asyncData(context) {
@@ -83,15 +81,6 @@ export default Vue.extend({
       },
     };
   },
-  // mounted() {
-  //   if (this.hukumnamaContent)
-  //     if (this.hukumnamaContent.photo) {
-  //       const el = document.getElementById("lightgallery");
-  //       if (el) {
-  //         lightGallery(el);
-  //       }
-  //     }
-  // },
 });
 </script>
 
@@ -102,9 +91,6 @@ export default Vue.extend({
     background-image: url("~static/bg_tomb_about.jpg");
     background-position: 0 -48px;
   }
-  // @screen lg {
-  //   background-position: 0 -87px;
-  // }
 }
 .ccenter-col-content {
   @apply flex flex-col
