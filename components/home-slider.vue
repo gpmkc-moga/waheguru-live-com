@@ -1,31 +1,19 @@
 <template>
   <div>
-    <div v-if="$fetchState.pending" class="w-full flex justify-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="animate-spin h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-        />
-      </svg>
-    </div>
+    <div
+      v-if="$fetchState.pending"
+      class="aspect-[1546/356] w-full animate-pulse bg-slate-200"
+    />
     <p v-else-if="$fetchState.error">Error while getting slides!</p>
     <div v-else class="relative p-2.5">
       <nuxt-picture
         format="webp"
-        src="/fg_frame_right.png"
+        src="/frame_slider_right.png"
         class="absolute flex justify-end top-2.5 right-2.5 w-full z-10"
       />
       <nuxt-picture
         format="webp"
-        src="/fg_frame_left.png"
+        src="/frame_slider_left.png"
         class="absolute flex justify-start bottom-2.5 left-2.5 w-full z-10"
       />
 
@@ -36,9 +24,10 @@
           :index="idx"
           class="relative"
         >
-          <div class="aspect-[1546/356] w-full animate-pulse" />
+          <div class="aspect-[1546/356] w-full animate-pulse bg-slate-200" />
           <nuxt-picture
             format="webp"
+            quality="100"
             class="w-full absolute top-0 left-0 z-10"
             :src="slide.path"
             :alt="slide.description"

@@ -16,6 +16,17 @@
           }"
         ></nuxt-picture>
       </nuxt-link>
+      <!-- upcoming programs heading -->
+      <nuxt-picture
+        format="webp"
+        class="flex justify-center mt-10 lg:mt-20"
+        src="/heading_upcoming.png"
+        :img-attrs="{
+          class: 'w-[62%] md:w-1/2',
+        }"
+      />
+      <!-- programs -->
+      <programs-section />
     </div>
   </div>
 </template>

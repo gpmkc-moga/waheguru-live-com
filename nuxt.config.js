@@ -72,7 +72,7 @@ export default {
           size: "medium" /* One of 'small', 'medium', or 'large' */,
           color: {
             button:
-              "#E12D30" /* Color of the button background if style = "button" */,
+              "#2c68a7" /* Color of the button background if style = "button" */,
             text: "#FFFFFF" /* Color of the prompt's text */,
           },
           text: {

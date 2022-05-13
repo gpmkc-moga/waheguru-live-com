@@ -60,58 +60,35 @@
             v-show="isMenuOpen"
             class="top-0 absolute flex flex-col w-screen"
           >
-            <nuxt-link
-              to="/about"
-              class="mobile-menu-item z-10"
-              @click.native="isMenuOpen = false"
+            <nuxt-link to="/about" class="mobile-menu-item z-10"
               >About</nuxt-link
             >
+            <nuxt-link to="/" class="mobile-menu-item z-10">Home</nuxt-link>
             <nuxt-link
-              to="/"
-              class="mobile-menu-item z-10"
-              @click.native="isMenuOpen = false"
-              >Home</nuxt-link
-            >
-            <a
-              class="z-10 mobile-menu-item"
-              @click="isLiveMenuOpen = !isLiveMenuOpen"
-              >Live</a
+              to="/live"
+              event=""
+              class="z-10 mobile-menu-item-dropdown"
+              @click.native="isLiveMenuOpen = !isLiveMenuOpen"
+              >Live</nuxt-link
             >
             <transition name="slide-down">
               <div
                 v-show="isLiveMenuOpen"
                 class="z-0 relative flex flex-col w-full"
               >
-                <nuxt-link
-                  to="/live-radio"
-                  class="mobile-menu-item-sub"
-                  @click.native="isMenuOpen = false"
+                <nuxt-link to="/live/live-radio" class="mobile-menu-item-sub"
                   >Live Radio</nuxt-link
                 >
-                <nuxt-link
-                  to="/live-video"
-                  class="mobile-menu-item-sub"
-                  @click.native="isMenuOpen = false"
+                <nuxt-link to="/live/live-video" class="mobile-menu-item-sub"
                   >Live Video</nuxt-link
                 >
               </div>
             </transition>
-            <nuxt-link
-              to="/gallery"
-              class="mobile-menu-item"
-              @click.native="isMenuOpen = false"
+            <nuxt-link to="/gallery" class="mobile-menu-item"
               >Gallery</nuxt-link
             >
-            <nuxt-link
-              to="/store"
-              class="mobile-menu-item"
-              @click.native="isMenuOpen = false"
-              >Store</nuxt-link
-            >
-            <nuxt-link
-              to="/contact"
-              class="mobile-menu-item"
-              @click.native="isMenuOpen = false"
+            <nuxt-link to="/store" class="mobile-menu-item">Store</nuxt-link>
+            <nuxt-link to="/contact" class="mobile-menu-item"
               >Contact</nuxt-link
             >
           </div>
@@ -136,17 +113,19 @@
           @mouseenter="isLiveMenuOpen = true"
           @mouseleave="isLiveMenuOpen = false"
         >
-          <a class="menu-item">Live</a>
+          <nuxt-link to="/live" class="menu-item-dropdown" event=""
+            >Live</nuxt-link
+          >
           <div class="z-20 relative h-0 w-0 overflow-visible">
             <transition name="fade">
               <div
                 v-show="isLiveMenuOpen"
                 class="bg-white w-max absolute flex flex-col"
               >
-                <nuxt-link to="/live-radio" class="menu-item-sub"
+                <nuxt-link to="/live/live-radio" class="menu-item-sub"
                   >Live Radio</nuxt-link
                 >
-                <nuxt-link to="/live-video" class="menu-item-sub"
+                <nuxt-link to="/live/live-video" class="menu-item-sub"
                   >Live Video</nuxt-link
                 >
               </div>
@@ -179,6 +158,10 @@ export default Vue.extend({
         this.isLiveMenuOpen = false;
       }
     },
+    // https://stackoverflow.com/a/71685443/10030480
+    $route() {
+      this.isMenuOpen = false;
+    },
   },
 });
 </script>
@@ -194,9 +177,21 @@ export default Vue.extend({
               text-[11px]
               text-center;
   font-family: "Krona One", sans;
+  &.nuxt-link-exact-active {
+    @apply bg-slate-700 text-white;
+  }
   &-sub {
     @extend .mobile-menu-item;
     @apply capitalize;
+    &.nuxt-link-exact-active {
+      @apply bg-slate-700 text-white;
+    }
+  }
+  &-dropdown {
+    @extend .mobile-menu-item;
+    &.nuxt-link-active {
+      @apply bg-slate-700 text-white;
+    }
   }
 }
 
@@ -211,11 +206,23 @@ export default Vue.extend({
               uppercase
               text-[11px];
   font-family: "Krona One", sans;
+  &.nuxt-link-exact-active {
+    @apply border-b-yellow-600;
+  }
   &-sub {
     @extend .menu-item;
     @apply capitalize border-b-0 hover:border-b-0 hover:bg-slate-700 hover:text-white
               text-slate-700
               bg-white;
+    &.nuxt-link-exact-active {
+      @apply bg-slate-700 text-white;
+    }
+  }
+  &-dropdown {
+    @extend .menu-item;
+    &.nuxt-link-active {
+      @apply border-b-yellow-600;
+    }
   }
 }
 
