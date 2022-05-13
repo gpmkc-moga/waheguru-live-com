@@ -8,7 +8,7 @@ sections:
   label: Website Content
 - type: document
   path: content/daily-hukumnama.json
-  label: Daily Hukumana
+  label: Daily Hukumnana
 - type: document
   path: content/home-slider.json
   label: Home Slider
