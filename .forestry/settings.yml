@@ -7,6 +7,9 @@ sections:
 - type: heading
   label: Website Content
 - type: document
+  path: content/daily-hukumnama.json
+  label: Daily Hukumana
+- type: document
   path: content/home-slider.json
   label: Home Slider
 - type: document
@@ -15,9 +18,6 @@ sections:
 - type: document
   path: content/programs.json
   label: Programs
-- type: document
-  path: content/daily-hukumnama.json
-  label: Daily Hukumana
 upload_dir: static/media
 public_path: "/media"
 front_matter_path: ''
