@@ -5,14 +5,14 @@ fields:
 - name: programs
   type: field_group_list
   fields:
-  - name: smagam_name
+  - name: program_name
     type: text
     config:
       required: false
-    label: Smagam Name
-  - name: smagam_start_date
+    label: Program Name
+  - name: program_start_date
     type: datetime
-    label: Smagam start date
+    label: Program start date
     description: Please enter smagam start date (eg. March Camp 20th March)
     config:
       required: true
@@ -20,9 +20,9 @@ fields:
       time_format: 
       display_utc: false
     default: ''
-  - name: smagam_end_date
+  - name: program_end_date
     type: datetime
-    label: Smagam end date
+    label: Program end date
     description: Please enter smagam end date (eg. March Camp 31st March)
     config:
       required: false
@@ -30,25 +30,25 @@ fields:
       time_format: 
       display_utc: false
     default: ''
-  - name: smagam_address_line_1
+  - name: program_address_line_1
     type: text
     config:
       required: true
     description: Please enter Smagam Address (Line 1) (eg. Village Bhamboj)<br>
-    label: Smagam Address Line 1
-  - name: smagam_address_line_2
+    label: Program Address Line 1
+  - name: program_address_line_2
     type: text
     config:
       required: true
-    label: Smagam Address Line 2
+    label: Program Address Line 2
     description: Please enter Smagam Address (Line 2) (eg. Dist Gurdaspur, Punjab(INDIA))<br>
-  - name: smagam_poster
+  - name: program_poster
     type: file
     config:
       maxSize: 1
-    label: Smagam Poster
+    label: Program Poster
     description: Please upload smagam poster (.jpeg or .jpg, &lt;1 mb)
-  - name: smagam_location
+  - name: program_location
     type: select
     default: Headquarters
     config:
@@ -61,7 +61,7 @@ fields:
         section: 
         file: 
         path: 
-    label: Smagam Location
+    label: Program Location
     description: 'Please select if program is at headquarters or outside<br>Headquarters:
       Gurudwara Prabh Milne Ka Chao, Moga'
   config:
