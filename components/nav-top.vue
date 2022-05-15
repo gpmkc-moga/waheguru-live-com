@@ -1,11 +1,9 @@
 <template>
-  <div class="relative lg:max-w-[960px] lg:mx-auto">
+  <div class="nav-top-wrapper">
     <!-- tablet and mobile -->
     <div class="lg:hidden">
       <!-- https://www.freecodecamp.org/news/4-reasons-your-z-index-isnt-working-and-how-to-fix-it-coder-coder-6bc05f103e6c/ -->
-      <div
-        class="bg-white z-30 relative flex flex-col items-center md:flex-row"
-      >
+      <div class="z-30 relative flex flex-col items-center md:flex-row">
         <nuxt-link to="/" class="m-2 w-full md:basis-3/5 flex justify-center">
           <nuxt-picture
             width="366"
@@ -96,7 +94,7 @@
       </div>
     </div>
     <!-- desktop -->
-    <div class="hidden lg:flex items-center bg-white">
+    <div class="hidden lg:flex items-center">
       <nuxt-link to="/" class="basis-1/4 m-2">
         <nuxt-picture
           format="webp"
@@ -240,5 +238,11 @@ export default Vue.extend({
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   @apply opacity-0;
+}
+.nav-top-wrapper {
+  @apply relative
+      lg:px-8 lg:mx-auto lg:sticky lg:top-0
+      bg-white
+      lg:bg-opacity-80;
 }
 </style>
