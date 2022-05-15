@@ -1,6 +1,15 @@
 {
   "programs": [
     {
+      "program_name": "March Camp 2022",
+      "program_start_date": "2022-03-22T00:00:00+05:30",
+      "program_end_date": "2022-03-31T00:00:00+05:30",
+      "program_address_line_1": "Rauli Road",
+      "program_address_line_2": "Moga, Punjab",
+      "program_poster": "",
+      "program_location": "Headquarters"
+    },
+    {
       "program_location": "Headquarters",
       "program_start_date": "2022-08-10T00:00:00+05:30",
       "program_address_line_1": "Rauli Road",
