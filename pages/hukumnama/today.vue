@@ -56,10 +56,16 @@
       }"
     />
     <!-- page keeps refreshing in dev mode! -->
-    <div
+    <!-- <div
       v-if="!isDev"
       class="ccenter-col-content justify-center onesignal-customlink-container"
-    ></div>
+    ></div> -->
+    <!-- <div
+      class="ccenter-col-content justify-center onesignal-customlink-container"
+    ></div> -->
+
+    <!-- custom link setup onesignal -->
+    <onesignal-subscription-button />
   </div>
 </template>
 
@@ -79,6 +85,20 @@ export default Vue.extend({
       hukumnamaContent: {
         photo: null,
       },
+    };
+  },
+  head() {
+    return {
+      title: "Today's Hukumnama",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Hukumnama Photo and Audio",
+          // can get from GurbaniNow api here!
+          // would be great for Gurbani searches!
+        },
+      ],
     };
   },
 });

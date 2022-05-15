@@ -15,8 +15,9 @@ export default {
   ...routerBase,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title:
-      "Waheguru Live - Gurdwara Prabh Milne Ka Chao Moga - Bhai Sewa Singh Ji Tarmala",
+    title: "Waheguru Live",
+    titleTemplate:
+      "%s - Gurdwara Prabh Milne Ka Chao Moga - Bhai Sewa Singh Ji Tarmala",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -70,25 +71,6 @@ export default {
       allowLocalhostAsSecureOrigin: true,
       welcomeNotification: {
         disable: true,
-      },
-      promptOptions: {
-        customlink: {
-          enabled: true /* Required to use the Custom Link */,
-          style: "button" /* Has value of 'button' or 'link' */,
-          size: "medium" /* One of 'small', 'medium', or 'large' */,
-          color: {
-            button:
-              "#2c68a7" /* Color of the button background if style = "button" */,
-            text: "#FFFFFF" /* Color of the prompt's text */,
-          },
-          text: {
-            subscribe: "Subscribe" /* Prompt's text when not subscribed */,
-            unsubscribe: "Unsubscribe" /* Prompt's text when subscribed */,
-            explanation:
-              "Get daily Hukumnama alerts on website" /* Optional text appearing before the prompt button */,
-          },
-          unsubscribeEnabled: true /* Controls whether the prompt is visible after subscription */,
-        },
       },
     },
   },

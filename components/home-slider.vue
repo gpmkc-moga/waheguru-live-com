@@ -1,34 +1,32 @@
 <template>
   <div>
-    <div
-      v-if="$fetchState.pending"
-      class="aspect-[1546/356] w-full animate-pulse bg-slate-200"
-    />
+    <p v-if="$fetchState.pending"></p>
     <p v-else-if="$fetchState.error">Error while getting slides!</p>
-    <div v-else class="relative p-2.5">
+    <div v-else class="relative m-2.5">
       <nuxt-picture
         format="webp"
         src="/frame_slider_right.png"
-        class="absolute flex justify-end top-2.5 right-2.5 w-full z-10"
+        class="absolute flex justify-end top-0 right-0 w-full z-20"
       />
       <nuxt-picture
         format="webp"
         src="/frame_slider_left.png"
-        class="absolute flex justify-start bottom-2.5 left-2.5 w-full z-10"
+        class="absolute flex justify-start bottom-0 left-0 w-full z-20"
       />
-
-      <hooper :settings="hooperSettings">
+      <div class="aspect-[1546/356] w-full animate-pulse bg-slate-200" />
+      <hooper
+        :settings="hooperSettings"
+        class="w-full !absolute top-0 left-0 z-10 !h-auto"
+      >
         <slide
           v-for="(slide, idx) in homeSliderContent.slides"
           :key="idx"
           :index="idx"
-          class="relative"
         >
-          <div class="aspect-[1546/356] w-full animate-pulse bg-slate-200" />
           <nuxt-picture
             format="webp"
             quality="100"
-            class="w-full absolute top-0 left-0 z-10"
+            class="w-full"
             :src="slide.path"
             :alt="slide.description"
           />
@@ -105,8 +103,4 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss">
-.hooper {
-  height: auto !important;
-}
-</style>
+<style lang="scss"></style>
