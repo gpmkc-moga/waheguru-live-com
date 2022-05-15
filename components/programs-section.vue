@@ -17,25 +17,22 @@
       </svg>
     </div>
     <p v-else-if="$fetchState.error">Error while getting slides!</p>
-    <div v-else>
-      <!-- {
-      "smagam_location": "Headquarters",
-      "smagam_start_date": "2022-08-10T00:00:00+05:30",
-      "smagam_address_line_1": "Rauli Road",
-      "smagam_address_line_2": "Moga, Punjab",
-      "smagam_poster": "",
-      "smagam_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2022",
-      "smagam_end_date": "2022-08-11T00:00:00+05:30"
-    }, -->
-      <div v-for="(program, idx) in programsContent.programs" :key="idx">
-        {{ program }}
-      </div>
+    <div v-else class="grid grid-cols-1 gap-3.5 m-3.5 md:grid-cols-2">
+      <program-block
+        v-for="(program, idx) in filteredPrograms"
+        :key="idx"
+        :program="program"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import {
+  checkFutureProgram,
+  checkProgramIndexLessThan3,
+} from "~/plugins/common_fun";
 
 export default Vue.extend({
   data: () => {
@@ -45,6 +42,21 @@ export default Vue.extend({
   },
   async fetch() {
     this.programsContent = await this.$content("programs").fetch();
+  },
+  computed: {
+    filteredPrograms() {
+      if (this.programsContent.programs) {
+        // future program_end_date only
+        const futurePrograms =
+          this.programsContent.programs.filter(checkFutureProgram);
+        // get only 3 for this page
+        const filterPrograms = futurePrograms.filter(
+          checkProgramIndexLessThan3
+        );
+        return filterPrograms;
+      }
+      return [];
+    },
   },
 });
 </script>

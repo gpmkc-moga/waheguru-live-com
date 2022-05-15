@@ -96,6 +96,8 @@ export default {
   googleFonts: {
     families: {
       "Krona+One": true,
+      Raleway: [500],
+      Mitr: [300],
     },
     display: "auto",
   },

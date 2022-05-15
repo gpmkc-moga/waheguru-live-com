@@ -173,8 +173,8 @@ export default Vue.extend({
               bg-white
               uppercase
               text-[11px]
-              text-center;
-  font-family: "Krona One", sans;
+              text-center
+              font-krona-one;
   &.nuxt-link-exact-active {
     @apply bg-slate-700 text-white;
   }
@@ -202,8 +202,8 @@ export default Vue.extend({
               hover:border-b-yellow-600 
               text-slate-700
               uppercase
-              text-[11px];
-  font-family: "Krona One", sans;
+              text-[11px]
+              font-krona-one;
   &.nuxt-link-exact-active {
     @apply border-b-yellow-600;
   }
