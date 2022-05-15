@@ -46,7 +46,6 @@ export default Vue.extend({
   },
   methods: {
     setupSubscriptionButton() {
-      console.dir(this.$OneSignal);
       // If we're on an unsupported browser, do nothing
       if (!this.$OneSignal.isPushNotificationsSupported()) {
         return;
@@ -84,7 +83,6 @@ export default Vue.extend({
           isPushEnabled,
           isOptedOut,
         };
-        console.dir(this.subscriptionState);
 
         return this.subscriptionState;
       });
