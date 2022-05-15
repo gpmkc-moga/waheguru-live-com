@@ -4,7 +4,7 @@
   https://documentation.onesignal.com/docs/web-push-custom-code-examples#section-custom-link-prompt
  -->
   <div v-if="subscriptionState != null" class="flex flex-col items-center">
-    <div class="mt-2 text-center text-sm md:text-base">
+    <div class="mt-2 text-center text-sm md:text-base lg:text-2xl">
       Get daily Hukumnama alerts on Website
     </div>
     <button
@@ -93,11 +93,12 @@ export default Vue.extend({
 
 <style scoped>
 .subscription-button {
-  @apply mt-1 md:mt-1.5
+  @apply mt-1 md:mt-1.5 lg:mt-2
         p-1
         md:p-2
         text-sm
         md:text-base
+        lg:text-2xl
         bg-[#2c68a7]
         rounded
         text-white;
