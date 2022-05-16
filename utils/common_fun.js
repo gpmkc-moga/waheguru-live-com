@@ -12,3 +12,10 @@ export function compareProgramsStartDate(program_a, program_b) {
     new Date(program_b.program_start_date)
   );
 }
+export function checkLocation(location) {
+  // https://stackoverflow.com/a/7759286/10030480
+  return function (program) {
+    // https://stackoverflow.com/a/2140644/10030480
+    return program.program_location.toUpperCase() === location.toUpperCase();
+  };
+}

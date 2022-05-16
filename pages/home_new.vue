@@ -29,7 +29,7 @@
         }"
       />
       <!-- programs -->
-      <programs-grid />
+      <programs-grid-home />
     </div>
   </div>
 </template>

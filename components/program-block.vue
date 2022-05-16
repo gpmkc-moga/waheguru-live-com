@@ -64,16 +64,17 @@
         </div>
       </div>
     </div>
-    <nuxt-link
+    <a
       v-if="withPoster && program.program_poster"
-      :to="program.program_poster"
+      :href="program.program_poster"
+      target="_blank"
     >
       <nuxt-picture
         format="webp"
         class="w-full"
         :src="program.program_poster"
       />
-    </nuxt-link>
+    </a>
   </div>
 </template>
 

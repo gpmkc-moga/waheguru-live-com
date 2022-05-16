@@ -1,6 +1,9 @@
 <template>
   <div>
-    <home-slider class="w-full" />
+    <home-slider
+      :home-slider-content-parent="homeSliderContent"
+      class="w-full"
+    />
 
     <!-- hukumnama, programs and founder section -->
     <div class="p-2.5 w-full">
@@ -16,6 +19,17 @@
           }"
         ></nuxt-picture>
       </nuxt-link>
+      <!-- upcoming programs heading -->
+      <nuxt-picture
+        format="webp"
+        class="flex justify-center mt-10 lg:mt-20 mb-[30px] lg:mb-10"
+        src="/heading_upcoming.png"
+        :img-attrs="{
+          class: 'w-[62%] md:w-1/2',
+        }"
+      />
+      <!-- programs -->
+      <programs-grid-home />
     </div>
   </div>
 </template>
@@ -24,8 +38,32 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  async asyncData(context) {
+    const homeSliderContent = await context.$content("home-slider").fetch();
+    const homeSliderContentAny: any = homeSliderContent;
+    let metaDescriptionFromSlide = "";
+    for (const i in homeSliderContentAny.slides) {
+      metaDescriptionFromSlide +=
+        homeSliderContentAny.slides[i].description + "\n";
+    }
+    return {
+      homeSliderContent,
+      metaDescriptionFromSlide,
+    };
+  },
   data: () => {
     return {};
+  },
+  head() {
+    return {
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.metaDescriptionFromSlide,
+        },
+      ],
+    };
   },
   methods: {},
 });

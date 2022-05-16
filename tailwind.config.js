@@ -8,6 +8,7 @@ module.exports = {
         "krona-one": ["Krona One", ...defaultTheme.fontFamily.sans],
         mitr: ["Mitr", ...defaultTheme.fontFamily.sans],
         raleway: ["Raleway", ...defaultTheme.fontFamily.sans],
+        "roboto-slab": ["Roboto Slab", ...defaultTheme.fontFamily.serif],
       },
       colors: {
         "site-yellow": "#FDD76F",
