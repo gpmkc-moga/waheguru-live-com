@@ -99,7 +99,7 @@ export default Vue.extend({
         text-sm
         md:text-base
         lg:text-2xl
-        bg-[#2c68a7]
+        bg-site-blue
         rounded
         text-white;
 }

@@ -1,6 +1,7 @@
 <template>
-  <div class="flex flex-col md:flex-row">
-    <!-- {
+  <div class="flex flex-col">
+    <div class="flex flex-col md:flex-row">
+      <!-- {
       "program_location": "Headquarters",
       "program_start_date": "2022-08-10T00:00:00+05:30",
       "program_address_line_1": "Rauli Road",
@@ -10,57 +11,69 @@
       "program_end_date": "2022-08-11T00:00:00+05:30"
     }, -->
 
-    <!-- date -->
-    <div
-      class="
-        text-center
-        leading-[1.1]
-        text-white
-        md:basis-1/4
-        p-2.5
-        md:p-3.5
-        bg-[#485362]
-        font-mitr font-light
-        md:flex md:flex-col md:justify-center
-        items-center
-      "
-    >
-      <div class="text-[39px]">
-        {{ new Date(program.program_start_date).getDate() }}
+      <!-- date -->
+      <div
+        class="
+          leading-[1.1]
+          text-white
+          md:basis-1/4
+          p-1.5
+          bg-site-gray
+          font-mitr font-light
+          flex flex-col
+          justify-center
+          items-center
+        "
+      >
+        <div class="text-[39px]">
+          {{ new Date(program.program_start_date).getDate() }}
+        </div>
+        <div class="text-[13px] uppercase">
+          {{
+            new Date(program.program_start_date).toLocaleString("default", {
+              month: "long",
+            })
+          }}
+        </div>
+        <div class="text-[17px]">
+          {{ new Date(program.program_start_date).getFullYear() }}
+        </div>
       </div>
-      <div class="text-[13px] uppercase">
-        {{
-          new Date(program.program_start_date).toLocaleString("default", {
-            month: "long",
-          })
-        }}
-      </div>
-      <div class="text-[17px]">
-        {{ new Date(program.program_start_date).getFullYear() }}
+      <!-- location -->
+      <div
+        class="
+          text-center
+          leading-[1.1]
+          md:text-left md:basis-3/4
+          p-1.5
+          md:pl-3.5 md:align-middle
+          bg-site-yellow
+          font-raleway font-medium
+          text-site-gray
+          flex flex-col
+          justify-center
+          items-center
+          md:items-start
+        "
+      >
+        <div class="text-[30px]">
+          {{ program.program_address_line_1 }}
+        </div>
+        <div class="text-[17px]">
+          {{ program.program_address_line_2 }}
+        </div>
       </div>
     </div>
-    <!-- location -->
-    <div
-      class="
-        text-center
-        leading-[1.1]
-        md:text-left md:basis-3/4
-        p-2.5
-        md:p-3.5 md:align-middle
-        bg-[#FDD76F]
-        font-raleway font-medium
-        text-[#485362]
-        md:flex md:flex-col md:justify-center
-        items-center
-      "
+    <nuxt-link
+      v-if="withPoster && program.program_poster"
+      :to="program.program_poster"
     >
-      <div class="text-[30px]">
-        {{ program.program_address_line_1 }}
-      </div>
-      <div class="text-[17px]">
-        {{ program.program_address_line_2 }}
-      </div>
-    </div>
+      <nuxt-picture
+        format="webp"
+        class="w-full"
+        :src="program.program_poster"
+      />
+    </nuxt-link>
   </div>
 </template>
 
@@ -73,6 +86,11 @@ export default Vue.extend({
       type: Object,
       default: null,
       required: true,
+    },
+    withPoster: {
+      type: Boolean,
+      default: false,
+      required: false,
     },
   },
 });

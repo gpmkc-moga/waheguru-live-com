@@ -22,14 +22,14 @@
       <!-- upcoming programs heading -->
       <nuxt-picture
         format="webp"
-        class="flex justify-center mt-10 lg:mt-20"
+        class="flex justify-center mt-10 lg:mt-20 mb-[30px] lg:mb-10"
         src="/heading_upcoming.png"
         :img-attrs="{
           class: 'w-[62%] md:w-1/2',
         }"
       />
       <!-- programs -->
-      <programs-section />
+      <programs-grid />
     </div>
   </div>
 </template>

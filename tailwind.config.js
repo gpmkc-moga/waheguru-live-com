@@ -9,6 +9,11 @@ module.exports = {
         mitr: ["Mitr", ...defaultTheme.fontFamily.sans],
         raleway: ["Raleway", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        "site-yellow": "#FDD76F",
+        "site-gray": "#485362",
+        "site-blue": "#2c68a7",
+      },
     },
   },
   plugins: [],
