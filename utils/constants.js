@@ -6,4 +6,8 @@ export default {
   },
   phoneNumber: "+91-98513-92513",
   forMoreInfo: "For More Information",
+  bhaiSahibName: "Bhai Sahib Bhai Sewa Singh Ji Tarmala",
+  bhaiSahibTitle: "Founder",
+  veerjiName: "Bhai Sahib Bhai Dalbir Singh Ji Tarmala",
+  veerjiTitle: "President",
 };

@@ -37,8 +37,8 @@
               rounded-[1px]
               uppercase
               font-raleway font-medium
-              text-white text-base
-              md:text-lg
+              text-white text-sm
+              md:text-base
               py-3
               px-6
               mt-2

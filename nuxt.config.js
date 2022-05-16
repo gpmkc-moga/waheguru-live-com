@@ -99,6 +99,7 @@ export default {
       Raleway: [500],
       Mitr: [300],
       "Roboto+Slab": true,
+      Actor: true,
     },
     display: "auto",
   },
