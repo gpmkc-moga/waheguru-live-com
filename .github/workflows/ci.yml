@@ -8,6 +8,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: ci
+  cancel-in-progress: true
+
 jobs:
   ci:
     name: CI 🤖
@@ -51,18 +55,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-
-      - name: Check Hukumnama file changed ❔📜
-        uses: dorny/paths-filter@v2
-        id: check_hukumnama_file_changed
-        with:
-          filters: |
-            changed:
-              - content/daily-hukumnama.json
-
-  handle_hukumnama_notif:
-    name: Handle Hukumnama Notification 📜
-    uses: ./.github/workflows/hukumnama_push_action.yml
-    secrets: inherit
-    needs: ci
-    if: needs.ci.outputs.hukumnama_updated == 'true'

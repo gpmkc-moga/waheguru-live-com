@@ -1,7 +1,15 @@
 name: Push notification on commit of content/daily-hukumnama.json
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "content/daily-hukumnama.json"
+
+concurrency:
+  group: push
+  cancel-in-progress: true
 
 jobs:
   read_hukumnama_file:
@@ -30,7 +38,7 @@ jobs:
     steps:
       - name: Send OneSignal Notification
         run: |
-          curl --include \
+          sleep 3m; curl --include \
               --request POST \
               --header "Content-Type: application/json; charset=utf-8" \
               --header "Authorization: Basic ${{secrets.ONESIGNAL_TEST_API_KEY}}" \
