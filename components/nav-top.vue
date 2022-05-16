@@ -1,9 +1,11 @@
 <template>
   <div class="nav-top-wrapper">
     <!-- tablet and mobile -->
-    <div class="lg:hidden">
+    <div class="lg:hidden relative">
       <!-- https://www.freecodecamp.org/news/4-reasons-your-z-index-isnt-working-and-how-to-fix-it-coder-coder-6bc05f103e6c/ -->
-      <div class="z-30 relative flex flex-col items-center md:flex-row">
+      <div
+        class="z-30 bg-white relative flex flex-col items-center md:flex-row"
+      >
         <nuxt-link to="/" class="m-2 w-full md:basis-3/5 flex justify-center">
           <nuxt-picture
             width="366"
@@ -56,7 +58,7 @@
         <transition name="slide-down">
           <div
             v-show="isMenuOpen"
-            class="top-0 absolute flex flex-col w-screen"
+            class="top-0 bg-white absolute flex flex-col w-full"
           >
             <nuxt-link to="/about" class="mobile-menu-item z-10"
               >About</nuxt-link
@@ -94,7 +96,7 @@
       </div>
     </div>
     <!-- desktop -->
-    <div class="hidden lg:flex items-center">
+    <div class="hidden relative lg:flex items-center">
       <nuxt-link to="/" class="basis-1/4 m-2">
         <nuxt-picture
           format="webp"
@@ -243,6 +245,6 @@ export default Vue.extend({
   @apply relative
       lg:px-8 lg:mx-auto lg:sticky lg:top-0
       bg-white
-      lg:bg-opacity-80;
+      lg:bg-opacity-80 z-50;
 }
 </style>
