@@ -26,7 +26,7 @@
       <!-- view all button -->
       <div
         v-if="filteredPrograms.length > 0"
-        class="flex justify-center items-center md:min-h-[87px]"
+        class="flex justify-center items-center min-h-[87px]"
         :class="{ 'col-span-2': filteredPrograms.length === 2 }"
       >
         <nuxt-link to="/programs">

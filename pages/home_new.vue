@@ -33,44 +33,25 @@
       <!-- heading university -->
       <nuxt-picture
         format="webp"
-        class="flex justify-center mt-[100px]"
+        class="flex justify-center mt-[100px] md:mt-[150px] lg:mt-[175px]"
         src="/heading_university.png"
         :img-attrs="{
-          class: 'w-[86%] lg:w-[60%]',
+          class: 'w-[86%] md:w-[60%]',
         }"
       />
       <!-- bhai sahib and veerji photos -->
       <div class="mt-14 flex flex-col md:flex-row">
         <!-- Bhai sahib block -->
-        <div class="flex flex-col">
-          <!-- photo -->
-          <nuxt-picture
-            format="webp"
-            class="flex justify-center p-2.5"
-            src="/photo_bhaisahib.png"
-            :img-attrs="{
-              class: 'w-1/2',
-            }"
-          />
-          <div class="flex flex-col text-center p-2.5">
-            <!-- title -->
-            <div
-              class="
-                text-[11px]
-                font-krona-one
-                uppercase
-                font-light
-                text-site-red
-              "
-            >
-              {{ constants.bhaiSahibTitle }}
-            </div>
-            <!-- name -->
-            <div class="text-base font-actor font-medium text-site-text">
-              {{ constants.bhaiSahibName }}
-            </div>
-          </div>
-        </div>
+        <photo-block
+          photo-url="/photo_bhaisahib.png"
+          :title="constants.bhaiSahibTitle"
+          :name="constants.bhaiSahibName"
+        />
+        <photo-block
+          photo-url="/photo_veerji.png"
+          :title="constants.veerjiTitle"
+          :name="constants.veerjiName"
+        />
       </div>
     </div>
   </div>
@@ -119,7 +100,10 @@ export default Vue.extend({
   @screen md {
     @apply bg-no-repeat bg-local bg-[length:100%];
     background-image: url("~static/bg_tomb.jpg");
-    background-position: 0 416px;
+    background-position: 0 334px;
+  }
+  @screen lg {
+    background-position: 0 360px;
   }
 }
 </style>
