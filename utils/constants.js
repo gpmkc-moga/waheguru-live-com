@@ -25,4 +25,6 @@ export default {
   headingExtraClasses: "Extra Learning Classes",
   headingDailyHukumnama: "Daily Hukumnama",
   headingPrograms: "Programs",
+  joinClasses: "Join these classes online on Youtube & Radio",
+  youtubeLink: "https://www.youtube.com/wahegurulive/live",
 };
