@@ -37,6 +37,7 @@
         format="webp"
         class="flex justify-center mt-[100px] md:mt-[150px] lg:mt-[175px]"
         src="/heading_university.png"
+        loading="lazy"
         :alt="constants.headingUniversity"
         :title="constants.headingUniversity"
         :img-attrs="{
@@ -86,6 +87,7 @@
       <nuxt-picture
         format="webp"
         class="flex justify-center"
+        loading="lazy"
         src="/heading_we_teach.jpg"
         :alt="constants.headingWeTeach"
         :title="constants.headingWeTeach"
@@ -108,6 +110,7 @@
         format="webp"
         class="flex justify-center mt-2.5"
         src="/graphic_daily_classes.jpg"
+        loading="lazy"
         :img-attrs="{
           class: 'w-full',
         }"
@@ -119,6 +122,7 @@
       <!-- heading extra classes -->
       <nuxt-picture
         format="webp"
+        loading="lazy"
         class="flex justify-center"
         src="/heading_extra_learning_classes.jpg"
         :alt="constants.headingExtraClasses"
@@ -128,6 +132,7 @@
         }"
       />
       <nuxt-picture
+        loading="lazy"
         format="webp"
         class="flex justify-center mt-[30px]"
         src="/graphic_extra_classes.jpg"

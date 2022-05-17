@@ -7,7 +7,7 @@
 
     <nuxt-picture
       format="webp"
-      class="flex justify-center mt-5"
+      class="flex justify-center mt-5 mb-2.5"
       src="/frame_post_top.png"
       :img-attrs="{
         class: 'w-4/5',
@@ -19,7 +19,8 @@
 
     <nuxt-picture
       format="webp"
-      class="flex justify-center mt-5"
+      class="flex justify-center mt-2.5"
+      loading="lazy"
       src="/frame_post_bottom.png"
       :img-attrs="{
         class: 'w-4/5',

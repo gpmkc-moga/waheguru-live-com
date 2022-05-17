@@ -37,6 +37,7 @@
         format="webp"
         class="flex justify-center mt-[100px] md:mt-[150px] lg:mt-[175px]"
         src="/heading_university.png"
+        loading="lazy"
         :alt="constants.headingUniversity"
         :title="constants.headingUniversity"
         :img-attrs="{
@@ -86,6 +87,7 @@
       <nuxt-picture
         format="webp"
         class="flex justify-center"
+        loading="lazy"
         src="/heading_we_teach.jpg"
         :alt="constants.headingWeTeach"
         :title="constants.headingWeTeach"
@@ -108,6 +110,7 @@
         format="webp"
         class="flex justify-center mt-2.5"
         src="/graphic_daily_classes.jpg"
+        loading="lazy"
         :img-attrs="{
           class: 'w-full',
         }"
@@ -119,6 +122,7 @@
       <!-- heading extra classes -->
       <nuxt-picture
         format="webp"
+        loading="lazy"
         class="flex justify-center"
         src="/heading_extra_learning_classes.jpg"
         :alt="constants.headingExtraClasses"
@@ -128,6 +132,7 @@
         }"
       />
       <nuxt-picture
+        loading="lazy"
         format="webp"
         class="flex justify-center mt-[30px]"
         src="/graphic_extra_classes.jpg"
@@ -135,6 +140,51 @@
           class: 'w-full',
         }"
       />
+    </div>
+
+    <!-- online and radio -->
+    <div class="flex flex-col mt-[30px] p-2.5">
+      <div class="flex flex-col">
+        <!-- title -->
+        <div class="font-roboto-slab font-medium text-[19px] text-center">
+          {{ constants.joinClasses }}
+        </div>
+        <!-- icons -->
+        <div class="flex justify-center gap-3 mt-4 text-[#324353]">
+          <nuxt-link
+            to="/live/live-video"
+            class="p-2 text-white bg-[#324353] rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"
+              />
+            </svg>
+          </nuxt-link>
+          <nuxt-link
+            to="/live/live-radio"
+            class="p-2 text-white bg-[#324353] rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </nuxt-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>

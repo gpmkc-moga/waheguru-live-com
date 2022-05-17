@@ -27,4 +27,8 @@ export default {
   headingPrograms: "Programs",
   joinClasses: "Join these classes online on Youtube & Radio",
   youtubeLink: "https://www.youtube.com/wahegurulive/live",
+  headingLiveVideo: "Waheguru Live Video",
+  headingLiveSchedule: "Live Schedule",
+  liveRadioHTML1:'<script type="text\/javascript" src="https:\/\/hosted.muses.org\/mrp.js"><\/script><script type=\"text\/javascript\"> MRP.insert({ \'url\':\'http:\/\/cast1.asurahosting.com\/proxy\/gpmkc\/stream\', \'codec\':\'mp3\', \'volume\':100, \'autoplay\':true, \'jsevents\':true, \'buffering\':0, \'title\':\'\', \'wmode\':\'transparent\', \'skin\':\'simple-gray\', \'width\':300, \'height\':122 }); <\/script>',
+  liveRadioStreamURL: 'http://cast1.asurahosting.com/proxy/gpmkc/stream'
 };

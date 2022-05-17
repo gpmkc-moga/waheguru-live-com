@@ -5,12 +5,12 @@
       <template #heading>
         <nuxt-picture
           format="webp"
-          class="flex justify-center md:mt-[150px]"
+          class="flex justify-center md:mt-[125px] lg:mt-[150px]"
           src="/heading_programs.jpg"
           :alt="constants.headingPrograms"
           :title="constants.headingPrograms"
           :img-attrs="{
-            class: 'w-[37%] lg:w-[26%]',
+            class: 'w-[37%] md:w-[26%]',
           }"
         />
       </template>
