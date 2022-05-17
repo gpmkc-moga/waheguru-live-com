@@ -75,6 +75,38 @@
         />
       </div>
     </div>
+
+    <!-- daily classes section -->
+    <div class="flex flex-col mt-[60px] p-2.5">
+      <!-- heading we teach -->
+      <nuxt-picture
+        format="webp"
+        class="flex justify-center"
+        src="/heading_we_teach.jpg"
+        :img-attrs="{
+          class: 'w-[35%] md:w-[25%]',
+        }"
+      />
+      <div
+        class="
+          font-roboto-slab font-medium
+          text-center text-[15px]
+          md:text-base
+          mt-[30px]
+          mb-[1.5em]
+        "
+      >
+        {{ constants.dailyClassesHeading }}
+      </div>
+      <nuxt-picture
+        format="webp"
+        class="flex justify-center mt-2.5"
+        src="/graphic_daily.jpg"
+        :img-attrs="{
+          class: 'w-full',
+        }"
+      />
+    </div>
   </div>
 </template>
 

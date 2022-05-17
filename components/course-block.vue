@@ -1,7 +1,10 @@
 <template>
   <div class="md:basis-1/2 flex flex-col py-2.5 px-[30px]">
     <div class="text-[25px] mb-[1em]" v-html="title" />
-    <div class="text-[15px] mb-[1em] lg:text-base" v-html="description" />
+    <div
+      class="text-[15px] md:text-base mb-[1em] lg:text-base"
+      v-html="description"
+    />
   </div>
 </template>
 
