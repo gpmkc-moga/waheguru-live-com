@@ -9,6 +9,7 @@ module.exports = {
         mitr: ["Mitr", ...defaultTheme.fontFamily.sans],
         raleway: ["Raleway", ...defaultTheme.fontFamily.sans],
         actor: ["Actor", ...defaultTheme.fontFamily.sans],
+        roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
         "roboto-slab": ["Roboto Slab", ...defaultTheme.fontFamily.serif],
       },
       colors: {

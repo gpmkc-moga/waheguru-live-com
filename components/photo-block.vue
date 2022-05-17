@@ -25,9 +25,7 @@
         {{ title }}
       </div>
       <!-- name -->
-      <div
-        class="text-base md:leading-[1.1] font-actor font-medium text-site-text"
-      >
+      <div class="text-base md:leading-[1.1] font-actor font-medium">
         {{ name }}
       </div>
     </div>

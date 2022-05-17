@@ -98,6 +98,7 @@ export default {
       "Krona+One": true,
       Raleway: [500],
       Mitr: [300],
+      Roboto: [300],
       "Roboto+Slab": true,
       Actor: true,
     },

@@ -8,6 +8,7 @@
 }
 
 html {
+  @apply text-site-text;
   overflow-y: scroll;
 }
 

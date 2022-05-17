@@ -54,6 +54,27 @@
         />
       </div>
     </div>
+
+    <!-- courses section -->
+
+    <div class="courses-section">
+      <!-- heading -->
+      <div class="text-[25px] uppercase" v-html="constants.ourCourses" />
+      <!-- courses -->
+      <div class="flex flex-col md:flex-row font-roboto font-light">
+        <course-block
+          :title="constants.oneYearCourse"
+          :description="constants.oneYearCourseDescription"
+        />
+        <div class="hidden md:block self-stretch m-2.5">
+          <div class="w-0.5 bg-black h-full" />
+        </div>
+        <course-block
+          :title="constants.fourYearCourse"
+          :description="constants.fourYearCourseDescription"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -105,5 +126,9 @@ export default Vue.extend({
   @screen lg {
     background-position: 0 360px;
   }
+}
+.courses-section {
+  @apply bg-no-repeat bg-local bg-cover bg-center mt-[60px] relative p-2.5 w-full font-roboto-slab text-center;
+  background-image: url("~static/bg_courses.jpg");
 }
 </style>
