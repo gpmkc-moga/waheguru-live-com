@@ -7,6 +7,8 @@
           format="webp"
           class="flex justify-center md:mt-[150px]"
           src="/heading_programs.jpg"
+          :alt="constants.headingPrograms"
+          :title="constants.headingPrograms"
           :img-attrs="{
             class: 'w-[37%] lg:w-[26%]',
           }"
@@ -59,6 +61,11 @@ export default Vue.extend({
     const programsData = await context.$content("programs").fetch();
     return {
       programsData,
+    };
+  },
+  data() {
+    return {
+      constants,
     };
   },
 

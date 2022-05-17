@@ -29,6 +29,7 @@
             class="w-full"
             :src="slide.path"
             :alt="slide.description"
+            :title="slide.description"
           />
         </slide>
         <hooper-navigation slot="hooper-addons">

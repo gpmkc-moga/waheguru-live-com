@@ -19,4 +19,10 @@ export default {
   fourYearCourseDescription:
     "Complete Divine Course<br>starts from 7 April for 4 Years.<br>Anyone can join this course from age 15-60",
   dailyClassesHeading: "Daily Classes Schedule | University Of Divine Studies",
+  headingUpcoming: "Upcoming Programs",
+  headingUniversity: "University of Divine Studies, Life Changes Here",
+  headingWeTeach: "We Teach",
+  headingExtraClasses: "Extra Learning Classes",
+  headingDailyHukumnama: "Daily Hukumnama",
+  headingPrograms: "Programs",
 };

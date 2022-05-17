@@ -13,6 +13,7 @@
             class="flex w-1/2 justify-center"
             src="/GPMKC_Logo.png"
             :alt="logoAlt"
+            :title="logoAlt"
           />
         </nuxt-link>
 
@@ -103,6 +104,7 @@
           class="block w-full"
           src="/GPMKC_Logo.png"
           :alt="logoAlt"
+          :title="logoAlt"
         />
       </nuxt-link>
       <div class="basis-3/4 m-2 flex justify-center items-center">

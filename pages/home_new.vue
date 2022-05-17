@@ -24,6 +24,8 @@
         format="webp"
         class="flex justify-center mt-14 lg:mt-20 mb-[30px] lg:mb-10"
         src="/heading_upcoming.png"
+        :alt="constants.headingUpcoming"
+        :title="constants.headingUpcoming"
         :img-attrs="{
           class: 'w-[62%] md:w-1/2',
         }"
@@ -35,6 +37,8 @@
         format="webp"
         class="flex justify-center mt-[100px] md:mt-[150px] lg:mt-[175px]"
         src="/heading_university.png"
+        :alt="constants.headingUniversity"
+        :title="constants.headingUniversity"
         :img-attrs="{
           class: 'w-[86%] md:w-[60%]',
         }"
@@ -83,6 +87,8 @@
         format="webp"
         class="flex justify-center"
         src="/heading_we_teach.jpg"
+        :alt="constants.headingWeTeach"
+        :title="constants.headingWeTeach"
         :img-attrs="{
           class: 'w-[35%] md:w-[25%]',
         }"
@@ -101,7 +107,30 @@
       <nuxt-picture
         format="webp"
         class="flex justify-center mt-2.5"
-        src="/graphic_daily.jpg"
+        src="/graphic_daily_classes.jpg"
+        :img-attrs="{
+          class: 'w-full',
+        }"
+      />
+    </div>
+
+    <!-- extra learning section -->
+    <div class="flex flex-col mt-[70px] p-2.5">
+      <!-- heading extra classes -->
+      <nuxt-picture
+        format="webp"
+        class="flex justify-center"
+        src="/heading_extra_learning_classes.jpg"
+        :alt="constants.headingExtraClasses"
+        :title="constants.headingExtraClasses"
+        :img-attrs="{
+          class: 'w-[75%] md:w-[55%]',
+        }"
+      />
+      <nuxt-picture
+        format="webp"
+        class="flex justify-center mt-[30px]"
+        src="/graphic_extra_classes.jpg"
         :img-attrs="{
           class: 'w-full',
         }"

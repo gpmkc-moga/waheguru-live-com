@@ -7,6 +7,8 @@
           format="webp"
           class="flex justify-center md:mt-[140px]"
           src="/heading_daily_hukumnama.jpg"
+          :alt="constants.headingDailyHukumnama"
+          :title="constants.headingDailyHukumnama"
           :img-attrs="{
             class: 'w-3/5 md:w-2/5',
           }"
@@ -51,6 +53,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import constants from "~/utils/constants";
 
 export default Vue.extend({
   async asyncData(context) {
@@ -62,6 +65,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      constants,
       hukumnamaContent: {
         photo: null,
       },
