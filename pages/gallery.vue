@@ -17,19 +17,10 @@
       <template>
         <div class="flex flex-col gap-8 my-8">
           <a :href="constants.videoGalleryLink">
-            <div
-              class="
-                flex
-                items-center
-                justify-center
-                gap-4
-                font-roboto font-bold
-                text-xl text-site-gray
-              "
-            >
+            <div class="gallery-link-text">
               <svg
                 role="img"
-                class="text-[#FF0000] fill-current w-12 h-12"
+                class="text-[#FF0000] gallery-link-svg"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -42,19 +33,10 @@
             </div>
           </a>
           <a :href="constants.photoGalleryLink">
-            <div
-              class="
-                flex
-                items-center
-                justify-center
-                gap-4
-                font-roboto font-bold
-                text-xl text-site-gray
-              "
-            >
+            <div class="gallery-link-text">
               <svg
                 role="img"
-                class="text-[#1877F2] fill-current w-12 h-12"
+                class="text-[#1877F2] gallery-link-svg"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -67,19 +49,10 @@
             </div>
           </a>
           <a :href="constants.audioGalleryLink">
-            <div
-              class="
-                flex
-                items-center
-                justify-center
-                gap-4
-                font-roboto font-bold
-                text-xl text-site-gray
-              "
-            >
+            <div class="gallery-link-text">
               <svg
                 role="img"
-                class="text-[#666666] fill-current w-12 h-12"
+                class="text-[#666666] gallery-link-svg"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -92,19 +65,10 @@
             </div>
           </a>
           <a :href="constants.instagramGalleryLink">
-            <div
-              class="
-                flex
-                items-center
-                justify-center
-                gap-4
-                font-roboto font-bold
-                text-xl text-site-gray
-              "
-            >
+            <div class="gallery-link-text">
               <svg
                 role="img"
-                class="text-[#E4405F] fill-current w-12 h-12"
+                class="text-[#E4405F] gallery-link-svg"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -135,4 +99,16 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.gallery-link-text {
+  @apply flex
+                items-center
+                justify-center
+                gap-4
+                font-roboto font-bold
+                text-xl md:text-[26px] text-site-gray;
+}
+.gallery-link-svg {
+  @apply fill-current w-12 h-12;
+}
+</style>
