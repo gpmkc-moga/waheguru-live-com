@@ -58,7 +58,7 @@ export default {
   instagramGalleryLink: "https://www.instagram.com/gpmkc.moga",
   headingStore: "Store",
   orderOnWhatsApp:"Order on Whatsapp",
-  orderOnWhatsAppLink:"https://web.whatsapp.com/catalog/919851392513",
+  orderOnWhatsAppLink:"https://wa.me/c/919851392513",
   headingContactUs: "Contact Us",
   contactInfo:"Gurdwara Prabh Milne Ka Chao, Rauli Road, Near Bughipura Chownk, Moga, Punjab 142001<br><br>gpmkc.moga@gmail.com<br><br>+91 98513-92513<br>+91 81950-13223"
 };
