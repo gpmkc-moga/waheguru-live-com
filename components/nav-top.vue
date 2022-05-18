@@ -25,7 +25,7 @@
             <svg
               v-if="!isMenuOpen"
               xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 stroke-[0.8] fill-slate-700"
+              class="h-6 w-6 stroke-[0.8] fill-site-gray"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -38,7 +38,7 @@
             <svg
               v-if="isMenuOpen"
               xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 stroke-[2.5] stroke-slate-700"
+              class="h-6 w-6 stroke-[2.5] stroke-site-gray"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -172,27 +172,27 @@ export default Vue.extend({
 .mobile-menu-item {
   @apply cursor-pointer
               p-3
-              hover:bg-slate-700 hover:text-white
-              text-slate-700
+              hover:bg-site-gray hover:text-white
+              text-site-gray
               bg-white
               uppercase
               text-[11px]
               text-center
               font-krona-one;
   &.nuxt-link-exact-active {
-    @apply bg-slate-700 text-white;
+    @apply bg-site-gray text-white;
   }
   &-sub {
     @extend .mobile-menu-item;
     @apply capitalize;
     &.nuxt-link-exact-active {
-      @apply bg-slate-700 text-white;
+      @apply bg-site-gray text-white;
     }
   }
   &-dropdown {
     @extend .mobile-menu-item;
     &.nuxt-link-active {
-      @apply bg-slate-700 text-white;
+      @apply bg-site-gray text-white;
     }
   }
 }
@@ -204,7 +204,7 @@ export default Vue.extend({
               border-b-4
               border-b-transparent
               hover:border-b-yellow-600 
-              text-slate-700
+              text-site-gray
               uppercase
               text-[11px]
               font-krona-one;
@@ -213,11 +213,11 @@ export default Vue.extend({
   }
   &-sub {
     @extend .menu-item;
-    @apply capitalize border-b-0 hover:border-b-0 hover:bg-slate-700 hover:text-white
-              text-slate-700
+    @apply capitalize border-b-0 hover:border-b-0 hover:bg-site-gray hover:text-white
+              text-site-gray
               bg-white;
     &.nuxt-link-exact-active {
-      @apply bg-slate-700 text-white;
+      @apply bg-site-gray text-white;
     }
   }
   &-dropdown {

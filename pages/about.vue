@@ -31,8 +31,8 @@
           format="webp"
           class="flex justify-center mt-10"
           src="/heading_about_us.jpg"
-          :alt="constants.headingOurMission"
-          :title="constants.headingOurMission"
+          :alt="constants.headingAboutUs"
+          :title="constants.headingAboutUs"
           :img-attrs="{
             class: 'w-[37%] md:w-[21%]',
           }"
