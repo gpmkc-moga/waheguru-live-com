@@ -1,6 +1,15 @@
 {
   "programs": [
     {
+      "program_name": "Ludhiana Gurmat smagam",
+      "program_start_date": "2022-05-29T10:00:00+05:30",
+      "program_end_date": "2022-05-29T14:00:00+05:30",
+      "program_address_line_1": "Urban State, Durgri",
+      "program_address_line_2": "Ludhiana, Punjab",
+      "program_poster": "/media/img-20220518-wa0006.jpg",
+      "program_location": "Outside"
+    },
+    {
       "program_name": "March Camp 2022",
       "program_start_date": "2022-03-22T00:00:00+05:30",
       "program_end_date": "2022-03-31T00:00:00+05:30",
