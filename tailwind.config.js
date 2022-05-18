@@ -18,6 +18,7 @@ module.exports = {
         "site-blue": "#2c68a7",
         "site-red": "#BF1919",
         "site-text": "#140404",
+        "site-yellow-divider": "#FCD77D",
       },
     },
   },

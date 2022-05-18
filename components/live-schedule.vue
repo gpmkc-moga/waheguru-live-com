@@ -23,7 +23,7 @@
     />
 
     <!-- divider -->
-    <div class="my-8 h-[3px] bg-[#FCD77D]" />
+    <div class="my-8 h-[3px] bg-site-yellow-divider" />
 
     <nuxt-picture
       loading="lazy"
@@ -35,7 +35,7 @@
       }"
     />
 
-    <div class="mt-[26px] mb-4 h-[3px] bg-[#FCD77D]" />
+    <div class="mt-[26px] mb-4 h-[3px] bg-site-yellow-divider" />
   </div>
 </template>
 

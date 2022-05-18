@@ -6,6 +6,7 @@
     <!-- end of heading -->
 
     <nuxt-picture
+      v-if="!hideFrame"
       format="webp"
       class="flex justify-center mt-5 mb-2.5"
       src="/frame_post_top.png"
@@ -18,6 +19,7 @@
     <!-- end of content -->
 
     <nuxt-picture
+      v-if="!hideFrame"
       format="webp"
       class="flex justify-center mt-2.5"
       loading="lazy"
@@ -33,7 +35,14 @@
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({});
+export default Vue.extend({
+  props: {
+    hideFrame: {
+      type: Boolean,
+      default: false,
+    },
+  },
+});
 </script>
 
 <style scoped>

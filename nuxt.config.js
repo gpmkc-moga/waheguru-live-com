@@ -1,5 +1,6 @@
 // https://github.com/kendallstrautman/brevifolia-nuxt-forestry/blob/master/nuxt.config.js
 import config from "./content/config.json";
+
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
 const routerBase =
   process.env.DEPLOY_ENV === "GH_PAGES"
@@ -95,10 +96,10 @@ export default {
   // google fonts options: https://google-fonts.nuxtjs.org/options
   googleFonts: {
     families: {
-      "Krona+One": true,
+      "Krona+One": [300,400],
       Raleway: [500],
       Mitr: [300],
-      Roboto: [300],
+      Roboto: [300,400],
       "Roboto+Slab": [400, 500],
       Actor: true,
     },
