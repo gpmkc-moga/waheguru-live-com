@@ -11,11 +11,12 @@
       <nuxt-link to="/hukumnama/today">
         <nuxt-picture
           format="webp"
-          class="flex justify-center"
+          class="flex justify-center w-1/2 md:w-1/3 mx-auto"
           src="/daily_hukumnama.jpg"
+          :alt="constants.readDailyHukumnama"
+          :title="constants.readDailyHukumnama"
           :img-attrs="{
-            class:
-              'w-1/2 md:w-1/3 hover:scale-110 transition-transform duration-1000',
+            class: 'w-full hover:scale-110 transition-transform duration-1000',
           }"
         ></nuxt-picture>
       </nuxt-link>
@@ -150,10 +151,10 @@
           {{ constants.joinClasses }}
         </div>
         <!-- icons -->
-        <div class="flex justify-center gap-3 mt-4 text-[#324353]">
+        <div class="flex justify-center gap-3 mt-4 text-site-dark-gray">
           <nuxt-link
             to="/live/live-video"
-            class="p-2 text-white bg-[#324353] rounded-full"
+            class="p-2 text-white bg-site-dark-gray rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +169,7 @@
           </nuxt-link>
           <nuxt-link
             to="/live/live-radio"
-            class="p-2 text-white bg-[#324353] rounded-full"
+            class="p-2 text-white bg-site-dark-gray rounded-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -196,6 +197,7 @@ import constants from "~/utils/constants";
 export default Vue.extend({
   async asyncData(context) {
     const homeSliderContent = await context.$content("home-slider").fetch();
+    const config = await context.$content("config").fetch();
     const homeSliderContentAny: any = homeSliderContent;
     let metaDescriptionFromSlide = "";
     for (const i in homeSliderContentAny.slides) {
@@ -205,6 +207,7 @@ export default Vue.extend({
     return {
       homeSliderContent,
       metaDescriptionFromSlide,
+      config,
     };
   },
   data: () => {
@@ -218,7 +221,10 @@ export default Vue.extend({
         {
           hid: "description",
           name: "description",
-          content: this.metaDescriptionFromSlide,
+          content:
+            this.metaDescriptionFromSlide +
+            "\n\n" +
+            this.config["main_description"],
         },
       ],
     };

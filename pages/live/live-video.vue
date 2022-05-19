@@ -30,6 +30,20 @@
 import Vue from "vue";
 import constants from "~/utils/constants";
 export default Vue.extend({
+  head() {
+    return {
+      title: constants.liveVideo,
+      // meta: [
+      //   {
+      //     hid: "description",
+      //     name: "description",
+      //     content: ,
+      //     // can get from GurbaniNow api here!
+      //     // would be great for Gurbani searches!
+      //   },
+      // ],
+    };
+  },
   data() {
     return {
       constants,

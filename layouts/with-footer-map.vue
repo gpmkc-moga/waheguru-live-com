@@ -5,7 +5,7 @@
     <Nuxt />
 
     <!-- navbar bottom -->
-    <nav-bottom></nav-bottom>
+    <nav-bottom :withMap="true"></nav-bottom>
   </div>
 </template>
 

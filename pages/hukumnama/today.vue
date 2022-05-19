@@ -73,16 +73,16 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: "Today's Hukumnama",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "Hukumnama Photo and Audio",
-          // can get from GurbaniNow api here!
-          // would be great for Gurbani searches!
-        },
-      ],
+      title: constants.dailyHukumnama,
+      // meta: [
+      //   {
+      //     hid: "description",
+      //     name: "description",
+      //     content: ,
+      //     // can get from GurbaniNow api here!
+      //     // would be great for Gurbani searches!
+      //   },
+      // ],
     };
   },
 });

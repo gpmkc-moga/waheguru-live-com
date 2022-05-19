@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         "site-yellow": "#FDD76F",
         "site-gray": "#485362",
+        "site-dark-gray": "#324353",
         "site-blue": "#2c68a7",
         "site-red": "#BF1919",
         "site-text": "#140404",

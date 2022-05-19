@@ -34,7 +34,7 @@
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 175.216 175.552"
               >
-                <title>WhatsApp</title>
+                <title>{{ constants.whatsapp }}</title>
                 <defs>
                   <linearGradient
                     id="b"
@@ -104,6 +104,20 @@ export default Vue.extend({
   data() {
     return {
       constants,
+    };
+  },
+  head() {
+    return {
+      title: constants.store,
+      // meta: [
+      //   {
+      //     hid: "description",
+      //     name: "description",
+      //     content: ,
+      //     // can get from GurbaniNow api here!
+      //     // would be great for Gurbani searches!
+      //   },
+      // ],
     };
   },
 });
