@@ -1,5 +1,6 @@
 // https://github.com/kendallstrautman/brevifolia-nuxt-forestry/blob/master/nuxt.config.js
 import config from "./content/config.json";
+import constants from "./utils/constants";
 
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
 const routerBase =
@@ -16,15 +17,25 @@ export default {
   ...routerBase,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Waheguru Live",
+    title: constants.waheguruLive,
     titleTemplate:
-      "%s - Gurdwara Prabh Milne Ka Chao Moga - Bhai Sewa Singh Ji Tarmala",
+      `%s${constants.titleExtension}`,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
+        content:config["main_description"],
+      },
+      {
+        hid: "og:title",
+        name: "og:title",
+        content:`${constants.waheguruLive}${constants.titleExtension}`,
+      },
+      {
+        hid: "og:description",
+        name: "og:description",
         content:config["main_description"],
       },
       { name: "format-detection", content: "telephone=no" },

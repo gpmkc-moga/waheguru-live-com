@@ -227,6 +227,14 @@ export default Vue.extend({
             "\n\n" +
             this.config["main_description"],
         },
+        {
+          hid: "og:title",
+          name: "og:title",
+          content:
+            this.metaDescriptionFromSlide +
+            "\n\n" +
+            this.config["main_description"],
+        },
       ],
     };
   },

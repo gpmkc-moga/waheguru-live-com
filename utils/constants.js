@@ -105,4 +105,6 @@ export default {
   store:"Store",
   contact:"Contact",
   programs: "Programs",
+  waheguruLive: "Waheguru Live",
+  titleExtension: " - Gurdwara Prabh Milne Ka Chao Moga - Bhai Sewa Singh Ji Tarmala",
 };

@@ -50,15 +50,13 @@ export default Vue.extend({
   head() {
     return {
       title: constants.contact,
-      // meta: [
-      //   {
-      //     hid: "description",
-      //     name: "description",
-      //     content: ,
-      //     // can get from GurbaniNow api here!
-      //     // would be great for Gurbani searches!
-      //   },
-      // ],
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: constants.contact,
+        },
+      ],
     };
   },
   data() {
