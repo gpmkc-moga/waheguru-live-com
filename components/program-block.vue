@@ -73,6 +73,9 @@
         format="webp"
         class="w-full"
         :src="program.program_poster"
+        :img-attrs="{
+          class: 'w-full',
+        }"
       />
     </a>
   </div>

@@ -56,6 +56,7 @@ export default {
   photoGalleryLink: "https://www.facebook.com/wahegurulive/photos?tab=albums",
   instagramGallery:"Instagram Gallery",
   instagramGalleryLink: "https://www.instagram.com/gpmkc.moga",
+  whatsappLink:"https://wa.me/919851392513",
   headingStore: "Store",
   orderOnWhatsApp:"Order on Whatsapp",
   orderOnWhatsAppLink:"https://wa.me/c/919851392513",
