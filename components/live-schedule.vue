@@ -13,6 +13,7 @@
     />
 
     <nuxt-picture
+      data-aos="fade-up"
       loading="lazy"
       format="webp"
       class="flex justify-center mt-9"
@@ -26,6 +27,7 @@
     <div class="my-8 h-[3px] bg-site-yellow-divider" />
 
     <nuxt-picture
+      data-aos="fade-up"
       loading="lazy"
       format="webp"
       class="flex justify-center mt-2.5"

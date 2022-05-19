@@ -26,7 +26,7 @@
             :src="hukumnamaContent.audio"
           ></audio>
           <!-- hukumnama photo -->
-          <div v-if="hukumnamaContent.photo" id="lightgallery" class="w-full">
+          <div v-if="hukumnamaContent.photo" class="w-full">
             <!-- caveat: https://github.com/nuxt/nuxt.js/issues/4544#issuecomment-451698704 -->
             <a :href="hukumnamaContent.photo" target="_blank">
               <nuxt-picture

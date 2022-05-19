@@ -47,6 +47,7 @@
           :about="constants.bhaiSahibAbout"
         />
         <leader-description-block
+          data-aos="fade-up"
           class="mt-[30px]"
           photoUrl="/photo_veerji.png"
           :name="constants.veerjiName"

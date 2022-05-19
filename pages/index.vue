@@ -44,9 +44,10 @@
         :img-attrs="{
           class: 'w-[86%] md:w-[60%]',
         }"
+        data-aos="fade-up"
       />
       <!-- bhai sahib and veerji photos -->
-      <div class="mt-14 flex flex-col md:flex-row">
+      <div class="mt-14 flex flex-col md:flex-row" data-aos="fade-up">
         <!-- Bhai sahib block -->
         <photo-block
           photo-url="/photo_bhaisahib.png"
@@ -63,7 +64,7 @@
 
     <!-- courses section -->
 
-    <div class="courses-section">
+    <div class="courses-section" data-aos="fade-up">
       <!-- heading -->
       <div class="text-[25px] uppercase" v-html="constants.ourCourses" />
       <!-- courses -->
@@ -83,7 +84,7 @@
     </div>
 
     <!-- daily classes section -->
-    <div class="flex flex-col mt-[60px] p-2.5">
+    <div class="flex flex-col mt-[60px] p-2.5" data-aos="fade-up">
       <!-- heading we teach -->
       <nuxt-picture
         format="webp"
@@ -119,7 +120,7 @@
     </div>
 
     <!-- extra learning section -->
-    <div class="flex flex-col mt-[70px] p-2.5">
+    <div class="flex flex-col mt-[70px] p-2.5" data-aos="fade-up">
       <!-- heading extra classes -->
       <nuxt-picture
         format="webp"
@@ -144,7 +145,7 @@
     </div>
 
     <!-- online and radio -->
-    <div class="flex flex-col mt-[30px] p-2.5">
+    <div class="flex flex-col mt-[30px] p-2.5" data-aos="fade-up">
       <div class="flex flex-col">
         <!-- title -->
         <div class="font-roboto-slab font-medium text-[19px] text-center">

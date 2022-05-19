@@ -18,6 +18,7 @@
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/onesignal": "^3.0.0-beta.16",
     "@nuxtjs/pwa": "^3.3.5",
+    "aos": "^2.3.4",
     "core-js": "^3.19.3",
     "hooper": "^0.3.4",
     "howler": "^2.2.3",
