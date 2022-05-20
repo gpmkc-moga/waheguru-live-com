@@ -5,6 +5,7 @@
       format="webp"
       class="flex justify-center p-2.5 md:basis-[36%]"
       :src="photoUrl"
+      :title="name"
       :img-attrs="{
         class: 'w-1/2 md:w-auto',
       }"
