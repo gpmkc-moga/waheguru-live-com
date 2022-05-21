@@ -28,16 +28,6 @@ export default {
         name: "description",
         content:config["main_description"],
       },
-      {
-        hid: "og:title",
-        name: "og:title",
-        content:`${constants.waheguruLive}${constants.titleExtension}`,
-      },
-      {
-        hid: "og:description",
-        name: "og:description",
-        content:config["main_description"],
-      },
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
@@ -62,7 +52,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
+  modules: [    
     "@nuxtjs/onesignal",
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
@@ -91,10 +81,16 @@ export default {
     manifest: {
       lang: "en",
     },
-    icon: {
-      /* icon options */
-      purpose: "maskable",
+    meta: {
+      name: constants.waheguruLive,
+      description: config["main_description"],
     },
+    manifest: {
+      name: constants.waheguruLive,
+      short_name: constants.waheguruLive,
+      description: config["main_description"],
+    },
+
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

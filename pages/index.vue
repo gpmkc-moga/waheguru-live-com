@@ -228,8 +228,8 @@ export default Vue.extend({
             this.config["main_description"],
         },
         {
-          hid: "og:title",
-          name: "og:title",
+          hid: "og:description",
+          name: "og:description",
           content:
             this.metaDescriptionFromSlide +
             "\n\n" +
