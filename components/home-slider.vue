@@ -106,7 +106,7 @@ export default Vue.extend({
   },
   computed: {
     allSlidesLoaded() {
-      return this.slidesLoaded >= this.homeSliderContent.slides.length;
+      return this.slidesLoaded / 3 == this.homeSliderContent.slides.length;
     },
   },
   data: () => {
