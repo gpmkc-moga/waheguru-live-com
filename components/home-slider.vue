@@ -15,8 +15,7 @@
       />
       <div
         :class="{
-          'opacity-0 animate-none ': allSlidesLoaded,
-          'animate-pulse': !allSlidesLoaded,
+          'opacity-0': allSlidesLoaded,
         }"
         class="
           aspect-[1546/356]
