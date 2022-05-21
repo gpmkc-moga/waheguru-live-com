@@ -8,3 +8,5 @@ fields:
     maxSize: 64
   label: Popup Image
   description: Popup Image
+pages:
+- content/popup.json
