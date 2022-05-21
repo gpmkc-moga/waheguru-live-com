@@ -10,6 +10,10 @@ sections:
   path: content/daily-hukumnama.json
   label: Daily Hukumnana
 - type: document
+  path: content/popup.json
+  label: Popup
+  match: "**/*"
+- type: document
   path: content/home-slider.json
   label: Home Slider
 - type: document
