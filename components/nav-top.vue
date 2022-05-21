@@ -139,19 +139,78 @@
         <nuxt-link to="/contact" class="menu-item">Contact</nuxt-link>
       </div>
     </div>
+    <!-- popup -->
+    <transition name="fade">
+      <div v-if="isPopupOpen">
+        <!-- backdrop -->
+        <div
+          class="fixed z-50 inset-0 w-screen h-screen bg-black bg-opacity-20"
+          @click="isPopupOpen = false"
+        />
+        <!-- close button -->
+        <div
+          class="
+            text-white
+            flex
+            justify-center
+            items-center
+            fixed
+            top-0
+            right-0
+            hover:opacity-70
+            z-50
+            p-6
+            cursor-pointer
+          "
+          @click="isPopupOpen = false"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <!-- photo frame -->
+        <a :href="this.popup.image">
+          <nuxt-picture
+            format="webp"
+            class="w-[80vw] z-50 h-[80vh] fixed inset-0 m-auto"
+            :src="this.popup.image"
+            :img-attrs="{
+              class: 'w-full h-full object-contain',
+            }"
+          />
+        </a>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import { mapState, mapMutations } from "vuex";
 
 export default Vue.extend({
+  async fetch() {
+    this.popup = await this.$content("popup").fetch();
+  },
   data: () => {
     return {
       isMenuOpen: false,
       isLiveMenuOpen: false,
+      isPopupOpen: false,
       logoAlt:
         "Gurdwara Prabh Milne Ka Chao, Moga | Bhai Sewa Singh Ji Tarmala",
+      popup: null,
     };
   },
   watch: {
@@ -164,6 +223,25 @@ export default Vue.extend({
     $route() {
       this.isMenuOpen = false;
     },
+  },
+  computed: {
+    ...mapState([
+      // map this.count to store.state.count
+      "isPopupShown",
+    ]),
+  },
+  methods: {
+    ...mapMutations({
+      registerPopupShown: "registerPopupShown",
+    }),
+  },
+  mounted() {
+    if (!this.isPopupShown) {
+      setTimeout(() => {
+        this.isPopupOpen = true;
+        this.registerPopupShown();
+      }, this.popup.timeout * 1000);
+    }
   },
 });
 </script>
