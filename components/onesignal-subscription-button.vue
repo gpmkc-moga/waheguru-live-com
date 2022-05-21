@@ -5,7 +5,7 @@
  -->
   <div v-if="subscriptionState != null" class="flex flex-col items-center">
     <div class="mt-2 text-center text-sm md:text-base lg:text-2xl">
-      Get daily Hukumnama alerts on Website
+      {{ constants.subscribeMessage }}
     </div>
     <button
       class="subscription-button"
@@ -19,83 +19,83 @@
 
 <script lang="ts">
 import Vue from "vue";
+import constants from "~/utils/constants";
 
 export default Vue.extend({
   data() {
     return {
-      subscribeText: "Subscribe",
-      unsubscribeText: "Unsubscribe",
+      constants,
       subscriptionState: null,
     };
   },
   computed: {
     buttonText() {
       return this.subscriptionState?.isPushEnabled
-        ? this.unsubscribeText
-        : this.subscribeText;
+        ? constants.unsubscribe
+        : constants.subscribe;
     },
   },
   mounted() {
-    console.log("mounted");
-    console.log("window.$OneSignal");
-    console.dir(window.$OneSignal);
-    window.$OneSignal.push(() => {
-      console.log("window.$OneSignal.push");
+    //console.log("mounted");
+    //console.log("OneSignal");
+    //console.dir(OneSignal);
+    OneSignal.push(() => {
+      //console.log("OneSignal.push");
       this.setupSubscriptionButton();
     });
   },
   methods: {
     setupSubscriptionButton() {
-      console.log("setupSubscriptionButton");
+      //console.log("setupSubscriptionButton");
       // If we're on an unsupported browser, do nothing
-      if (!window.$OneSignal.isPushNotificationsSupported()) {
-        console.log("!window.$OneSignal.isPushNotificationsSupported()");
+      if (!OneSignal.isPushNotificationsSupported()) {
+        //console.log("!OneSignal.isPushNotificationsSupported()");
         return;
       }
       this.getSubscriptionState();
-      window.$OneSignal.on("subscriptionChange", (isSubscribed) => {
+      OneSignal.on("subscriptionChange", (isSubscribed) => {
         /* If the user's subscription state changes during the page's session, update the button text */
-        console.log("subscriptionChange");
+        //console.log("subscriptionChange");
 
         this.getSubscriptionState();
       });
     },
     onManageWebPushSubscriptionButtonClicked() {
-      console.log("onManageWebPushSubscriptionButtonClicked");
+      //console.log("onManageWebPushSubscriptionButtonClicked");
 
-      window.$OneSignal.push(() => {
+      OneSignal.push(() => {
         if (this.subscriptionState.isPushEnabled) {
           /* Subscribed, opt them out */
-          console.log("window.$OneSignal.setSubscription(false)");
+          //console.log("OneSignal.setSubscription(false)");
 
-          window.$OneSignal.setSubscription(false);
+          OneSignal.setSubscription(false);
         } else if (this.subscriptionState.isOptedOut) {
           /* Opted out, opt them back in */
 
-          window.$OneSignal.setSubscription(true);
-          console.log("window.$OneSignal.setSubscription(true)");
+          OneSignal.setSubscription(true);
+          //console.log("OneSignal.setSubscription(true)");
         } else {
           /* Unsubscribed, subscribe them */
 
-          window.$OneSignal.registerForPushNotifications();
-          console.log("window.$OneSignal.registerForPushNotifications()");
+          OneSignal.registerForPushNotifications();
+          //console.log("OneSignal.registerForPushNotifications()");
         }
       });
     },
     getSubscriptionState(): any {
-      console.log("getSubscriptionState");
+      //console.log("getSubscriptionState");
       return Promise.all([
-        window.$OneSignal.isPushNotificationsEnabled(),
-        window.$OneSignal.isOptedOut(),
+        OneSignal.isPushNotificationsEnabled(),
+        OneSignal.isOptedOut(),
       ]).then((result) => {
-        console.log("getSubscriptionState> promise all then");
+        //console.log("getSubscriptionState> promise all then");
         const isPushEnabled = result[0];
         const isOptedOut = result[1];
         this.subscriptionState = {
           isPushEnabled,
           isOptedOut,
         };
-        console.dir(this.subscriptionState);
+        //console.dir(this.subscriptionState);
 
         return this.subscriptionState;
       });

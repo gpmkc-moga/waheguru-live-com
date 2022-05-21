@@ -17,19 +17,6 @@ export default {
   ...routerBase,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    script: [
-      {
-        src:"https://cdn.onesignal.com/sdks/OneSignalSDK.js",
-        async: true
-      },
-      {
-        hid: 'onesignal-init',
-        innerHTML:"window.OneSignal = window.OneSignal || [];OneSignal.push(function() { OneSignal.init({ appId: '0ddb5f3a-df91-4d2a-bd99-0b841f86288e', }); });"
-      }
-    ],
-    __dangerouslyDisableSanitizersByTagID: {
-      'onesignal-init': 'innerHTML'
-    },
     title: constants.waheguruLive,
     titleTemplate:
       `%s${constants.titleExtension}`,
@@ -73,18 +60,6 @@ export default {
     // https://image.nuxtjs.org/
     "@nuxt/image",
   ],
-
-  // Options
-  // oneSignal: {
-  //   init: {
-  //     appId: config.onesignal_app_id,
-  //     safari_web_id: config.onesignal_app_id_safari,
-  //     allowLocalhostAsSecureOrigin: true,
-  //     welcomeNotification: {
-  //       disable: true,
-  //     },
-  //   },
-  // },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

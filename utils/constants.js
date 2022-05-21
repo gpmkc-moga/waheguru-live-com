@@ -108,4 +108,7 @@ export default {
   programs: "Programs",
   waheguruLive: "Waheguru Live",
   titleExtension: " - Gurdwara Prabh Milne Ka Chao Moga - Bhai Sewa Singh Ji Tarmala",
+  subscribeMessage: "Get daily Hukumnama alerts on Website",
+  subscribe: "Subscribe",
+  unsubscribe: "Unsubscribe",
 };
