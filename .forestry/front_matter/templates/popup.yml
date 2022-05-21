@@ -8,5 +8,15 @@ fields:
     maxSize: 64
   label: Popup Image
   description: Popup Image
+- name: popup_timeout
+  type: number
+  label: Popup Timeout
+  description: Popup Timeout in seconds
+  default: 3
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
 pages:
 - content/popup.json
