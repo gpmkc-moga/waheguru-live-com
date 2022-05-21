@@ -13,7 +13,21 @@
         src="/frame_slider_left.png"
         class="absolute flex justify-start bottom-0 left-0 w-full z-20"
       />
-      <div class="aspect-[1546/356] w-full animate-pulse bg-slate-200" />
+      <div
+        :class="{
+          'opacity-0 animate-none ': allSlidesLoaded,
+        }"
+        class="
+          aspect-[1546/356]
+          relative
+          w-full
+          animate-pulse
+          bg-slate-200
+          z-50
+          transition-opacity
+          duration-700
+        "
+      />
       <hooper
         :settings="hooperSettings"
         class="w-full !absolute top-0 left-0 z-10 !h-auto"
@@ -24,6 +38,7 @@
           :index="idx"
         >
           <nuxt-picture
+            @load="loadedSlide()"
             format="webp"
             quality="100"
             class="w-full"
@@ -83,6 +98,16 @@ export default Vue.extend({
       required: false,
     },
   },
+  methods: {
+    loadedSlide() {
+      this.slidesLoaded += 1;
+    },
+  },
+  computed: {
+    allSlidesLoaded() {
+      return this.slidesLoaded >= this.homeSliderContent.slides.length;
+    },
+  },
   data: () => {
     return {
       homeSliderContent: {},
@@ -92,6 +117,7 @@ export default Vue.extend({
         playSpeed: 5000,
         transition: 1000,
       },
+      slidesLoaded: 0,
     };
   },
   async fetch() {
@@ -104,4 +130,5 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+</style>
