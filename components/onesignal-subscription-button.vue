@@ -36,53 +36,66 @@ export default Vue.extend({
     },
   },
   mounted() {
-    if (Array.isArray(this.$OneSignal)) {
-      this.$OneSignal.push(() => {
-        this.setupSubscriptionButton();
-      });
-    } else {
+    console.log("mounted");
+    console.log("window.$OneSignal");
+    console.dir(window.$OneSignal);
+    window.$OneSignal.push(() => {
+      console.log("window.$OneSignal.push");
       this.setupSubscriptionButton();
-    }
+    });
   },
   methods: {
     setupSubscriptionButton() {
+      console.log("setupSubscriptionButton");
       // If we're on an unsupported browser, do nothing
-      if (!this.$OneSignal.isPushNotificationsSupported()) {
+      if (!window.$OneSignal.isPushNotificationsSupported()) {
+        console.log("!window.$OneSignal.isPushNotificationsSupported()");
         return;
       }
       this.getSubscriptionState();
-      this.$OneSignal.on("subscriptionChange", (isSubscribed) => {
+      window.$OneSignal.on("subscriptionChange", (isSubscribed) => {
         /* If the user's subscription state changes during the page's session, update the button text */
+        console.log("subscriptionChange");
 
         this.getSubscriptionState();
       });
     },
     onManageWebPushSubscriptionButtonClicked() {
-      if (this.subscriptionState.isPushEnabled) {
-        /* Subscribed, opt them out */
+      console.log("onManageWebPushSubscriptionButtonClicked");
 
-        this.$OneSignal.setSubscription(false);
-      } else if (this.subscriptionState.isOptedOut) {
-        /* Opted out, opt them back in */
+      window.$OneSignal.push(() => {
+        if (this.subscriptionState.isPushEnabled) {
+          /* Subscribed, opt them out */
+          console.log("window.$OneSignal.setSubscription(false)");
 
-        this.$OneSignal.setSubscription(true);
-      } else {
-        /* Unsubscribed, subscribe them */
+          window.$OneSignal.setSubscription(false);
+        } else if (this.subscriptionState.isOptedOut) {
+          /* Opted out, opt them back in */
 
-        this.$OneSignal.registerForPushNotifications();
-      }
+          window.$OneSignal.setSubscription(true);
+          console.log("window.$OneSignal.setSubscription(true)");
+        } else {
+          /* Unsubscribed, subscribe them */
+
+          window.$OneSignal.registerForPushNotifications();
+          console.log("window.$OneSignal.registerForPushNotifications()");
+        }
+      });
     },
     getSubscriptionState(): any {
+      console.log("getSubscriptionState");
       return Promise.all([
-        this.$OneSignal.isPushNotificationsEnabled(),
-        this.$OneSignal.isOptedOut(),
+        window.$OneSignal.isPushNotificationsEnabled(),
+        window.$OneSignal.isOptedOut(),
       ]).then((result) => {
+        console.log("getSubscriptionState> promise all then");
         const isPushEnabled = result[0];
         const isOptedOut = result[1];
         this.subscriptionState = {
           isPushEnabled,
           isOptedOut,
         };
+        console.dir(this.subscriptionState);
 
         return this.subscriptionState;
       });

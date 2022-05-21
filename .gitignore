@@ -93,5 +93,4 @@ sw.*
 .history
 
 # OneSignalSDK
-# https://github.com/nuxt-community/onesignal-module
 OneSignalSDK*

@@ -47,7 +47,9 @@
     <!-- end of component -->
 
     <!-- custom link setup onesignal -->
-    <onesignal-subscription-button v-if="!isDev" />
+    <!-- <onesignal-subscription-button v-if="!isDev" /> -->
+    <!--  -->
+    <div class="onesignal-customlink-container"></div>
   </div>
 </template>
 
