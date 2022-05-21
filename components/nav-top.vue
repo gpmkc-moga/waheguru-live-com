@@ -159,7 +159,8 @@
             right-0
             hover:opacity-70
             z-50
-            p-6
+            p-3
+            md:p-6
             cursor-pointer
           "
           @click="isPopupOpen = false"
