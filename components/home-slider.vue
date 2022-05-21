@@ -16,16 +16,17 @@
       <div
         :class="{
           'opacity-0 animate-none ': allSlidesLoaded,
+          'animate-pulse': !allSlidesLoaded,
         }"
         class="
           aspect-[1546/356]
           relative
           w-full
-          animate-pulse
           bg-slate-200
           z-50
           transition-opacity
           duration-700
+          pointer-events-none
         "
       />
       <hooper
