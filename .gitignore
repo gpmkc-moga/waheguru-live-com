@@ -91,6 +91,3 @@ sw.*
 
 # VSCode History Extension folder
 .history
-
-# OneSignalSDK
-OneSignalSDK*
