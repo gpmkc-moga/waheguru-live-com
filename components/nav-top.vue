@@ -180,7 +180,7 @@
           </svg>
         </div>
         <!-- photo frame -->
-        <a :href="this.popup.image">
+        <a :href="this.popup.image" target="_blank">
           <nuxt-picture
             format="webp"
             class="w-[80vw] z-50 h-[80vh] fixed inset-0 m-auto"
