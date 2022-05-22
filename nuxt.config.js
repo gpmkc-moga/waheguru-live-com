@@ -15,7 +15,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   ...routerBase,
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  // https://nuxtjs.org/docs/directory-structure/dist#the-fallback-property
+  generate: {
+    fallback: '404.html'
+  },
   head: {
     title: constants.waheguruLive,
     titleTemplate:
