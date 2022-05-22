@@ -62,7 +62,9 @@ export default {
     "@nuxt/content",
     // https://image.nuxtjs.org/
     "@nuxt/image",
+    '@nuxtjs/sitemap',
   ],
+  
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -99,4 +101,13 @@ export default {
     },
     display: "auto",
   },
+
+  sitemap: {
+    hostname: 'https://wahegurulive.com',
+    // options
+    exclude: [
+      '/hukumnama',
+      '/live',
+    ]
+  }
 };

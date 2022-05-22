@@ -37,7 +37,9 @@
       <nuxt-link class="pages-link" to="/hukumnama/today">{{
         constants.dailyHukumnama
       }}</nuxt-link>
-      <nuxt-link class="pages-link" to="/">{{ constants.home }}</nuxt-link>
+      <nuxt-link class="pages-link" to="/index1">{{
+        constants.home
+      }}</nuxt-link>
       <nuxt-link class="pages-link" to="/about">{{
         constants.about
       }}</nuxt-link>

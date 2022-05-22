@@ -50,8 +50,16 @@ jobs:
       - name: Generate
         run: npm run generate
 
+      # - name: Deploy 🚀
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./dist
+
       - name: Deploy 🚀
-        uses: peaceiris/actions-gh-pages@v3
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist

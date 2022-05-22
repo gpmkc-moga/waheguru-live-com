@@ -6,7 +6,10 @@
       <div
         class="z-30 bg-white relative flex flex-col items-center md:flex-row"
       >
-        <nuxt-link to="/" class="m-2 w-full md:basis-3/5 flex justify-center">
+        <nuxt-link
+          to="/index1"
+          class="m-2 w-full md:basis-3/5 flex justify-center"
+        >
           <nuxt-picture
             width="366"
             format="webp"
@@ -64,7 +67,9 @@
             <nuxt-link to="/about" class="mobile-menu-item z-10"
               >About</nuxt-link
             >
-            <nuxt-link to="/" class="mobile-menu-item z-10">Home</nuxt-link>
+            <nuxt-link to="/index1" class="mobile-menu-item z-10"
+              >Home</nuxt-link
+            >
             <nuxt-link
               to="/live"
               event=""
@@ -98,7 +103,7 @@
     </div>
     <!-- desktop -->
     <div class="hidden relative lg:flex items-center">
-      <nuxt-link to="/" class="basis-1/4 m-2">
+      <nuxt-link to="/index1" class="basis-1/4 m-2">
         <nuxt-picture
           format="webp"
           class="block w-full"
@@ -109,7 +114,7 @@
       </nuxt-link>
       <div class="basis-3/4 m-2 flex justify-center items-center">
         <nuxt-link to="/about" class="menu-item">About</nuxt-link>
-        <nuxt-link to="/" class="menu-item">Home</nuxt-link>
+        <nuxt-link to="/index1" class="menu-item">Home</nuxt-link>
         <div
           class="h-full flex flex-col"
           @mouseenter="isLiveMenuOpen = true"
