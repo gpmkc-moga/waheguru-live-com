@@ -16,9 +16,6 @@ export default {
   target: "static",
   ...routerBase,
   // https://nuxtjs.org/docs/directory-structure/dist#the-fallback-property
-  generate: {
-    fallback: '404.html'
-  },
   head: {
     title: constants.waheguruLive,
     titleTemplate:
