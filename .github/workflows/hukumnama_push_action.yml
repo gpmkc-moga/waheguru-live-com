@@ -49,6 +49,6 @@ jobs:
           \"isIos\": true,
           \"isAnyWeb\": true,
           \"data\": {\"post_type\": \"hukumnama\"},
-          \"url\": \"https://wahegurulive.com/hukumnama/today/\",
+          \"url\": \"https://gpmkc-moga.github.io/hukumnama/today\",
           \"included_segments\": [\"Subscribed Users\"]}" \
               https://onesignal.com/api/v1/notifications
