@@ -1,7 +1,7 @@
 RewriteEngine On 
 
 RewriteCond %{HTTPS} off 
-RewriteRule (.*) https://autodiscover.wahegurulive.com%{REQUEST_URI}
+RewriteRule (.*) https://wahegurulive.com%{REQUEST_URI}
 
 ErrorDocument 500 /404.html
 ErrorDocument 401 /404.html
