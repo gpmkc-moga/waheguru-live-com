@@ -10,7 +10,7 @@ ErrorDocument 404 /404.html
 
 
 # DISABLE CACHING
-
+# https://stackoverflow.com/a/31317791
 <filesMatch "\.(html|htm|js|css)$">
 FileETag None
 Header unset ETag
