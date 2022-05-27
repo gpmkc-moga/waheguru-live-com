@@ -33,7 +33,7 @@ export default {
       },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/png", href: "favicon-32x32.png", sizes: "32x32" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
