@@ -146,7 +146,7 @@
     </div>
     <!-- popup -->
     <transition name="fade">
-      <div v-if="isPopupOpen">
+      <div v-if="isPopupOpen && popup.image != ''">
         <!-- backdrop -->
         <div
           class="fixed z-50 inset-0 w-screen h-screen bg-black bg-opacity-20"
@@ -187,14 +187,14 @@
         </div>
         <!-- photo frame -->
         <a
-          :href="this.popup.image"
+          :href="popup.image"
           target="_blank"
           @click="isPopupOpen = false"
         >
           <nuxt-picture
             format="webp"
             class="w-[80vw] z-50 h-[80vh] fixed inset-0 m-auto"
-            :src="this.popup.image"
+            :src="popup.image"
             :img-attrs="{
               class: 'w-full h-full object-contain',
             }"
@@ -247,10 +247,12 @@ export default Vue.extend({
   },
   mounted() {
     if (!this.isPopupShown) {
-      setTimeout(() => {
-        this.isPopupOpen = true;
-        this.registerPopupShown();
-      }, this.popup.timeout * 1000);
+     if(this.popup.image != ''){
+        setTimeout(() => {
+          this.isPopupOpen = true;
+          this.registerPopupShown();
+        }, this.popup.timeout * 1000);
+      }
     }
   },
 });
