@@ -10,11 +10,9 @@ ErrorDocument 404 /404.html
 
 
 # DISABLE CACHING
-# https://stackoverflow.com/a/31317791
-<FilesMatch "\.(html|htm|js|css)$">
-  FileETag None
-  Header unset ETag
-  Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-  Header set Pragma "no-cache"
-  Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
-</FilesMatch>
+# https://www.a2hosting.in/kb/developer-corner/apache-web-server/turning-off-caching-using-htaccess
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
