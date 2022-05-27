@@ -11,8 +11,9 @@ ErrorDocument 404 /404.html
 
 # DISABLE CACHING
 # https://www.a2hosting.in/kb/developer-corner/apache-web-server/turning-off-caching-using-htaccess
+# https://www.siteground.com/kb/disable-dynamic-caching-website/
 <IfModule mod_headers.c>
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires 0
+  <FilesMatch ".(js|css|xml|html)$">
+    Header set Cache-Control "private"
+  </FilesMatch>
 </IfModule>
