@@ -1,7 +1,10 @@
 RewriteEngine On 
 
+# https://manage.bigrock.in/kb/answer/2007
 RewriteCond %{HTTPS} off 
 RewriteRule (.*) https://wahegurulive.com%{REQUEST_URI}
+
+# https://stackoverflow.com/a/41770541
 
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
@@ -11,7 +14,7 @@ RewriteCond %{HTTPS} on
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
-
+# https://stackoverflow.com/a/38437502
 ErrorDocument 500 /404.html
 ErrorDocument 401 /404.html
 ErrorDocument 403 /404.html
