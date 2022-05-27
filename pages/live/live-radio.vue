@@ -5,9 +5,9 @@
         <nuxt-picture
           format="webp"
           class="flex justify-center md:mt-[175px]"
-          src="/heading_live_video.jpg"
-          :alt="constants.headingLiveVideo"
-          :title="constants.headingLiveVideo"
+          src="/heading_live_radio.png"
+          :alt="constants.headingLiveRadio"
+          :title="constants.headingLiveRadio"
           :img-attrs="{
             class: 'w-[68%] md:w-[48%]',
           }"
