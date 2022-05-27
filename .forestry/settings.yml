@@ -16,9 +16,6 @@ sections:
   path: content/home-slider.json
   label: Home Slider
 - type: document
-  path: content/products.json
-  label: Products
-- type: document
   path: content/programs.json
   label: Programs
 upload_dir: static/media
