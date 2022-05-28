@@ -33,3 +33,5 @@ fields:
     max: 
     labelField: name
   label: Album
+pages:
+- content/audio-gallery.json
