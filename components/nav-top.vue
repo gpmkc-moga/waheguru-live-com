@@ -6,10 +6,7 @@
       <div
         class="z-30 bg-white relative flex flex-col items-center md:flex-row"
       >
-        <nuxt-link
-          to="/"
-          class="m-2 w-full md:basis-3/5 flex justify-center"
-        >
+        <nuxt-link to="/" class="m-2 w-full md:basis-3/5 flex justify-center">
           <nuxt-picture
             width="366"
             format="webp"
@@ -67,9 +64,7 @@
             <nuxt-link to="/about" class="mobile-menu-item z-10"
               >About</nuxt-link
             >
-            <nuxt-link to="/" class="mobile-menu-item z-10"
-              >Home</nuxt-link
-            >
+            <nuxt-link to="/" class="mobile-menu-item z-10">Home</nuxt-link>
             <nuxt-link
               to="/live"
               event=""
@@ -186,11 +181,7 @@
           </svg>
         </div>
         <!-- photo frame -->
-        <a
-          :href="popup.image"
-          target="_blank"
-          @click="isPopupOpen = false"
-        >
+        <a :href="popup.image" target="_blank" @click="isPopupOpen = false">
           <nuxt-picture
             format="webp"
             class="w-[80vw] z-50 h-[80vh] fixed inset-0 m-auto"
@@ -210,9 +201,6 @@ import Vue from "vue";
 import { mapState, mapMutations } from "vuex";
 
 export default Vue.extend({
-  async fetch() {
-    this.popup = await this.$content("popup").fetch();
-  },
   data: () => {
     return {
       isMenuOpen: false,
@@ -222,6 +210,17 @@ export default Vue.extend({
         "Gurdwara Prabh Milne Ka Chao, Moga | Bhai Sewa Singh Ji Tarmala",
       popup: null,
     };
+  },
+  async fetch() {
+    this.popup = await this.$content("popup").fetch();
+    if (!this.isPopupShown) {
+      if (this.popup.image != "") {
+        setTimeout(() => {
+          this.isPopupOpen = true;
+          this.registerPopupShown();
+        }, this.popup.timeout * 1000);
+      }
+    }
   },
   watch: {
     isMenuOpen(value) {
@@ -244,16 +243,6 @@ export default Vue.extend({
     ...mapMutations({
       registerPopupShown: "registerPopupShown",
     }),
-  },
-  mounted() {
-    if (!this.isPopupShown) {
-     if(this.popup.image != ''){
-        setTimeout(() => {
-          this.isPopupOpen = true;
-          this.registerPopupShown();
-        }, this.popup.timeout * 1000);
-      }
-    }
   },
 });
 </script>
