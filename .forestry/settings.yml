@@ -18,6 +18,10 @@ sections:
 - type: document
   path: content/programs.json
   label: Programs
+- type: document
+  path: content/audio-gallery.json
+  label: Audio Gallery
+  match: "**/*"
 upload_dir: static/media
 public_path: "/media"
 front_matter_path: ''
