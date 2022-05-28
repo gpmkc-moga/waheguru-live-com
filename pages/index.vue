@@ -118,32 +118,6 @@
         }"
       />
     </div>
-
-    <!-- extra learning section -->
-    <div class="flex flex-col mt-[70px] p-2.5" data-aos="fade-up">
-      <!-- heading extra classes -->
-      <nuxt-picture
-        format="webp"
-        loading="lazy"
-        class="flex justify-center"
-        src="/heading_extra_learning_classes.jpg"
-        :alt="constants.headingExtraClasses"
-        :title="constants.headingExtraClasses"
-        :img-attrs="{
-          class: 'w-[75%] md:w-[55%]',
-        }"
-      />
-      <nuxt-picture
-        loading="lazy"
-        format="webp"
-        class="flex justify-center mt-[30px]"
-        src="/graphic_extra_classes.jpg"
-        :img-attrs="{
-          class: 'w-full',
-        }"
-      />
-    </div>
-
     <!-- online and radio -->
     <div class="flex flex-col mt-[30px] p-2.5" data-aos="fade-up">
       <div class="flex flex-col">
@@ -188,6 +162,30 @@
         </div>
       </div>
     </div>
+    <!-- extra learning section -->
+    <div class="flex flex-col mt-[70px] mb-10 p-2.5" data-aos="fade-up">
+      <!-- heading extra classes -->
+      <nuxt-picture
+        format="webp"
+        loading="lazy"
+        class="flex justify-center"
+        src="/heading_extra_learning_classes.jpg"
+        :alt="constants.headingExtraClasses"
+        :title="constants.headingExtraClasses"
+        :img-attrs="{
+          class: 'w-[75%] md:w-[55%]',
+        }"
+      />
+      <nuxt-picture
+        loading="lazy"
+        format="webp"
+        class="flex justify-center mt-[30px]"
+        src="/graphic_extra_classes.jpg"
+        :img-attrs="{
+          class: 'w-full',
+        }"
+      />
+    </div>
   </div>
 </template>
 
@@ -225,7 +223,7 @@ export default Vue.extend({
           content:
             this.metaDescriptionFromSlide +
             "\n\n" +
-            this.config["main_description"],
+            this.config.main_description,
         },
         {
           hid: "og:description",
@@ -233,7 +231,7 @@ export default Vue.extend({
           content:
             this.metaDescriptionFromSlide +
             "\n\n" +
-            this.config["main_description"],
+            this.config.main_description,
         },
       ],
     };
