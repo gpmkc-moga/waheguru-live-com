@@ -14,24 +14,15 @@
         />
       </template>
       <template #default>
-        <div class="grid grid-cols-2 text-center w-max mx-auto">
-          <div
-            class="
-              text-left
-              border border-site-text
-              p-2
-              col-span-2
-              text-site-blue
-            "
-          >
+        <div class="grid w-2/3 grid-cols-2 text-center w-max mx-auto">
+          <div class="border border-site-text p-2 col-span-2 text-site-blue">
             {{ radioStateText }}
           </div>
           <div
             class="p-3 border border-site-text flex items-center justify-center"
           >
             <button
-              @click="handlePlayPause"
-              :class="{ disabled: isDisabledPlayPause }"
+              :class="{ 'disabled opacity-70': isDisabledPlayPause }"
               class="
                 rounded-full
                 bg-site-text
@@ -41,6 +32,7 @@
                 items-center
                 justify-center
               "
+              @click="handlePlayPause"
             >
               <svg
                 version="1.1"
@@ -94,8 +86,7 @@
             class="p-3 border border-site-text flex items-center justify-center"
           >
             <button
-              @click="handleStop"
-              :class="{ disabled: isDisabledStop }"
+              :class="{ 'disabled opacity-70': isDisabledStop }"
               class="
                 rounded-full
                 bg-site-text
@@ -106,6 +97,7 @@
                 items-center
                 justify-center
               "
+              @click="handleStop"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -199,6 +191,13 @@ enum RadioState {
   ended,
 }
 export default Vue.extend({
+  data() {
+    return {
+      constants,
+      sound: null,
+      radioState: RadioState.init,
+    };
+  },
   head() {
     return {
       title: constants.liveRadio,
@@ -210,42 +209,6 @@ export default Vue.extend({
         },
       ],
     };
-  },
-  data() {
-    return {
-      constants,
-      sound: null,
-      radioState: RadioState.init,
-    };
-  },
-  mounted() {
-    this.sound = new Howl({
-      src: [constants.liveRadioStreamURL],
-      html5: true,
-      preload: true,
-      autoplay: true,
-    });
-    this.sound?.on("loaderror", () => {
-      this.updateState("loaderror");
-    });
-    this.sound?.on("playerror", () => {
-      this.updateState("playerror");
-    });
-    this.sound?.on("load", () => {
-      this.updateState("load");
-    });
-    this.sound?.on("play", () => {
-      this.updateState("play");
-    });
-    this.sound?.on("end", () => {
-      this.updateState("end");
-    });
-    this.sound?.on("pause", () => {
-      this.updateState("pause");
-    });
-    this.sound?.on("stop", () => {
-      this.updateState("stop");
-    });
   },
   computed: {
     isDisabledPlayPause() {
@@ -283,13 +246,32 @@ export default Vue.extend({
       }
     },
   },
+  mounted() {
+    this.sound = new Audio(constants.liveRadioStreamURL);
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement#events
+    this.sound?.addEventListener("abort", this.updateStateEvent);
+    this.sound?.addEventListener("emptied", this.updateStateEvent);
+    this.sound?.addEventListener("ended", this.updateStateEvent);
+    this.sound?.addEventListener("error", this.updateStateEvent);
+    this.sound?.addEventListener("loadeddata", this.updateStateEvent);
+    this.sound?.addEventListener("loadstart", this.updateStateEvent);
+    this.sound?.addEventListener("pause", this.updateStateEvent);
+    this.sound?.addEventListener("playing", this.updateStateEvent);
+    this.sound?.addEventListener("stalled", this.updateStateEvent);
+    this.sound?.addEventListener("suspend", this.updateStateEvent);
+  },
   destroyed() {
     this.disposePlayer();
   },
   methods: {
+    updateStateEvent(event) {
+      console.log(event.type);
+      this.updateState(event.type);
+    },
     disposePlayer() {
-      this.sound?.off();
-      this.sound?.unload();
+      this.sound?.removeAttribute("src"); // empty source
+      this.sound?.load();
       this.sound = null;
     },
     handlePlayPause() {
@@ -311,29 +293,40 @@ export default Vue.extend({
       this.sound?.pause();
     },
     stopSound() {
-      this.sound?.stop();
+      this.pauseSound();
+      this.sound?.load();
+      // this.sound?.currentTime = 0;
     },
     updateState(eventString: string) {
       switch (eventString) {
-        case "loaderror":
+        case "abort":
           this.radioState = RadioState.errored;
           break;
-        case "playerror":
+        case "emptied":
+          this.radioState = RadioState.stopped;
+          break;
+        case "ended":
+          this.radioState = RadioState.ended;
+          break;
+        case "error":
           this.radioState = RadioState.errored;
           break;
-        case "load":
+        case "loadeddata":
           this.radioState = RadioState.loaded;
           break;
-        case "play":
-          this.radioState = RadioState.playing;
-          break;
-        case "end":
-          this.radioState = RadioState.ended;
+        case "loadstart":
+          this.radioState = RadioState.loading;
           break;
         case "pause":
           this.radioState = RadioState.paused;
           break;
-        case "stop":
+        case "playing":
+          this.radioState = RadioState.playing;
+          break;
+        case "stalled":
+          this.radioState = RadioState.errored;
+          break;
+        case "suspend":
           this.radioState = RadioState.stopped;
           break;
       }
