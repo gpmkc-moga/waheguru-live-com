@@ -120,4 +120,5 @@ export default {
   subscribeMessage: "Get daily Hukumnama alerts on Website",
   subscribe: "Subscribe",
   unsubscribe: "Unsubscribe",
+  album: "Album",
 };
