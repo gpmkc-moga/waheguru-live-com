@@ -2,7 +2,7 @@
 label: Audio Gallery
 hide_body: true
 fields:
-- name: album
+- name: albums
   type: field_group_list
   fields:
   - name: cover
@@ -32,6 +32,6 @@ fields:
     min: 
     max: 
     labelField: name
-  label: Album
+  label: Albums
 pages:
 - content/audio-gallery.json
