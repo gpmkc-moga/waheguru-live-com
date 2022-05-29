@@ -4,31 +4,41 @@
       "cover": "/media/4.jpg",
       "name": "Akath Katha",
       "artist": "Bhai Sahib Bhai Sewa Singh Ji Tarmala",
-      "audio_files": []
+      "audio_files": [
+        "/media/4.jpg"
+      ]
     },
     {
       "cover": "/media/3.jpg",
       "name": "Kirtan",
       "artist": "Bhai Sahib Bhai Dalbir Singh Ji Tarmala",
-      "audio_files": []
+      "audio_files": [
+
+      ]
     },
     {
       "cover": "/media/2.jpg",
       "name": "Kavishri",
       "artist": "Gurdwara Prabh Milne Ka Chao Moga",
-      "audio_files": []
+      "audio_files": [
+
+      ]
     },
     {
       "cover": "/media/1-1.jpg",
       "name": "Dhadi Vaaran | Gurmukh",
       "artist": "Gurdwara Prabh Milne Ka Chao Moga",
-      "audio_files": []
+      "audio_files": [
+
+      ]
     },
     {
       "cover": "/media/1.jpg",
       "name": "Dhadi Vaaran | Gurmukh Bibian",
       "artist": "Gurdwara Prabh Milne Ka Chao Moga",
-      "audio_files": []
+      "audio_files": [
+
+      ]
     }
   ]
 }
