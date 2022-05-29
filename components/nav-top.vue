@@ -65,12 +65,11 @@
               >About</nuxt-link
             >
             <nuxt-link to="/" class="mobile-menu-item z-10">Home</nuxt-link>
-            <nuxt-link
-              to="/live"
-              event=""
+            <a
+              href="/live"
               class="z-10 mobile-menu-item-dropdown"
-              @click.native="isLiveMenuOpen = !isLiveMenuOpen"
-              >Live</nuxt-link
+              @click.prevent="isLiveMenuOpen = !isLiveMenuOpen"
+              >Live</a
             >
             <transition name="slide-down">
               <div
@@ -115,9 +114,7 @@
           @mouseenter="isLiveMenuOpen = true"
           @mouseleave="isLiveMenuOpen = false"
         >
-          <nuxt-link to="/live" class="menu-item-dropdown" event=""
-            >Live</nuxt-link
-          >
+          <a to="/live" class="menu-item-dropdown" @click.prevent="">Live</a>
           <div class="z-20 relative h-0 w-0 overflow-visible">
             <transition name="fade">
               <div
