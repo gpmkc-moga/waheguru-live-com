@@ -126,4 +126,5 @@ export default {
   album: "Album",
   noTracks: "No tracks in this album!",
   listenTo: "Listen to album on Waheguru Live!",
+  shareAlbumOn: "share album on:",
 };

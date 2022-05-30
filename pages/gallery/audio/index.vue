@@ -101,6 +101,18 @@ export default Vue.extend({
       constants,
     };
   },
+  head() {
+    return {
+      title: constants.audioGallery,
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: constants.audioGallery,
+        },
+      ],
+    };
+  },
 });
 </script>
 
