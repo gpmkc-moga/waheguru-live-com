@@ -212,13 +212,18 @@ export default Vue.extend({
   },
   computed: {
     isDisabledPlayPause() {
-      return this.radioState == RadioState.errored;
+      return (
+        this.radioState == RadioState.errored ||
+        this.radioState == RadioState.loading ||
+        this.radioState == RadioState.init
+      );
     },
     isDisabledStop() {
       return (
         this.radioState == RadioState.errored ||
         this.radioState == RadioState.init ||
         this.radioState == RadioState.stopped ||
+        this.radioState == RadioState.loading ||
         this.radioState == RadioState.ended
       );
     },
@@ -266,7 +271,6 @@ export default Vue.extend({
   },
   methods: {
     updateStateEvent(event) {
-      console.log(event.type);
       this.updateState(event.type);
     },
     disposePlayer() {

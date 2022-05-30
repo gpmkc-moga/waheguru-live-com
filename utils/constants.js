@@ -42,7 +42,7 @@ export default {
   stopped: "Stopped. 🙏Press play to start.",
   errored: "Error!",
   ended: "Ended",
-  init: "🙏 Press play to start.",
+  init: "",
   headingOurMission: "Our Mission",
   headingAboutUs: "About Us",
   ourMissionText:
