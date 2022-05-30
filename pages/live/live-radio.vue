@@ -14,10 +14,7 @@
         />
       </template>
       <template #default>
-        <div class="grid w-2/3 grid-cols-2 text-center w-max mx-auto">
-          <div class="border border-site-text p-2 col-span-2 text-site-blue">
-            {{ radioStateText }}
-          </div>
+        <div class="grid grid-cols-2 text-center w-max mx-auto">
           <div
             class="p-3 border border-site-text flex items-center justify-center"
           >
@@ -176,26 +173,15 @@
 </template>
 
 <script lang="ts">
-import { Howl } from "howler";
-
 import Vue from "vue";
 import constants from "~/utils/constants";
-enum RadioState {
-  init,
-  loading,
-  loaded,
-  playing,
-  errored,
-  paused,
-  stopped,
-  ended,
-}
+import { AudioPlayerMixin } from "~/utils/audio-player";
+
 export default Vue.extend({
+  mixins: [AudioPlayerMixin],
   data() {
     return {
       constants,
-      sound: null,
-      radioState: RadioState.init,
     };
   },
   head() {
@@ -210,131 +196,8 @@ export default Vue.extend({
       ],
     };
   },
-  computed: {
-    isDisabledPlayPause() {
-      return (
-        this.radioState == RadioState.errored ||
-        this.radioState == RadioState.loading ||
-        this.radioState == RadioState.init
-      );
-    },
-    isDisabledStop() {
-      return (
-        this.radioState == RadioState.errored ||
-        this.radioState == RadioState.init ||
-        this.radioState == RadioState.stopped ||
-        this.radioState == RadioState.loading ||
-        this.radioState == RadioState.ended
-      );
-    },
-    radioStateText() {
-      // https://www.w3schools.com/js/js_switch.asp
-      switch (this.radioState) {
-        case RadioState.init:
-          return constants.init;
-        case RadioState.loading:
-          return constants.loading;
-        case RadioState.loaded:
-          return constants.loaded;
-        case RadioState.playing:
-          return constants.playing;
-        case RadioState.errored:
-          return constants.errored;
-        case RadioState.paused:
-          return constants.paused;
-        case RadioState.stopped:
-          return constants.stopped;
-        case RadioState.ended:
-          return constants.ended;
-        default:
-          return "";
-      }
-    },
-  },
   mounted() {
-    this.sound = new Audio(constants.liveRadioStreamURL);
-
-    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement#events
-    this.sound?.addEventListener("abort", this.updateStateEvent);
-    this.sound?.addEventListener("emptied", this.updateStateEvent);
-    this.sound?.addEventListener("ended", this.updateStateEvent);
-    this.sound?.addEventListener("error", this.updateStateEvent);
-    this.sound?.addEventListener("loadeddata", this.updateStateEvent);
-    this.sound?.addEventListener("loadstart", this.updateStateEvent);
-    this.sound?.addEventListener("pause", this.updateStateEvent);
-    this.sound?.addEventListener("playing", this.updateStateEvent);
-    this.sound?.addEventListener("stalled", this.updateStateEvent);
-    this.sound?.addEventListener("suspend", this.updateStateEvent);
-  },
-  destroyed() {
-    this.disposePlayer();
-  },
-  methods: {
-    updateStateEvent(event) {
-      this.updateState(event.type);
-    },
-    disposePlayer() {
-      this.sound?.removeAttribute("src"); // empty source
-      this.sound?.load();
-      this.sound = null;
-    },
-    handlePlayPause() {
-      if (this.radioState == RadioState.playing) {
-        this.pauseSound();
-      } else if (this.radioState != RadioState.errored) {
-        this.playSound();
-      }
-    },
-    handleStop() {
-      if (!this.isDisabledStop) {
-        this.stopSound();
-      }
-    },
-    playSound() {
-      this.sound?.play();
-    },
-    pauseSound() {
-      this.sound?.pause();
-    },
-    stopSound() {
-      this.pauseSound();
-      this.sound?.load();
-      // this.sound?.currentTime = 0;
-    },
-    updateState(eventString: string) {
-      switch (eventString) {
-        case "abort":
-          this.radioState = RadioState.errored;
-          break;
-        case "emptied":
-          this.radioState = RadioState.stopped;
-          break;
-        case "ended":
-          this.radioState = RadioState.ended;
-          break;
-        case "error":
-          this.radioState = RadioState.errored;
-          break;
-        case "loadeddata":
-          this.radioState = RadioState.loaded;
-          break;
-        case "loadstart":
-          this.radioState = RadioState.loading;
-          break;
-        case "pause":
-          this.radioState = RadioState.paused;
-          break;
-        case "playing":
-          this.radioState = RadioState.playing;
-          break;
-        case "stalled":
-          this.radioState = RadioState.errored;
-          break;
-        case "suspend":
-          this.radioState = RadioState.stopped;
-          break;
-      }
-    },
+    this.setupSound(constants.liveRadioStreamURL);
   },
 });
 </script>

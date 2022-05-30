@@ -23,8 +23,10 @@
     "hooper": "^0.3.4",
     "lightgallery": "^2.4.0",
     "nuxt": "^2.15.8",
+    "path-browserify": "^1.0.1",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
+    "vue-social-sharing": "^3.0.9",
     "vue-template-compiler": "^2.6.14",
     "vuelidate": "^0.7.7",
     "webpack": "^4.46.0"
