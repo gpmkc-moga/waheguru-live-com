@@ -28,6 +28,11 @@ fields:
     config: {}
     label: Audio Files
     description: Album Audio Files
+  - name: allow_downloads
+    type: boolean
+    label: Allow downloads
+    description: Whether to allow downloading files from this album
+    default: false
   config:
     min: 
     max: 
