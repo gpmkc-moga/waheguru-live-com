@@ -3,10 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - master
-  pull_request:
-    branches:
-      - master
+      - "master"
 
 concurrency:
   group: ci
