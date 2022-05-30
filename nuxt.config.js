@@ -69,6 +69,7 @@ export default {
     // https://image.nuxtjs.org/
     "@nuxt/image",
     "@nuxtjs/sitemap",
+    "vue-social-sharing/nuxt",
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
