@@ -2,7 +2,20 @@
   <div>
     <!-- top bar  -->
     <!-- back button         center title audio gallery -->
-    <div class="grid grid-cols-3 p-4 bg-white sticky top-0">
+    <div class="grid grid-cols-3 p-4 bg-white sticky top-0 items-center">
+      <!-- bottom pattern -->
+      <div
+        class="
+          rounded
+          absolute
+          h-2.5
+          bottom-0
+          w-full
+          inset-x-0
+          mx-auto
+          bg-[url('/washi.png')]
+        "
+      />
       <!-- https://stackoverflow.com/a/48123669 -->
       <!-- https://stackoverflow.com/a/70965943 -->
       <nuxt-link
@@ -30,7 +43,7 @@
           />
         </svg>
       </nuxt-link>
-      <div class="font-roboto-slab text-base md:text-lg text-center p-4">
+      <div class="font-roboto-slab text-base md:text-lg text-center">
         {{ constants.audioGallery }}
       </div>
     </div>

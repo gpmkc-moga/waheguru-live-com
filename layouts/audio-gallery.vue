@@ -1,5 +1,5 @@
 <template>
-  <Nuxt />
+  <Nuxt class="max-w-5xl mx-auto inset-x-0" />
 </template>
 
 <script lang="ts">

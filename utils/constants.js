@@ -34,7 +34,10 @@ export default {
     "<script type=\"text/javascript\" src=\"https://hosted.muses.org/mrp.js\"></script><script type=\"text/javascript\"> MRP.insert({ 'url':'http://cast1.asurahosting.com/proxy/gpmkc/stream', 'codec':'mp3', 'volume':100, 'autoplay':true, 'jsevents':true, 'buffering':0, 'title':'', 'wmode':'transparent', 'skin':'simple-gray', 'width':300, 'height':122 }); </script>",
   liveRadioStreamURL: "http://cast1.asurahosting.com/proxy/gpmkc/stream",
   playPause: "Play/Pause",
+  play: "Play",
+  pause: "Pause",
   stop: "Stop",
+  download: "Download",
   loaded: "Loaded",
   loading: "Loading...",
   playing: "Playing...",
@@ -121,4 +124,6 @@ export default {
   subscribe: "Subscribe",
   unsubscribe: "Unsubscribe",
   album: "Album",
+  noTracks: "No tracks in this album!",
+  listenTo: "Listen to album on Waheguru Live!",
 };

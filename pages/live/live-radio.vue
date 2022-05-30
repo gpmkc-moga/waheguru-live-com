@@ -14,10 +14,7 @@
         />
       </template>
       <template #default>
-        <div class="grid w-2/3 grid-cols-2 text-center w-max mx-auto">
-          <div class="border border-site-text p-2 col-span-2 text-site-blue">
-            {{ playerStateText }}
-          </div>
+        <div class="grid grid-cols-2 text-center w-max mx-auto">
           <div
             class="p-3 border border-site-text flex items-center justify-center"
           >

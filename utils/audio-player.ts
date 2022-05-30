@@ -22,7 +22,7 @@ export const AudioPlayerMixin = {
     this.disposePlayer();
   },
   methods: {
-    setupSound(url) {
+    setupSound(url, autoplay = false) {
       this.$data._playerState = PlayerState.init;
       this.$data._sound = new Audio(url);
 
@@ -36,9 +36,27 @@ export const AudioPlayerMixin = {
       this.$data._sound?.addEventListener("pause", this._updateStateEvent);
       this.$data._sound?.addEventListener("playing", this._updateStateEvent);
       this.$data._sound?.addEventListener("stalled", this._updateStateEvent);
-      this.$data._sound?.addEventListener("suspend", this._updateStateEvent);
+
+      if (autoplay) {
+        this._playSound();
+      }
     },
     disposePlayer() {
+      this.$data._sound?.removeEventListener("abort", this._updateStateEvent);
+      this.$data._sound?.removeEventListener("emptied", this._updateStateEvent);
+      this.$data._sound?.removeEventListener("ended", this._updateStateEvent);
+      this.$data._sound?.removeEventListener("error", this._updateStateEvent);
+      this.$data._sound?.removeEventListener(
+        "loadeddata",
+        this._updateStateEvent
+      );
+      this.$data._sound?.removeEventListener(
+        "loadstart",
+        this._updateStateEvent
+      );
+      this.$data._sound?.removeEventListener("pause", this._updateStateEvent);
+      this.$data._sound?.removeEventListener("playing", this._updateStateEvent);
+      this.$data._sound?.removeEventListener("stalled", this._updateStateEvent);
       this.$data._sound?.removeAttribute("src"); // empty source
       this.$data._sound?.load();
       this.$data._sound = null;
@@ -116,9 +134,6 @@ export const AudioPlayerMixin = {
         case "stalled":
           this.$data._playerState = PlayerState.errored;
           break;
-        case "suspend":
-          this.$data._playerState = PlayerState.stopped;
-          break;
       }
     },
   },
@@ -130,10 +145,7 @@ export const AudioPlayerMixin = {
       );
     },
     isDisabledPause() {
-      return (
-        this.isDisabledPlayPause ||
-        this.$data._playerState === PlayerState.paused
-      );
+      return !(this.$data._playerState === PlayerState.playing);
     },
     isDisabledPlayPause() {
       return (
@@ -143,12 +155,9 @@ export const AudioPlayerMixin = {
       );
     },
     isDisabledStop() {
-      return (
-        this.$data._playerState === PlayerState.errored ||
-        this.$data._playerState === PlayerState.init ||
-        this.$data._playerState === PlayerState.stopped ||
-        this.$data._playerState === PlayerState.loading ||
-        this.$data._playerState === PlayerState.ended
+      return !(
+        this.$data._playerState === PlayerState.playing ||
+        this.$data._playerState === PlayerState.paused
       );
     },
     playerStateText() {
