@@ -34,7 +34,8 @@
         "/media/Akath-Katha-30-12-2011-am.mp3",
         "/media/Akath-Katha-30-12-2011-pm.mp3",
         "/media/Akath-Katha-31-12-2010-am.mp3"
-      ]
+      ],
+      "allow_downloads": false
     },
     {
       "cover": "/media/3.jpg",
@@ -128,7 +129,8 @@
         "/media/Tu Sajan Tu Preetam Mera.mp3",
         "/media/Tujh Bin Kavan Hamara.mp3",
         "/media/Tum Sarnayee Aaya.mp3"
-      ]
+      ],
+      "allow_downloads": false
     },
     {
       "cover": "/media/2.jpg",
@@ -146,7 +148,8 @@
         "/media/Sadhuan-Di-Gal-Ki-Sunaiye-Sangten.mp3",
         "/media/Safal-Janam-Bnaundi-Hai-Gurbani-Bande-Da.mp3",
         "/media/Sikh-Le-Sangat-Vich-Dang-Jiwan-Da-26-01-2014-Bhaini-Mia-Khan.mp3"
-      ]
+      ],
+      "allow_downloads": false
     },
     {
       "cover": "/media/1-1.jpg",
@@ -211,7 +214,8 @@
         "/media/Track 8.mp3",
         "/media/Track 9.mp3",
         "/media/Track 10.mp3"
-      ]
+      ],
+      "allow_downloads": false
     },
     {
       "cover": "/media/1.jpg",
@@ -248,6 +252,16 @@
         "/media/Tera Chotha Put.mp3",
         "/media/Vaisakhi Dihara.mp3",
         "/media/Waheguru Bol Bandeya.mp3"
+      ],
+      "allow_downloads": false
+    },
+    {
+      "cover": "/media/5.jpg",
+      "name": "Waheguru Simran",
+      "artist": "Bhai Sahib Bhai Sewa Singh Ji Tarmala",
+      "allow_downloads": true,
+      "audio_files": [
+
       ]
     }
   ]
