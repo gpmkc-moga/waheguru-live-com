@@ -74,14 +74,13 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
-    manifest: {
-      lang: "en",
-    },
     meta: {
       name: constants.waheguruLive,
       description: config.main_description,
     },
+    workbox: false,
     manifest: {
+      display: "browser",
       name: constants.waheguruLive,
       short_name: constants.waheguruLive,
       description: config.main_description,
