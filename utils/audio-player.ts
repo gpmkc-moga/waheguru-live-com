@@ -24,8 +24,11 @@ export const AudioPlayerMixin = {
   methods: {
     setupSound(url, autoplay = false) {
       this.$data._playerState = PlayerState.init;
-      this.$data._sound = new Audio(url);
-
+      if (this.$data._sound === null) {
+        this.$data._sound = new Audio(url);
+      } else {
+        this.$data._sound.setAttribute("src", url);
+      }
       // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement#events
       this.$data._sound?.addEventListener("abort", this._updateStateEvent);
       this.$data._sound?.addEventListener("emptied", this._updateStateEvent);
@@ -60,7 +63,6 @@ export const AudioPlayerMixin = {
       this.$data._sound?.removeEventListener("stalled", this._updateStateEvent);
       this.$data._sound?.removeAttribute("src"); // empty source
       this.$data._sound?.load();
-      this.$data._sound = null;
       this.$data._playerState = PlayerState.init;
     },
     handlePlay() {
