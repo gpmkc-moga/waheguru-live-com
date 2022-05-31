@@ -29,10 +29,14 @@ fields:
     description: Whether to allow downloading files from this album
     default: false
   - name: audio_files
-    type: image_gallery
-    config: {}
-    label: Audio Files
-    description: Album Audio Files
+    type: list
+    config:
+      use_select: false
+      min: 
+      max: 
+    label: Audio Files link
+    description: Link for audio files<br>Please upload files directly from ftp and
+      then put links here one by one
   config:
     min: 
     max: 
