@@ -61,7 +61,10 @@ export const AudioPlayerMixin = {
       this.$data._sound?.removeEventListener("pause", this._updateStateEvent);
       this.$data._sound?.removeEventListener("playing", this._updateStateEvent);
       this.$data._sound?.removeEventListener("stalled", this._updateStateEvent);
-      this.$data._sound?.removeAttribute("src"); // empty source
+      this.$data._sound?.setAttribute(
+        "src",
+        "/audio-gallery/assets_waheguru-simran-loop.mp3"
+      ); // small source to reset downloading
       this.$data._sound?.load();
       this.$data._playerState = PlayerState.init;
     },
