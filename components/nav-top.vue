@@ -208,17 +208,6 @@ export default Vue.extend({
       popup: null,
     };
   },
-  async fetch() {
-    this.popup = await this.$content("popup").fetch();
-    if (!this.isPopupShown) {
-      if (this.popup.image != "") {
-        setTimeout(() => {
-          this.isPopupOpen = true;
-          this.registerPopupShown();
-        }, this.popup.timeout * 1000);
-      }
-    }
-  },
   watch: {
     isMenuOpen(value) {
       if (!value) {
@@ -229,6 +218,17 @@ export default Vue.extend({
     $route() {
       this.isMenuOpen = false;
     },
+  },
+  async mounted() {
+    this.popup = await this.$content("popup").fetch();
+    if (!this.isPopupShown) {
+      if (this.popup.image != "") {
+        setTimeout(() => {
+          this.isPopupOpen = true;
+          this.registerPopupShown();
+        }, this.popup.timeout * 1000);
+      }
+    }
   },
   computed: {
     ...mapState([
