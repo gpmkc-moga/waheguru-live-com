@@ -14,7 +14,12 @@
         />
       </template>
       <template #default>
-        <div class="grid grid-cols-2 text-center w-max mx-auto">
+        <div
+          class="grid grid-cols-2 text-center w-max mx-auto"
+          :class="{
+            'animate-pulse opacity-90': isDisabledPlayPause && isDisabledStop,
+          }"
+        >
           <div
             class="p-3 border border-site-text flex items-center justify-center"
           >
