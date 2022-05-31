@@ -74,10 +74,7 @@ export const AudioPlayerMixin = {
       }
     },
     handlePlayPause() {
-      if (
-        !this.isDisabledPause &&
-        this.$data._playerState === PlayerState.playing
-      ) {
+      if (!this.isDisabledPause) {
         this._pauseSound();
       } else if (!this.isDisabledPlay) {
         this._playSound();
