@@ -42,6 +42,7 @@ export const AudioPlayerMixin = {
       }
     },
     disposePlayer() {
+      this.handlePause();
       this.$data._sound?.removeEventListener("abort", this._updateStateEvent);
       this.$data._sound?.removeEventListener("emptied", this._updateStateEvent);
       this.$data._sound?.removeEventListener("ended", this._updateStateEvent);
@@ -68,10 +69,7 @@ export const AudioPlayerMixin = {
       }
     },
     handlePause() {
-      if (
-        !this.isDisabledPause &&
-        this.$data._playerState === PlayerState.playing
-      ) {
+      if (!this.isDisabledPause) {
         this._pauseSound();
       }
     },
