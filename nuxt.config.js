@@ -78,7 +78,9 @@ export default {
       name: constants.waheguruLive,
       description: config.main_description,
     },
-    workbox: false,
+    workbox: {
+      offline: false,
+    },
     manifest: {
       display: "browser",
       name: constants.waheguruLive,
