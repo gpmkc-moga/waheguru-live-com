@@ -8,18 +8,21 @@
     <!-- hukumnama, programs and founder section -->
     <div class="home-tomb-section">
       <!-- hukumnama button -->
-      <nuxt-link to="/hukumnama/today">
-        <nuxt-picture
-          format="webp"
-          class="flex justify-center w-1/2 md:w-1/3 mx-auto"
-          src="/daily_hukumnama.jpg"
-          :alt="constants.readDailyHukumnama"
-          :title="constants.readDailyHukumnama"
-          :img-attrs="{
-            class: 'w-full hover:scale-110 transition-transform duration-1000',
-          }"
-        ></nuxt-picture>
-      </nuxt-link>
+      <div class="w-full text-center">
+        <nuxt-link to="/hukumnama/today" class="w-1/2 md:w-1/3 inline-flex">
+          <nuxt-picture
+            format="webp"
+            class="w-full mx-auto inline-flex"
+            src="/daily_hukumnama.jpg"
+            :alt="constants.readDailyHukumnama"
+            :title="constants.readDailyHukumnama"
+            :img-attrs="{
+              class:
+                'w-full hover:scale-110 transition-transform duration-1000',
+            }"
+          ></nuxt-picture>
+        </nuxt-link>
+      </div>
       <!-- upcoming programs heading -->
       <nuxt-picture
         format="webp"

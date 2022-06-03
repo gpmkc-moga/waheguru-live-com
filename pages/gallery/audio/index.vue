@@ -18,7 +18,7 @@
       />
       <!-- https://stackoverflow.com/a/48123669 -->
       <!-- https://stackoverflow.com/a/70965943 -->
-      <nuxt-link
+      <a
         class="
           cursor-pointer
           opacity-70
@@ -26,7 +26,7 @@
           justify-self-start
           items-center
         "
-        to="/gallery"
+        @click.prevent="$router.back()"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@
             d="M15 19l-7-7 7-7"
           />
         </svg>
-      </nuxt-link>
+      </a>
       <div class="font-roboto-slab text-base md:text-lg text-center">
         {{ constants.audioGallery }}
       </div>

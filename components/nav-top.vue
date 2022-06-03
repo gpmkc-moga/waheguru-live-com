@@ -84,10 +84,50 @@
                 >
               </div>
             </transition>
-            <nuxt-link to="/gallery" class="mobile-menu-item"
-              >Gallery</nuxt-link
+            <a
+              href="/gallery"
+              class="z-10 mobile-menu-item-dropdown"
+              @click.prevent="isGalleryMenuOpen = !isGalleryMenuOpen"
+              >{{ constants.gallery }}</a
             >
-            <nuxt-link to="/store" class="mobile-menu-item">Store</nuxt-link>
+            <transition name="slide-down">
+              <div
+                v-show="isGalleryMenuOpen"
+                class="z-0 relative flex flex-col w-full"
+              >
+                <a
+                  :href="constants.videoGalleryLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mobile-menu-item-sub"
+                  >{{ constants.video }}</a
+                >
+                <a
+                  :href="constants.photoGalleryLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mobile-menu-item-sub"
+                  >{{ constants.photo }}</a
+                >
+                <nuxt-link to="/gallery/audio" class="mobile-menu-item-sub">{{
+                  constants.audio
+                }}</nuxt-link>
+                <a
+                  :href="constants.instagramGalleryLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mobile-menu-item-sub"
+                  >{{ constants.instagram }}</a
+                >
+              </div>
+            </transition>
+            <a
+              :href="constants.orderOnWhatsAppLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mobile-menu-item"
+              >{{ constants.store }}</a
+            >
             <nuxt-link to="/contact" class="mobile-menu-item"
               >Contact</nuxt-link
             >
@@ -131,8 +171,55 @@
             </transition>
           </div>
         </div>
-        <nuxt-link to="/gallery" class="menu-item">Gallery</nuxt-link>
-        <nuxt-link to="/store" class="menu-item">Store</nuxt-link>
+        <div
+          class="h-full flex flex-col"
+          @mouseenter="isGalleryMenuOpen = true"
+          @mouseleave="isGalleryMenuOpen = false"
+        >
+          <a to="/gallery" class="menu-item-dropdown" @click.prevent="">{{
+            constants.gallery
+          }}</a>
+          <div class="z-20 relative h-0 w-0 overflow-visible">
+            <transition name="fade">
+              <div
+                v-show="isGalleryMenuOpen"
+                class="bg-white w-max absolute flex flex-col"
+              >
+                <a
+                  :href="constants.videoGalleryLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="menu-item-sub"
+                  >{{ constants.video }}</a
+                >
+                <a
+                  :href="constants.photoGalleryLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="menu-item-sub"
+                  >{{ constants.photo }}</a
+                >
+                <nuxt-link to="/gallery/audio" class="menu-item-sub">{{
+                  constants.audio
+                }}</nuxt-link>
+                <a
+                  :href="constants.instagramGalleryLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="menu-item-sub"
+                  >{{ constants.instagram }}</a
+                >
+              </div>
+            </transition>
+          </div>
+        </div>
+        <a
+          :href="constants.orderOnWhatsAppLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="menu-item"
+          >{{ constants.store }}</a
+        >
         <nuxt-link to="/contact" class="menu-item">Contact</nuxt-link>
       </div>
     </div>
@@ -181,12 +268,13 @@
         <a :href="popup.image" target="_blank" @click="isPopupOpen = false">
           <nuxt-picture
             format="webp"
-            class="w-[80vw] z-50 h-[80vh] fixed inset-0 m-auto"
+            class="z-50 w-max h-max fixed inset-0 m-auto"
             :src="popup.image"
             :img-attrs="{
-              class: 'w-full h-full object-contain',
+              class: 'max-w-[80vw] max-h-[80vh] object-contain',
             }"
-          />
+          >
+          </nuxt-picture>
         </a>
       </div>
     </transition>
@@ -196,22 +284,26 @@
 <script lang="ts">
 import Vue from "vue";
 import { mapState, mapMutations } from "vuex";
+import constants from "~/utils/constants";
 
 export default Vue.extend({
   data: () => {
     return {
       isMenuOpen: false,
       isLiveMenuOpen: false,
+      isGalleryMenuOpen: false,
       isPopupOpen: false,
       logoAlt:
         "Gurdwara Prabh Milne Ka Chao, Moga | Bhai Sewa Singh Ji Tarmala",
       popup: null,
+      constants,
     };
   },
   watch: {
     isMenuOpen(value) {
       if (!value) {
         this.isLiveMenuOpen = false;
+        this.isGalleryMenuOpen = false;
       }
     },
     // https://stackoverflow.com/a/71685443/10030480
