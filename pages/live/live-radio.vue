@@ -131,7 +131,8 @@ export default Vue.extend({
         this.setupSound(constants.liveRadioStreamURL, true);
       } else if (this.playing) {
         this.disposePlayer();
-      } else if (this.errored) {
+      } else {
+        // for errored, also for paused through notification
         this.disposePlayer();
         this.setupSound(constants.liveRadioStreamURL, true);
       }
