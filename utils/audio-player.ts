@@ -1,6 +1,6 @@
 import constants from "./constants";
 
-enum PlayerState {
+export enum PlayerState {
   init,
   loading,
   loaded,
@@ -138,6 +138,18 @@ export const AudioPlayerMixin = {
     },
   },
   computed: {
+    loading() {
+      return this.$data._playerState === PlayerState.loading;
+    },
+    playing() {
+      return this.$data._playerState === PlayerState.playing;
+    },
+    init() {
+      return this.$data._playerState === PlayerState.init;
+    },
+    errored() {
+      return this.$data._playerState === PlayerState.errored;
+    },
     isDisabledPlay() {
       return (
         this.isDisabledPlayPause ||

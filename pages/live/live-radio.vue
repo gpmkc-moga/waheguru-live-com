@@ -14,121 +14,34 @@
         />
       </template>
       <template #default>
-        <div
-          class="grid grid-cols-2 text-center w-max mx-auto"
-          :class="{
-            'animate-pulse opacity-90': isDisabledPlayPause && isDisabledStop,
-          }"
-        >
+        <div class="flex flex-col text-center w-max mx-auto">
           <div
             class="p-3 border border-site-text flex items-center justify-center"
           >
             <button
-              :class="{ 'disabled opacity-70': isDisabledPlayPause }"
-              class="
-                rounded-full
-                bg-site-text
-                p-3
-                text-white
-                flex
-                items-center
-                justify-center
-              "
-              @click="handlePlayPause"
-            >
-              <svg
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                class="w-6 h-6 flex"
-                viewBox="0 0 45.974 45.975"
-                style="enable-background: new 0 0 45.974 45.975"
-                fill="currentColor"
-                xml:space="preserve"
-              >
-                <g>
-                  <g>
-                    <g>
-                      <path
-                        d="M9.629,44.68c-1.154,1.16-2.895,1.51-4.407,0.885c-1.513-0.623-2.5-2.1-2.5-3.735V4.043c0-1.637,0.987-3.112,2.5-3.736
-                      c1.513-0.625,3.253-0.275,4.407,0.885l17.862,17.951c2.088,2.098,2.088,5.488,0,7.585L9.629,44.68z"
-                      />
-                    </g>
-                    <g>
-                      <g>
-                        <path
-                          d="M38.252,45.975c-2.763,0-5-2.238-5-5V5c0-2.762,2.237-5,5-5c2.762,0,5,2.238,5,5v35.975
-                        C43.252,43.736,41.013,45.975,38.252,45.975z"
-                        />
-                      </g>
-                    </g>
-                  </g>
-                </g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-              </svg>
-            </button>
-          </div>
-          <div
-            class="p-3 border border-site-text flex items-center justify-center"
-          >
-            <button
-              :class="{ 'disabled opacity-70': isDisabledStop }"
-              class="
-                rounded-full
-                bg-site-text
-                p-3
-                cursor-pointer
-                text-white
-                flex
-                items-center
-                justify-center
-              "
-              @click="handleStop"
+              :class="{
+                'disabled opacity-90': loading || errored,
+                'animate-pulse': loading,
+              }"
+              class="flex text-site-dark-gray items-center justify-center"
+              @click="handleClick"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6 flex"
+                class="h-20 w-20"
+                viewBox="0 0 20 20"
                 fill="currentColor"
-                viewBox="0 0 16 16"
               >
                 <path
-                  d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"
+                  fill-rule="evenodd"
+                  :d="radioButtonSvgPath"
+                  clip-rule="evenodd"
                 />
               </svg>
             </button>
           </div>
-          <div class="border border-site-text px-3 text-site-text">
-            {{ constants.playPause }}
-          </div>
-          <div class="border border-site-text px-3 text-site-text">
-            {{ constants.stop }}
-          </div>
-          <div
-            class="
-              border border-site-text
-              p-2
-              col-span-2
-              flex
-              justify-center
-              gap-2
-            "
-          >
+
+          <div class="p-2 flex justify-center gap-2">
             <a href="https://cast1.asurahosting.com:2199/tunein/gpmkc.pls"
               ><img
                 align="absmiddle"
@@ -201,8 +114,28 @@ export default Vue.extend({
       ],
     };
   },
-  mounted() {
-    this.setupSound(constants.liveRadioStreamURL);
+  computed: {
+    radioButtonSvgPath() {
+      if (this.errored) {
+        return `M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z`;
+      } else if (this.playing) {
+        return `M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z`;
+      } else {
+        return `M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z`;
+      }
+    },
+  },
+  methods: {
+    handleClick() {
+      if (this.init) {
+        this.setupSound(constants.liveRadioStreamURL, true);
+      } else if (this.playing) {
+        this.disposePlayer();
+      } else if (this.errored) {
+        this.disposePlayer();
+        this.setupSound(constants.liveRadioStreamURL, true);
+      }
+    },
   },
 });
 </script>
