@@ -334,6 +334,8 @@ export default Vue.extend({
         this.popup = await this.$content("popup").fetch();
         console.log("got popup data");
       }
+      console.log("this.$route.path");
+      console.log(this.$route.path);
       console.log("this.isHukumnamaPage");
       console.log(this.isHukumnamaPage);
 
@@ -346,6 +348,9 @@ export default Vue.extend({
         await timeout(this.popup.timeout * 1000);
         console.log("done timeout");
       }
+
+      console.log("this.$route.path");
+      console.log(this.$route.path);
       console.log("this.isHukumnamaPage");
       console.log(this.isHukumnamaPage);
 
