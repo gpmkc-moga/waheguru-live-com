@@ -285,7 +285,10 @@
 import Vue from "vue";
 import { mapState, mapMutations } from "vuex";
 import constants from "~/utils/constants";
-
+// https://stackoverflow.com/a/33292942
+function timeout(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 export default Vue.extend({
   data: () => {
     return {
@@ -299,6 +302,16 @@ export default Vue.extend({
       constants,
     };
   },
+  computed: {
+    isHukumnamaPage() {
+      return this.$route.path === "/hukumnama/today";
+    },
+    ...mapState([
+      // map this.count to store.state.count
+      "isPopupShown",
+      "toShowPopup",
+    ]),
+  },
   watch: {
     isMenuOpen(value) {
       if (!value) {
@@ -309,26 +322,36 @@ export default Vue.extend({
     // https://stackoverflow.com/a/71685443/10030480
     $route() {
       this.isMenuOpen = false;
+      this._initPopup();
     },
   },
-  async mounted() {
-    this.popup = await this.$content("popup").fetch();
-    if (!this.isPopupShown) {
-      if (this.popup.image != "") {
-        setTimeout(() => {
-          this.isPopupOpen = true;
-          this.registerPopupShown();
-        }, this.popup.timeout * 1000);
-      }
-    }
-  },
-  computed: {
-    ...mapState([
-      // map this.count to store.state.count
-      "isPopupShown",
-    ]),
+  mounted() {
+    this._initPopup();
   },
   methods: {
+    async _initPopup() {
+      if (this.popup === null) {
+        // every page
+        this.popup = await this.$content("popup").fetch();
+      }
+      if (
+        !this.isHukumnamaPage &&
+        this.popup.image != "" &&
+        !this.isPopupShown
+      ) {
+        // await if conditions meet
+        await timeout(this.popup.timeout * 1000);
+      }
+      if (
+        !this.isHukumnamaPage &&
+        this.popup.image != "" &&
+        !this.isPopupShown
+      ) {
+        // show if conditions meet
+        this.isPopupOpen = true;
+        this.registerPopupShown();
+      }
+    },
     ...mapMutations({
       registerPopupShown: "registerPopupShown",
     }),

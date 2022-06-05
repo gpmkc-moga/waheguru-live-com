@@ -1,9 +1,9 @@
 export const state = () => ({
-    isPopupShown: false
-})
+  isPopupShown: false,
+});
 
 export const mutations = {
-    registerPopupShown(state) {
-      state.isPopupShown = true
-    }
-  }
+  registerPopupShown(state) {
+    state.isPopupShown = true;
+  },
+};
