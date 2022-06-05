@@ -304,7 +304,7 @@ export default Vue.extend({
   },
   computed: {
     isHukumnamaPage() {
-      return this.$route.path === "/hukumnama/today";
+      return this.$route.path.includes("/hukumnama/today");
     },
     ...mapState([
       // map this.count to store.state.count
@@ -332,12 +332,7 @@ export default Vue.extend({
       if (this.popup === null) {
         // every page
         this.popup = await this.$content("popup").fetch();
-        console.log("got popup data");
       }
-      console.log("this.$route.path");
-      console.log(this.$route.path);
-      console.log("this.isHukumnamaPage");
-      console.log(this.isHukumnamaPage);
 
       if (
         !this.isHukumnamaPage &&
@@ -346,13 +341,7 @@ export default Vue.extend({
       ) {
         // await if conditions meet
         await timeout(this.popup.timeout * 1000);
-        console.log("done timeout");
       }
-
-      console.log("this.$route.path");
-      console.log(this.$route.path);
-      console.log("this.isHukumnamaPage");
-      console.log(this.isHukumnamaPage);
 
       if (
         !this.isHukumnamaPage &&
@@ -362,7 +351,6 @@ export default Vue.extend({
         // show if conditions meet
         this.isPopupOpen = true;
         this.registerPopupShown();
-        console.log("popup shown");
       }
     },
     ...mapMutations({
