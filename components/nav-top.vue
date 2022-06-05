@@ -334,6 +334,9 @@ export default Vue.extend({
         this.popup = await this.$content("popup").fetch();
         console.log("got popup data");
       }
+      console.log("this.isHukumnamaPage");
+      console.log(this.isHukumnamaPage);
+
       if (
         !this.isHukumnamaPage &&
         this.popup.image != "" &&
@@ -343,6 +346,9 @@ export default Vue.extend({
         await timeout(this.popup.timeout * 1000);
         console.log("done timeout");
       }
+      console.log("this.isHukumnamaPage");
+      console.log(this.isHukumnamaPage);
+
       if (
         !this.isHukumnamaPage &&
         this.popup.image != "" &&
