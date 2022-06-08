@@ -111,6 +111,6 @@ export default {
   sitemap: {
     hostname: "https://wahegurulive.com",
     // options
-    exclude: ["/hukumnama", "/live"],
+    exclude: ["/hukumnama", "/live","/gallery","/store"],
   },
 };
