@@ -60,8 +60,10 @@ import constants from "~/utils/constants";
 export default Vue.extend({
   async asyncData(context) {
     const hukumnamaContent = await context.$content("daily-hukumnama").fetch();
+    const config = await context.$content("config").fetch();
     return {
       hukumnamaContent,
+      config,
       isDev: context.isDev,
     };
   },
@@ -81,6 +83,16 @@ export default Vue.extend({
           hid: "og:title",
           name: "og:title",
           content: constants.dailyHukumnama,
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: hukumnamaContent.Gurbani  ?? config.main_description,
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: hukumnamaContent.Gurbani  ?? config.main_description,
         },
       ],
     };
