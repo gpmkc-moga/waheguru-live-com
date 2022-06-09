@@ -28,3 +28,12 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
 }
+
+.layout-div {
+@apply shadow-lg max-w-5xl mx-auto inset-x-0 bg-white;
+}
+
+.layout-div-wrapper {
+  @apply lg:pb-5;
+  background-image: url("~static/washi.png");
+}
