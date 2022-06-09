@@ -87,12 +87,16 @@ export default Vue.extend({
         {
           hid: "description",
           name: "description",
-          content: this.hukumnamaContent.Gurbani  ?? this.config.main_description,
+          content: this.hukumnamaContent.has_gurbani_description
+            ? this.hukumnamaContent.Gurbani
+            : this.config.main_description,
         },
         {
           hid: "og:description",
           name: "og:description",
-          content: this.hukumnamaContent.Gurbani  ?? this.config.main_description,
+          content: this.hukumnamaContent.has_gurbani_description
+            ? this.hukumnamaContent.Gurbani
+            : this.config.main_description,
         },
       ],
     };
