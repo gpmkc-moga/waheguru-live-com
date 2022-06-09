@@ -14,6 +14,10 @@ fields:
     maxSize: 64
   label: Audio
   description: Please upload Hukumnama audio file here
+- name: has_gurbani_description
+  type: boolean
+  label: Include Gurbani Description?
+  default: false
 - name: Gurbani
   type: textarea
   default: ''
@@ -24,5 +28,8 @@ fields:
       format: markdown
   label: Gurbani Description
   description: Please enter Hukumnama Gurbani here for better link sharing and SEO
+  showOnly:
+    field: has_gurbani_description
+    value: true
 pages:
 - content/daily-hukumnama.json
