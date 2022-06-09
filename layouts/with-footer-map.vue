@@ -1,11 +1,11 @@
 <template>
-  <div class="max-w-5xl mx-auto inset-x-0">
-    <nav-top />
-
-    <Nuxt />
-
-    <!-- navbar bottom -->
-    <nav-bottom :withMap="true"></nav-bottom>
+  <div class="layout-div-wrapper">
+    <div class="layout-div">
+      <nav-top />
+      <Nuxt />
+      <!-- navbar bottom -->
+      <nav-bottom :with-map="true"></nav-bottom>
+    </div>
   </div>
 </template>
 

@@ -1,5 +1,7 @@
 <template>
-  <Nuxt class="max-w-5xl mx-auto inset-x-0" />
+  <div class="layout-div-wrapper">
+    <Nuxt class="layout-div" />
+  </div>
 </template>
 
 <script lang="ts">
