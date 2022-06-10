@@ -22,12 +22,19 @@
     >
       <!-- title -->
       <div
-        class="text-[11px] font-krona-one uppercase font-light text-site-red"
+        class="
+          text-[11px]
+          xl:text-sm
+          font-krona-one
+          uppercase
+          font-light
+          text-site-red
+        "
       >
         {{ title }}
       </div>
       <!-- name -->
-      <div class="text-base md:leading-[1.1] font-actor font-medium">
+      <div class="text-base xl:text-xl md:leading-[1.1] font-actor font-medium">
         {{ name }}
       </div>
     </div>

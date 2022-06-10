@@ -4,7 +4,7 @@
       <template #heading>
         <nuxt-picture
           format="webp"
-          class="flex justify-center md:mt-[175px]"
+          class="flex justify-center md:mt-[175px] lg:mt-[250px]"
           src="/heading_live_radio.png"
           :alt="constants.headingLiveRadio"
           :title="constants.headingLiveRadio"
@@ -28,7 +28,7 @@
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-20 w-20"
+                class="h-20 w-20 lg:h-28 lg:w-28 xl:h-40 xl:w-40"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -44,6 +44,7 @@
           <div class="p-2 flex justify-center gap-2">
             <a href="https://cast1.asurahosting.com:2199/tunein/gpmkc.pls"
               ><img
+                class="xl:w-6 xl:h-6"
                 align="absmiddle"
                 src="https://cast1.asurahosting.com:2199/system/images/tunein-pls.png"
                 border="0"
@@ -52,6 +53,7 @@
             /></a>
             <a href="https://cast1.asurahosting.com:2199/tunein/gpmkc.asx"
               ><img
+                class="xl:w-6 xl:h-6"
                 align="absmiddle"
                 src="https://cast1.asurahosting.com:2199/system/images/tunein-asx.png"
                 border="0"
@@ -60,6 +62,7 @@
             /></a>
             <a href="https://cast1.asurahosting.com:2199/tunein/gpmkc.ram"
               ><img
+                class="xl:w-6 xl:h-6"
                 align="absmiddle"
                 src="https://cast1.asurahosting.com:2199/system/images/tunein-ram.png"
                 border="0"
@@ -68,6 +71,7 @@
             /></a>
             <a href="https://cast1.asurahosting.com:2199/tunein/gpmkc.qtl"
               ><img
+                class="xl:w-6 xl:h-6"
                 align="absmiddle"
                 src="https://cast1.asurahosting.com:2199/system/images/tunein-qtl.png"
                 border="0"
@@ -76,6 +80,7 @@
             /></a>
             <a href="https://cast1.my-control-panel.com/stream/gpmkc/stream.pls"
               ><img
+                class="xl:w-6 xl:h-6"
                 align="absmiddle"
                 src="https://cast1.asurahosting.com:2199/system/images/tunein-web.png"
                 border="0"

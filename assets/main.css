@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .layout-div {
-@apply shadow-lg max-w-5xl mx-auto inset-x-0 bg-white;
+@apply shadow-lg max-w-7xl mx-auto inset-x-0 bg-white;
 }
 
 .layout-div-wrapper {
