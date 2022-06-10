@@ -400,9 +400,14 @@ export default Vue.extend({
               uppercase
               text-[11px]
               font-krona-one;
+  @screen xl {
+    @apply text-[13px];
+  }
+
   &.nuxt-link-exact-active {
     @apply border-b-yellow-600;
   }
+
   &-sub {
     @extend .menu-item;
     @apply capitalize border-b-0 hover:border-b-0 hover:bg-site-gray hover:text-white
@@ -437,7 +442,7 @@ export default Vue.extend({
 }
 .nav-top-wrapper {
   @apply relative
-      lg:px-8 lg:mx-auto lg:sticky lg:top-0
+      lg:px-8 xl:px-10 lg:mx-auto lg:sticky lg:top-0
       bg-white
       lg:bg-opacity-80 z-50;
 }

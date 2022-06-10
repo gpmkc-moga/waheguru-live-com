@@ -1,10 +1,10 @@
 <template>
   <div class="mb-2.5">
-    <TombPost :hideFrame="true">
+    <TombPost :hide-frame="true">
       <template>
         <nuxt-picture
           format="webp"
-          class="flex justify-center md:mt-[115px]"
+          class="flex justify-center md:mt-[115px] lg:mt-[160px] xl:mt-[190px]"
           src="/heading_our_mission.jpg"
           :alt="constants.headingOurMission"
           :title="constants.headingOurMission"
@@ -17,7 +17,9 @@
           class="
             p-2.5
             font-roboto
-            text-[13px] text-center
+            text-[13px]
+            lg:text-[15px]
+            text-center
             mt-[18px]
             mb-[1.5em]
             leading-relaxed
@@ -41,7 +43,7 @@
         <!-- bhai sahib about us section  -->
         <leader-description-block
           class="mt-[50px]"
-          photoUrl="/photo_bhaisahib.png"
+          photo-url="/photo_bhaisahib.png"
           :name="constants.bhaiSahibName"
           :title="constants.bhaiSahibTitle"
           :about="constants.bhaiSahibAbout"
@@ -49,7 +51,7 @@
         <leader-description-block
           data-aos="fade-up"
           class="mt-[30px]"
-          photoUrl="/photo_veerji.png"
+          photo-url="/photo_veerji.png"
           :name="constants.veerjiName"
           :title="constants.veerjiTitle"
           :about="constants.veerjiAbout"
@@ -64,6 +66,12 @@
 import Vue from "vue";
 import constants from "~/utils/constants";
 export default Vue.extend({
+  layout: "with-footer-map",
+  data() {
+    return {
+      constants,
+    };
+  },
   head() {
     return {
       title: constants.about,
@@ -74,12 +82,6 @@ export default Vue.extend({
           content: constants.about,
         },
       ],
-    };
-  },
-  layout: "with-footer-map",
-  data() {
-    return {
-      constants,
     };
   },
 });

@@ -39,7 +39,14 @@
       <!-- heading university -->
       <nuxt-picture
         format="webp"
-        class="flex justify-center mt-[100px] md:mt-[150px] lg:mt-[175px]"
+        class="
+          flex
+          justify-center
+          mt-[100px]
+          md:mt-[150px]
+          lg:mt-[175px]
+          xl:mt-[220px]
+        "
         src="/heading_university.png"
         loading="lazy"
         :alt="constants.headingUniversity"
@@ -105,6 +112,8 @@
           font-roboto-slab font-medium
           text-center text-[15px]
           md:text-base
+          lg:text-lg
+          xl:text-xl
           mt-[30px]
           mb-[1.5em]
         "
@@ -125,7 +134,16 @@
     <div class="flex flex-col mt-[30px] p-2.5" data-aos="fade-up">
       <div class="flex flex-col">
         <!-- title -->
-        <div class="font-roboto-slab font-medium text-[19px] text-center">
+        <div
+          class="
+            font-roboto-slab font-medium
+            text-[15px]
+            md:text-base
+            lg:text-lg
+            xl:text-xl
+            text-center
+          "
+        >
           {{ constants.joinClasses }}
         </div>
         <!-- icons -->
@@ -252,6 +270,9 @@ export default Vue.extend({
   }
   @screen lg {
     background-position: 0 360px;
+  }
+  @screen xl {
+    background-position: 0 375px;
   }
 }
 .courses-section {
