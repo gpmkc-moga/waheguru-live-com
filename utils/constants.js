@@ -131,4 +131,8 @@ export default {
   noTracks: "No tracks in this album!",
   listenTo: "Listen to album on Waheguru Live!",
   shareAlbumOn: "share album on:",
+  liveSchedule:
+    'Early Morning : <span style="color: #2a64a6;">03:00 - 06:30</span><br>Morning :  <span style="color: #2a64a6;">10:00 - 12:00</span><br>Evening :  <span style="color: #2a64a6;">03:00 - 05:00</span><br>Late Evening :  <span style="color: #2a64a6;">07:30 - 08:30</span>',
+  liveScheduleSaturday:
+    'Early Saturday<br><span style="color: #2a64a6;">07:30 pm - 10:30 pm</span><br>from Gurdwara Prabh Milne Ka Chao, Moga',
 };

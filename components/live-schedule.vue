@@ -12,29 +12,37 @@
       }"
     />
 
-    <nuxt-picture
+    <div
+      class="
+        text-right
+        font-roboto font-bold
+        text-base
+        md:text-lg
+        lg:text-xl
+        xl:text-3xl
+        mt-8
+        w-max
+        mx-auto
+        inset-0
+      "
       data-aos="fade-up"
-      loading="lazy"
-      format="webp"
-      class="flex justify-center mt-9"
-      src="/text_live_schedule.jpg"
-      :img-attrs="{
-        class: 'w-full md:w-[90%]',
-      }"
+      v-html="constants.liveSchedule"
     />
 
     <!-- divider -->
     <div class="my-8 h-[3px] bg-site-yellow-divider" />
 
-    <nuxt-picture
+    <div
+      class="
+        text-center
+        font-roboto-slab font-medium
+        text-base
+        md:text-lg
+        lg:text-xl
+        xl:text-3xl
+      "
       data-aos="fade-up"
-      loading="lazy"
-      format="webp"
-      class="flex justify-center mt-2.5"
-      src="/text_saturday.jpg"
-      :img-attrs="{
-        class: 'w-[65%] md:w-[55%]',
-      }"
+      v-html="constants.liveScheduleSaturday"
     />
 
     <div class="mt-[26px] mb-4 h-[3px] bg-site-yellow-divider" />
