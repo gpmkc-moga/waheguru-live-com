@@ -4,7 +4,7 @@
       <template #heading>
         <nuxt-picture
           format="webp"
-          class="flex justify-center md:mt-[175px]"
+          class="flex justify-center md:mt-[175px] lg:mt-[250px]"
           src="/heading_live_video.jpg"
           :alt="constants.headingLiveVideo"
           :title="constants.headingLiveVideo"
@@ -30,6 +30,11 @@
 import Vue from "vue";
 import constants from "~/utils/constants";
 export default Vue.extend({
+  data() {
+    return {
+      constants,
+    };
+  },
   head() {
     return {
       title: constants.liveVideo,
@@ -40,11 +45,6 @@ export default Vue.extend({
           content: constants.liveVideo,
         },
       ],
-    };
-  },
-  data() {
-    return {
-      constants,
     };
   },
 });

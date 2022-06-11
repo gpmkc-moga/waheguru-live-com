@@ -1,10 +1,10 @@
 <template>
   <div class="mb-2.5">
-    <TombPost :hideFrame="true">
+    <TombPost :hide-frame="true">
       <template #heading>
         <nuxt-picture
           format="webp"
-          class="flex justify-center md:mt-[150px] lg:mt-[200px]"
+          class="flex justify-center md:mt-[150px] lg:mt-[230px]"
           src="/heading_contact_us.jpg"
           :alt="constants.headingContactUs"
           :title="constants.headingContactUs"
@@ -17,13 +17,15 @@
       <template>
         <div class="flex flex-col md:flex-row mt-[50px]">
           <div
-            v-html="constants.contactInfo"
             class="
               p-2.5
               font-roboto
               text-[15px]
-              md:text-base md:w-[45%] md:self-center
+              md:text-base
+              xl:text-lg
+              md:w-[45%] md:self-center
             "
+            v-html="constants.contactInfo"
           />
 
           <div class="border-site-yellow m-2.5 border-4 md:w-[55%]">
@@ -47,6 +49,11 @@ import Vue from "vue";
 import constants from "~/utils/constants";
 
 export default Vue.extend({
+  data() {
+    return {
+      constants,
+    };
+  },
   head() {
     return {
       title: constants.contact,
@@ -57,11 +64,6 @@ export default Vue.extend({
           content: constants.contact,
         },
       ],
-    };
-  },
-  data() {
-    return {
-      constants,
     };
   },
 });

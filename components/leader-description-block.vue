@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md:max-w-[700px] md:mx-auto md:flex"
+    class="md:max-w-[700px] xl:max-w-[850px] md:mx-auto md:flex"
     :class="{ 'md:flex-row-reverse': reverse }"
   >
     <nuxt-picture
@@ -34,6 +34,7 @@
           mt-2.5
           font-krona-one
           text-site-red text-[13px]
+          xl:text-[15px]
           font-light
           uppercase
         "
@@ -48,6 +49,7 @@
           mt-2.5
           font-roboto font-light
           text-[13px]
+          xl:text-[15px]
           leading-normal
           text-justify
         "
@@ -62,11 +64,6 @@ import Vue from "vue";
 import constants from "~/utils/constants";
 
 export default Vue.extend({
-  data() {
-    return {
-      constants,
-    };
-  },
   props: {
     reverse: {
       type: Boolean,
@@ -93,8 +90,12 @@ export default Vue.extend({
       required: true,
     },
   },
+  data() {
+    return {
+      constants,
+    };
+  },
 });
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
