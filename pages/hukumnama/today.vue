@@ -5,7 +5,7 @@
       <template #heading>
         <nuxt-picture
           format="webp"
-          class="flex justify-center md:mt-[140px]"
+          class="flex justify-center md:mt-[140px] lg:mt-[190px]"
           src="/heading_daily_hukumnama.jpg"
           :alt="constants.headingDailyHukumnama"
           :title="constants.headingDailyHukumnama"
