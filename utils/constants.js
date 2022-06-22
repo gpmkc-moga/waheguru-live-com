@@ -77,7 +77,7 @@ export default {
     "Gurdwara Prabh Milne Ka Chao, Rauli Road, Near Bughipura Chownk, Moga, Punjab 142001<br><br>gpmkc.moga@gmail.com<br><br>+91 98513-92513<br>+91 81950-13223",
   readDailyHukumnama: "Read Daily Hukumnama",
   followUs: "Follow Us",
-  websiteUrl: "https://wahegurulive.com/",
+  websiteUrl: "https://wahegurulive.com",
   youtubeUrl: "https://www.youtube.com/c/Wahegurulive",
   instagramUrl: "https://www.instagram.com/gpmkc.moga/",
   twitterUrl: "https://twitter.com/wahegurulive",
