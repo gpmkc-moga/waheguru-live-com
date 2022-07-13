@@ -4,7 +4,7 @@
       <template #heading>
         <nuxt-picture
           format="webp"
-          class="flex justify-center md:mt-[115px]"
+          class="flex justify-center md:mt-[115px] lg:mt-[160px]"
           src="/heading_gallery.jpg"
           :alt="constants.headingGallery"
           :title="constants.headingGallery"
