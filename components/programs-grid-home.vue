@@ -85,6 +85,7 @@ export default Vue.extend({
   async fetch() {
     this.programsContent = await this.$content("programs").fetch();
   },
+  fetchOnServer: false,
   computed: {
     filteredPrograms() {
       if (this.programsContent.programs) {
