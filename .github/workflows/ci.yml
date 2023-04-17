@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [16]
 
     outputs:
       hukumnama_updated: ${{ steps.check_hukumnama_file_changed.outputs.changed }}
@@ -44,8 +44,11 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
 
-      - name: Generate
-        run: npm run generate
+      - name: Generate with Tina
+        run: npm run generate_with_tina
+        env:
+          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
       # - name: Deploy 🚀
       #   uses: peaceiris/actions-gh-pages@v3

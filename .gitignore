@@ -94,3 +94,4 @@ sw.*
 
 # audio gallery not upload in git
 static/audio-gallery
+node_modules

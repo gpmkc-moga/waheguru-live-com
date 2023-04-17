@@ -260,7 +260,10 @@
       "name": "Waheguru Simran",
       "artist": "Bhai Sahib Bhai Sewa Singh Ji Tarmala",
       "allow_downloads": true,
-      "audio_files": ["/audio-gallery/Wahe-Guru Simran.mp3"]
+      "audio_files": [
+        "/audio-gallery/Wahe-Guru Simran.mp3"
+      ]
     }
-  ]
+  ],
+  "_template": "audio_gallery"
 }
