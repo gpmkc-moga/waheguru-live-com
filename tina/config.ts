@@ -115,6 +115,11 @@ export default defineConfig({
             name: "slides",
             label: "Slides",
             list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: `${item?.description}` };
+              },
+            },
             fields: [
               {
                 type: "image",
@@ -150,6 +155,11 @@ export default defineConfig({
             name: "programs",
             label: "Programs",
             list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: `${item?.program_name}` };
+              },
+            },
             fields: [
               {
                 type: "string",
@@ -215,6 +225,11 @@ export default defineConfig({
             name: "albums",
             label: "Albums",
             list: true,
+            ui: {
+              itemProps: (item) => {
+                return { label: `${item?.name}` };
+              },
+            },
             fields: [
               {
                 type: "image",
