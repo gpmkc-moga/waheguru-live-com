@@ -1,9 +1,18 @@
 {
   "programs": [
     {
+      "program_name": "Malaysia Samagam 2023",
+      "program_start_date": "2023-04-18T18:30:00.000Z",
+      "program_end_date": "2023-04-22T18:30:00.000Z",
+      "program_address_line_1": "Malaysia",
+      "program_address_line_2": "Malaysia",
+      "program_poster": "/media/img_1_1681797578070.jpg",
+      "program_location": "Outside"
+    },
+    {
       "program_name": "June Camp 2022",
-      "program_start_date": "2022-06-01T00:00:00+05:30",
-      "program_end_date": "2022-06-07T00:00:00+05:30",
+      "program_start_date": "2022-05-31T18:30:00.000Z",
+      "program_end_date": "2022-06-06T18:30:00.000Z",
       "program_address_line_1": "Rauli Road",
       "program_address_line_2": "Moga, Punjab",
       "program_poster": "/media/2bd3e9c8-2220-41cb-947d-8f5ea2184b86.jpg",
@@ -11,8 +20,8 @@
     },
     {
       "program_name": "Ludhiana Gurmat smagam",
-      "program_start_date": "2022-05-29T10:00:00+05:30",
-      "program_end_date": "2022-05-29T14:00:00+05:30",
+      "program_start_date": "2022-05-29T04:30:00.000Z",
+      "program_end_date": "2022-05-29T08:30:00.000Z",
       "program_address_line_1": "Urban State, Durgri",
       "program_address_line_2": "Ludhiana, Punjab",
       "program_poster": "/media/img-20220518-wa0006.jpg",
@@ -20,8 +29,8 @@
     },
     {
       "program_name": "March Camp 2022",
-      "program_start_date": "2022-03-22T00:00:00+05:30",
-      "program_end_date": "2022-03-31T00:00:00+05:30",
+      "program_start_date": "2022-03-21T18:30:00.000Z",
+      "program_end_date": "2022-03-30T18:30:00.000Z",
       "program_address_line_1": "Rauli Road",
       "program_address_line_2": "Moga, Punjab",
       "program_poster": "",
@@ -29,8 +38,8 @@
     },
     {
       "program_name": "March Camp 2023",
-      "program_start_date": "2023-03-22T00:00:00+05:30",
-      "program_end_date": "2023-03-31T00:00:00+05:30",
+      "program_start_date": "2023-03-21T18:30:00.000Z",
+      "program_end_date": "2023-03-30T18:30:00.000Z",
       "program_address_line_1": "Rauli Road",
       "program_address_line_2": "Moga, Punjab",
       "program_poster": "",
@@ -38,22 +47,21 @@
     },
     {
       "program_name": "December Camp 2022",
-      "program_start_date": "2022-12-24T00:00:00+05:30",
-      "program_end_date": "2022-12-31T00:00:00+05:30",
+      "program_start_date": "2022-12-23T18:30:00.000Z",
+      "program_end_date": "2022-12-30T18:30:00.000Z",
       "program_address_line_1": "Rauli Road",
       "program_address_line_2": "Moga, Punjab",
       "program_poster": "",
       "program_location": "Headquarters"
     },
     {
-      "program_location": "Headquarters",
-      "program_start_date": "2022-08-08T00:00:00+05:30",
+      "program_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2022",
+      "program_start_date": "2022-08-07T18:30:00.000Z",
+      "program_end_date": "2022-08-10T18:30:00.000Z",
       "program_address_line_1": "Rauli Road",
       "program_address_line_2": "Moga, Punjab",
       "program_poster": "",
-      "program_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2022",
-      "program_end_date": "2022-08-11T00:00:00+05:30"
+      "program_location": "Headquarters"
     }
-  ],
-  "_template": "programs"
+  ]
 }
