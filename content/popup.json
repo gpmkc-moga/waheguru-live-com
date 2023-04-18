@@ -1,5 +1,4 @@
 {
   "image": "",
-  "timeout": 3,
-  "_template": "popup"
+  "timeout": 5
 }
