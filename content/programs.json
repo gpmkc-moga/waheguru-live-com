@@ -1,6 +1,15 @@
 {
   "programs": [
     {
+      "program_name": "June Camp 2023",
+      "program_start_date": "2023-05-31T18:30:00.000Z",
+      "program_end_date": "2023-05-31T18:30:00.000Z",
+      "program_address_line_1": "Gurdwara Prabh Milne Ka Chao",
+      "program_address_line_2": "Near Bughipura Chownk, Rauli Road, Moga (Punjab)",
+      "program_poster": "/media/June Camp 2023 Poster.jpeg",
+      "program_location": "Headquarters"
+    },
+    {
       "program_name": "Malaysia Samagam 2023",
       "program_start_date": "2023-04-18T18:30:00.000Z",
       "program_end_date": "2023-04-22T18:30:00.000Z",
