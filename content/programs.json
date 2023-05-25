@@ -10,6 +10,15 @@
       "program_location": "Headquarters"
     },
     {
+      "program_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2023",
+      "program_start_date": "2023-08-07T18:30:00.000Z",
+      "program_end_date": "2023-08-10T18:30:00.000Z",
+      "program_address_line_1": "Janam Diwas Bhai Sewa Singh ji Tarmala 2023 (Aug 8-11)",
+      "program_address_line_2": "Rauli Road, Moga, Punjab",
+      "program_poster": "",
+      "program_location": "Headquarters"
+    },
+    {
       "program_name": "December Camp 2023",
       "program_start_date": "2023-12-23T18:30:00.000Z",
       "program_end_date": "2023-12-30T18:30:00.000Z",
@@ -24,15 +33,6 @@
       "program_end_date": "2024-03-30T18:30:00.000Z",
       "program_address_line_1": "March Camp 2024 (March 22 - March 31)",
       "program_address_line_2": "Rauli Road, Moga, Punjab",
-      "program_poster": "",
-      "program_location": "Headquarters"
-    },
-    {
-      "program_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2023",
-      "program_start_date": "2023-08-07T18:30:00.000Z",
-      "program_end_date": "2023-08-10T18:30:00.000Z",
-      "program_address_line_1": "Rauli Road",
-      "program_address_line_2": "Moga, Punjab",
       "program_poster": "",
       "program_location": "Headquarters"
     }
