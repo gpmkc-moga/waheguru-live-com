@@ -16,7 +16,7 @@
       <template #default>
         <iframe
           class="w-full aspect-video mt-2.5"
-          src="https://www.youtube.com/embed/live_stream?channel=UCHHc9uXG4gggMJtyVOMmKvA&amp;autoplay=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0"
+          src="https://www.youtube.com/embed/live_stream?channel=UCivy8HzqwN4nHx9-RTSxhkw&amp;autoplay=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0"
           frameborder="0"
           allow="autoplay; fullscreen"
         ></iframe>
