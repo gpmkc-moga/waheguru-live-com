@@ -1,14 +1,6 @@
 {
   "programs": [
     {
-      "program_name": "July 14-15 Gurdwara Sahib Riverside 10am-5pm",
-      "program_start_date": "2023-07-13T18:30:00.000Z",
-      "program_end_date": "2023-06-14T18:30:00.000Z",
-      "program_address_line_1": "July 14-15 Gurdwara Sahib Riverside 10am-5pm",
-      "program_address_line_2": "7940 Mission Blvd, Riverside, CA 92509, United States",
-      "program_location": "Outside"
-    },
-    {
       "program_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2023",
       "program_start_date": "2023-08-07T18:30:00.000Z",
       "program_end_date": "2023-08-10T18:30:00.000Z",
@@ -33,6 +25,14 @@
       "program_address_line_1": "Bandi Chhor Divas 2023",
       "program_address_line_2": "Gurdwara Prabh Milne Ka Chao, Moga",
       "program_location": "Headquarters"
+    },
+    {
+      "program_name": "July 14-15 Gurdwara Sahib Riverside 10am-5pm",
+      "program_start_date": "2023-07-13T18:30:00.000Z",
+      "program_end_date": "2023-06-14T18:30:00.000Z",
+      "program_address_line_1": "July 14-15 Gurdwara Sahib Riverside 10am-5pm",
+      "program_address_line_2": "7940 Mission Blvd, Riverside, CA 92509, United States",
+      "program_location": "Outside"
     }
   ]
 }
