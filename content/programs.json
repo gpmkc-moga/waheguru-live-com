@@ -73,6 +73,14 @@
       "program_address_line_1": "July 23 Gurdwara Sahib Tracy (9am-3pm)",
       "program_address_line_2": "11770 W Clover Rd, Tracy, CA 95304, United States",
       "program_location": "Outside"
+    },
+    {
+      "program_name": "July 23 Gurdwara Guru Nanak Parkash (4pm-830pm)",
+      "program_start_date": "2023-07-22T18:30:00.000Z",
+      "program_end_date": "2023-07-22T18:30:00.000Z",
+      "program_address_line_1": "July 23 Gurdwara Guru Nanak Parkash (4pm-830pm)",
+      "program_address_line_2": "16101 West Grant Line Rd, Tracy, CA 95304, United States",
+      "program_location": "Outside"
     }
   ]
 }
