@@ -33,6 +33,14 @@
       "program_address_line_1": "July 14-15 Gurdwara Sahib Riverside 10am-5pm",
       "program_address_line_2": "7940 Mission Blvd, Riverside, CA 92509, United States",
       "program_location": "Outside"
+    },
+    {
+      "program_name": "March Camp 2024",
+      "program_start_date": "2024-03-21T18:30:00.000Z",
+      "program_end_date": "2024-03-30T18:30:00.000Z",
+      "program_address_line_1": "March Camp 2024",
+      "program_address_line_2": "Moga",
+      "program_location": "Headquarters"
     }
   ]
 }
