@@ -97,6 +97,14 @@
       "program_address_line_1": "July 25 (11am-4pm)",
       "program_address_line_2": "2436 Stagecoach Rd, Stockton, CA 95215, United States",
       "program_location": "Outside"
+    },
+    {
+      "program_name": "July 26-30 Gurdwara Khalsa Darbar (10am - 6pm)",
+      "program_start_date": "2023-07-25T18:30:00.000Z",
+      "program_end_date": "2023-07-29T18:30:00.000Z",
+      "program_address_line_1": "July 26-30 Gurdwara Khalsa Darbar (10am - 6pm)",
+      "program_address_line_2": "10371 Jackson Rd, Sacramento, CA 95827, United States",
+      "program_location": "Outside"
     }
   ]
 }
