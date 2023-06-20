@@ -33,6 +33,14 @@
       "program_address_line_1": "July 14-15 Gurdwara Sahib Riverside 10am-5pm",
       "program_address_line_2": "7940 Mission Blvd, Riverside, CA 92509, United States",
       "program_location": "Outside"
+    },
+    {
+      "program_name": "July 16 -18 Sikh Community Gurdwara",
+      "program_start_date": "2023-07-15T18:30:00.000Z",
+      "program_end_date": "2023-07-17T18:30:00.000Z",
+      "program_address_line_1": "July 16-18 Sikh Community Gurdwara",
+      "program_address_line_2": "144 North, @nd Ave, Covina, CA 91723, United States",
+      "program_location": "Outside"
     }
   ]
 }
