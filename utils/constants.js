@@ -82,7 +82,7 @@ export default {
   instagramUrl: "https://www.instagram.com/gpmkc.moga/",
   twitterUrl: "https://twitter.com/wahegurulive",
   facebookUrl: "http://www.facebook.com/wahegurulive",
-  soundCloudUrl: "https://soundcloud.com/wahegurulive",
+  soundCloudUrl: "https://soundcloud.com/gpmkcmoga",
   getInTouch: "Get in Touch",
   gurdwaraNameFooter: "Gurdwara Prabh Milne Ka Chao",
   universityNameFooter: "University of Divine Studies",
