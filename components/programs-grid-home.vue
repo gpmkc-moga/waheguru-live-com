@@ -17,7 +17,7 @@
       </svg>
     </div>
     <p v-else-if="$fetchState.error">Error while getting programs!</p>
-    <div v-else class="grid grid-cols-1 gap-4 m-4 md:grid-cols-2">
+    <div v-else class="flex flex-col md:grid gap-4 m-4 md:grid-cols-2">
       <program-block
         v-for="(program, idx) in filteredPrograms"
         :key="idx"
