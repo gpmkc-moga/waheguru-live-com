@@ -1,6 +1,14 @@
 {
   "programs": [
     {
+      "program_name": "March camp 2024",
+      "program_start_date": "2024-03-21T18:30:00.000Z",
+      "program_end_date": "2024-03-30T18:30:00.000Z",
+      "program_address_line_1": "March Camp",
+      "program_address_line_2": "Gurudwara Prabh Milne Ka Chao, Moga",
+      "program_location": "Headquarters"
+    },
+    {
       "program_name": "Village Lalbai",
       "program_start_date": "2024-01-27T18:30:00.000Z",
       "program_end_date": "2024-01-27T18:30:00.000Z",
