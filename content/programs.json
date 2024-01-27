@@ -1,38 +1,12 @@
 {
   "programs": [
     {
-      "program_name": "Janam Diwas Bhai Sewa Singh ji Tarmala 2023",
-      "program_start_date": "2023-08-07T18:30:00.000Z",
-      "program_end_date": "2023-08-10T18:30:00.000Z",
-      "program_address_line_1": "Janam Diwas Bhai Sewa Singh ji Tarmala 2023 (Aug 8-11)",
-      "program_address_line_2": "Gurdwara Prabh Milne Ka Chao, Moga",
-      "program_poster": "",
-      "program_location": "Headquarters"
-    },
-    {
-      "program_name": "December Camp 2023",
-      "program_start_date": "2023-12-23T18:30:00.000Z",
-      "program_end_date": "2023-12-30T18:30:00.000Z",
-      "program_address_line_1": "December Camp 2023 (Dec 24-31)",
-      "program_address_line_2": "Gurdwara Prabh Milne Ka Chao, Moga",
-      "program_poster": "",
-      "program_location": "Headquarters"
-    },
-    {
-      "program_name": "Bandi Chhor Divas 2023",
-      "program_start_date": "2023-10-27T18:30:00.000Z",
-      "program_end_date": "2023-10-27T18:30:00.000Z",
-      "program_address_line_1": "Bandi Chhor Divas 2023",
-      "program_address_line_2": "Gurdwara Prabh Milne Ka Chao, Moga",
-      "program_location": "Headquarters"
-    },
-    {
-      "program_name": "Gurmat Parchar 2023 - California, USA",
-      "program_start_date": "2023-07-13T18:30:00.000Z",
-      "program_end_date": "2023-07-29T18:30:00.000Z",
-      "program_address_line_1": "Gurmat Parchar July 14-30, 2023",
-      "program_address_line_2": "California, USA",
-      "program_poster": "/media/USA Cali 2023.jpg",
+      "program_name": "Village Lalbai",
+      "program_start_date": "2024-01-27T18:30:00.000Z",
+      "program_end_date": "2024-01-27T18:30:00.000Z",
+      "program_address_line_1": "Village Lalbai",
+      "program_address_line_2": "Near Giddadbaha, Sri Mukatsar Sahib",
+      "program_poster": "/media/IMG-20240126-WA0011.jpg",
       "program_location": "Outside"
     }
   ]
